@@ -28,7 +28,7 @@ const BookSection = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 lg:gap-8 w-full mt-80 md:mt-0">
           
           {/* Title Section */}
-          <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg flex-shrink-0 w-full md:w-auto">
+          <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg flex-shrink-0 w-full md:w-auto text-center">
             <div className="inline-flex items-center px-2 py-1 rounded-full bg-red-100 text-red-600 text-xs font-medium mb-2">
               <BookOpen className="w-3 h-3 mr-1" />
               New Release

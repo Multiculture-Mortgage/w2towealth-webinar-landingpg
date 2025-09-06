@@ -8,34 +8,34 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Modern Brand Colors */
-    --brand-orange: 22 100% 52%;
-    --brand-orange-light: 22 100% 62%;
-    --brand-teal: 190 85% 35%;
-    --brand-teal-light: 190 75% 45%;
-    --brand-navy: 220 26% 14%;
+    /* Exact Ad Colors */
+    --brand-orange: 22 100% 60%;
+    --brand-orange-light: 22 100% 65%;
+    --brand-teal: 186 100% 30%;
+    --brand-teal-light: 186 80% 40%;
+    --brand-navy: 215 25% 27%;
     --brand-gray: 220 9% 46%;
     
     /* Clean Modern Palette */
     --background: 0 0% 100%;
-    --foreground: 220 26% 14%;
+    --foreground: 215 25% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 26% 14%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 26% 14%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 22 100% 52%;
+    --primary: 22 100% 60%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 14% 96%;
-    --secondary-foreground: 220 26% 14%;
+    --secondary-foreground: 215 25% 27%;
 
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: 190 85% 35%;
+    --accent: 186 100% 30%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -43,7 +43,7 @@ All colors MUST be HSL.
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 22 100% 52%;
+    --ring: 22 100% 60%;
 
     /* Modern Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(var(--brand-orange-light)));
@@ -51,10 +51,10 @@ All colors MUST be HSL.
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
     
     /* Clean Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(220 26% 14% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(220 26% 14% / 0.1), 0 2px 4px -1px hsl(220 26% 14% / 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(220 26% 14% / 0.1), 0 4px 6px -2px hsl(220 26% 14% / 0.05);
-    --shadow-xl: 0 20px 25px -5px hsl(220 26% 14% / 0.1), 0 10px 10px -5px hsl(220 26% 14% / 0.04);
+    --shadow-sm: 0 1px 2px 0 hsl(215 25% 27% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215 25% 27% / 0.1), 0 2px 4px -1px hsl(215 25% 27% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(215 25% 27% / 0.1), 0 4px 6px -2px hsl(215 25% 27% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(215 25% 27% / 0.1), 0 10px 10px -5px hsl(215 25% 27% / 0.04);
     
     --radius: 0.5rem;
   }

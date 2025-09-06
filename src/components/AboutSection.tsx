@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Award, Users2, TrendingUp, Quote } from "lucide-react";
+import headshotImage from "@/assets/headshot.jpg";
 
 const testimonials = [
   {
@@ -22,19 +23,31 @@ const AboutSection = () => {
   return (
     <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Professional Photo */}
+          <div className="order-2 lg:order-1">
+            <div className="relative">
+              <img 
+                src={headshotImage} 
+                alt="Multiculture Mortgage LLC Team" 
+                className="w-full rounded-2xl shadow-xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/20 to-transparent rounded-2xl"></div>
+            </div>
+          </div>
+
           {/* Content */}
-          <div>
+          <div className="order-1 lg:order-2">
             <Badge className="bg-brand-navy text-white mb-4 px-4 py-2">
-              YOUR EXPERT INSTRUCTOR
+              YOUR EXPERT INSTRUCTORS
             </Badge>
             
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-navy">
-              Learn From a Proven Real Estate Professional
+              Learn From Proven Real Estate Professionals
             </h2>
             
             <p className="text-lg text-brand-gray mb-8 leading-relaxed">
-              As the founder of Multiculture Mortgage LLC, our instructor has personally helped 
+              As the founders of Multiculture Mortgage LLC, our team has personally helped 
               hundreds of working professionals transition from traditional employment to building 
               substantial wealth through strategic real estate investments.
             </p>
@@ -46,7 +59,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-brand-navy">15+ Years Experience</h4>
-                  <p className="text-brand-gray">Licensed mortgage professional with extensive real estate investment expertise</p>
+                  <p className="text-brand-gray">Licensed mortgage professionals with extensive real estate investment expertise</p>
                 </div>
               </div>
               
@@ -75,50 +88,31 @@ const AboutSection = () => {
               Secure Your Spot Now
             </Button>
           </div>
+        </div>
 
-          {/* Stats & Testimonials */}
-          <div className="space-y-6">
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="bg-brand-orange text-white border-0">
-                <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-black mb-1">500+</div>
-                  <div className="text-sm font-medium">Happy Clients</div>
-                </CardContent>
-              </Card>
-              <Card className="bg-brand-teal text-white border-0">
-                <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-black mb-1">98%</div>
-                  <div className="text-sm font-medium">Success Rate</div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Testimonials */}
-            <div className="space-y-4">
-              {testimonials.map((testimonial, index) => (
-                <Card key={index} className="border-l-4 border-l-brand-orange">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-3 mb-3">
-                      <Quote className="h-5 w-5 text-brand-orange flex-shrink-0 mt-1" />
-                      <p className="text-brand-gray italic">"{testimonial.content}"</p>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-semibold text-brand-navy">{testimonial.name}</p>
-                        <p className="text-sm text-brand-gray">{testimonial.role}</p>
-                      </div>
-                      <div className="flex">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 text-brand-orange fill-current" />
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
+        {/* Testimonials Row */}
+        <div className="mt-16 grid md:grid-cols-2 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <Card key={index} className="border-l-4 border-l-brand-orange">
+              <CardContent className="p-6">
+                <div className="flex items-start space-x-3 mb-3">
+                  <Quote className="h-5 w-5 text-brand-orange flex-shrink-0 mt-1" />
+                  <p className="text-brand-gray italic">"{testimonial.content}"</p>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-brand-navy">{testimonial.name}</p>
+                    <p className="text-sm text-brand-gray">{testimonial.role}</p>
+                  </div>
+                  <div className="flex">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 text-brand-orange fill-current" />
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

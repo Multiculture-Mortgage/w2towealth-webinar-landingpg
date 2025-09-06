@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { Calendar, Clock, Users, AlertCircle } from "lucide-react";
 import ReCAPTCHA from 'react-google-recaptcha';
+import CountdownTimer from './CountdownTimer';
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
@@ -293,6 +294,10 @@ const HeroSection = () => {
                     {isSubmitting ? "REGISTERING..." : "REGISTER FREE NOW"}
                   </Button>
                 </form>
+
+                <div className="flex justify-center py-4">
+                  <CountdownTimer />
+                </div>
                 
                 <div className="text-center space-y-2">
                   <p className="text-sm text-brand-gray">

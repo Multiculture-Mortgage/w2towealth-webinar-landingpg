@@ -108,7 +108,7 @@ const BenefitsSection = () => {
           <div className="relative h-[500px] w-full max-w-7xl mx-auto">
             {/* Question bubbles */}
             <div className="absolute top-0 left-1/6 transform -rotate-3 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.1s' }}>
-              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
+              <div className="bg-white/90 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
                 "How much do I need to start?"
               </div>
             </div>
@@ -120,7 +120,7 @@ const BenefitsSection = () => {
             </div>
             
             <div className="absolute top-32 left-1/2 transform -translate-x-1/2 -rotate-1 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.3s' }}>
-              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
+              <div className="bg-white/90 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
                 "Can I do this with a full-time job?"
               </div>
             </div>
@@ -132,19 +132,19 @@ const BenefitsSection = () => {
             </div>
             
             <div className="absolute top-64 right-4 transform -rotate-2 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.5s' }}>
-              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
+              <div className="bg-white/90 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
                 "What if the market crashes?"
               </div>
             </div>
             
             <div className="absolute top-120 left-1/4 transform rotate-1 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.6s' }}>
-              <div className="bg-gradient-to-r from-brand-teal/10 to-brand-orange/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-teal/20 drop-shadow-md backdrop-blur-sm">
+              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-teal/20 drop-shadow-md backdrop-blur-sm">
                 "Should I buy or build?"
               </div>
             </div>
             
             <div className="absolute top-128 right-1/4 transform -rotate-3 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.7s' }}>
-              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
+              <div className="bg-white/90 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
                 "How much cash flow is realistic?"
               </div>
             </div>
@@ -156,13 +156,13 @@ const BenefitsSection = () => {
             </div>
             
             <div className="absolute bottom-32 right-1/5 transform -rotate-1 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.9s' }}>
-              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
+              <div className="bg-white/90 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
                 "How do I qualify for loans?"
               </div>
             </div>
             
             <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 rotate-1 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '1.0s' }}>
-              <div className="bg-gradient-to-r from-brand-teal/10 to-brand-orange/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-teal/20 drop-shadow-md backdrop-blur-sm">
+              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-teal/20 drop-shadow-md backdrop-blur-sm">
                 "Is house hacking right for me?"
               </div>
             </div>

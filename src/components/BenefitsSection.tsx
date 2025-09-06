@@ -47,6 +47,13 @@ const benefits = [
 const BenefitsSection = () => {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
+      {/* Wavy Separator at Top */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden">
+        <svg className="relative block w-full h-16" viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path d="M0,50 C360,0 480,100 720,80 C960,60 1200,0 1440,40 L1440,0 L0,0 Z" fill="hsl(var(--background))"/>
+        </svg>
+      </div>
+
       {/* Background Texture */}
       <div className="absolute inset-0 opacity-3">
         <div className="absolute top-0 left-0 w-full h-full" style={{
@@ -59,15 +66,17 @@ const BenefitsSection = () => {
         }}></div>
       </div>
 
-      {/* Floating Elements */}
+      {/* Curved Accent Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-16 h-16 border-2 border-brand-orange/10 rounded-lg rotate-12"></div>
-        <div className="absolute top-40 right-20 w-12 h-12 border-2 border-brand-teal/10 rounded-full"></div>
-        <div className="absolute bottom-32 left-1/4 w-20 h-20 border-2 border-brand-orange/10 rounded-lg -rotate-6"></div>
-        <div className="absolute bottom-20 right-1/3 w-14 h-14 border-2 border-brand-teal/10 rounded-full"></div>
+        <svg className="absolute top-1/4 right-0 w-64 h-64 opacity-5" viewBox="0 0 200 200">
+          <path d="M50,200 Q200,50 200,0 L200,200 Z" fill="hsl(var(--brand-orange))"/>
+        </svg>
+        <svg className="absolute bottom-1/4 left-0 w-48 h-48 opacity-5" viewBox="0 0 200 200">
+          <path d="M0,0 Q150,200 200,50 L0,0 Z" fill="hsl(var(--brand-teal))"/>
+        </svg>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 pt-8">
         {/* Header */}
         <div className="text-center mb-16">
           <Badge className="bg-brand-teal text-white mb-4 px-4 py-2">

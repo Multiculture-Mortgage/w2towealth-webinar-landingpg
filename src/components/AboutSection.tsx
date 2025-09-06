@@ -21,6 +21,13 @@ const testimonials = [
 const AboutSection = () => {
   return (
     <section className="py-20 bg-gradient-subtle relative overflow-hidden">
+      {/* Curved Top Separator */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden">
+        <svg className="relative block w-full h-20" viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,60 C480,100 960,20 1440,60 L1440,0 L0,0 Z" fill="hsl(var(--brand-orange))"/>
+        </svg>
+      </div>
+
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 opacity-4">
         <div className="absolute top-0 left-0 w-full h-full" style={{
@@ -38,6 +45,16 @@ const AboutSection = () => {
         }}></div>
       </div>
 
+      {/* Curved Design Accents */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <svg className="absolute top-1/4 right-10 w-32 h-64 opacity-8" viewBox="0 0 100 200">
+          <path d="M0,0 Q100,100 0,200 L100,200 L100,0 Z" fill="hsl(var(--brand-teal) / 0.05)"/>
+        </svg>
+        <svg className="absolute bottom-1/4 left-10 w-40 h-48 opacity-8" viewBox="0 0 100 200">
+          <path d="M100,0 Q0,100 100,200 L0,200 L0,0 Z" fill="hsl(var(--brand-orange) / 0.05)"/>
+        </svg>
+      </div>
+
       {/* Scattered Geometric Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/6 w-3 h-3 bg-brand-orange/20 rounded-full animate-pulse"></div>
@@ -48,7 +65,7 @@ const AboutSection = () => {
         <div className="absolute top-3/4 right-1/12 w-3 h-3 bg-brand-teal/20 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 pt-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Professional Photo */}
           <div className="order-2 lg:order-1">

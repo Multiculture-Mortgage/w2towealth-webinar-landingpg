@@ -15,6 +15,14 @@ const HeroSection = () => {
 
   return (
     <section className="bg-gradient-subtle py-20 relative overflow-hidden">
+      {/* Wavy Background Shapes */}
+      <div className="absolute inset-0 overflow-hidden">
+        <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1440 800" preserveAspectRatio="none">
+          <path d="M0,160 C320,100 420,200 640,180 C860,160 1120,80 1440,120 L1440,0 L0,0 Z" fill="hsl(var(--brand-orange) / 0.05)"/>
+          <path d="M0,320 C360,280 480,360 720,340 C960,320 1200,240 1440,280 L1440,0 L0,0 Z" fill="hsl(var(--brand-teal) / 0.05)"/>
+        </svg>
+      </div>
+      
       {/* Background Texture Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-32 h-32 bg-brand-orange rounded-full blur-3xl"></div>

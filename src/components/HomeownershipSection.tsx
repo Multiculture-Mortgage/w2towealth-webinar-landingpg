@@ -5,6 +5,20 @@ import { Quote, Home, TrendingUp } from "lucide-react";
 const HomeownershipSection = () => {
   return (
     <section className="py-20 bg-brand-orange text-white relative overflow-hidden">
+      {/* Curved Top Separator */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden">
+        <svg className="relative block w-full h-20" viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,60 C480,20 960,100 1440,60 L1440,0 L0,0 Z" fill="white"/>
+        </svg>
+      </div>
+
+      {/* Curved Bottom Separator */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+        <svg className="relative block w-full h-20" viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,60 C480,100 960,20 1440,60 L1440,120 L0,120 Z" fill="hsl(var(--background))"/>
+        </svg>
+      </div>
+
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 transform rotate-12">
@@ -24,16 +38,20 @@ const HomeownershipSection = () => {
         </div>
       </div>
 
+      {/* Flowing Wave Accents */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <svg className="absolute top-1/3 left-0 w-full h-32 opacity-10" viewBox="0 0 1440 100">
+          <path d="M0,50 C360,10 480,90 720,70 C960,50 1200,10 1440,30 L1440,100 L0,100 Z" fill="rgba(255,255,255,0.1)"/>
+        </svg>
+      </div>
+
       {/* Textured Overlay */}
       <div className="absolute inset-0 opacity-5" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         backgroundSize: '60px 60px'
       }}></div>
 
-      {/* Gradient Overlay for Depth */}
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-black/5 to-black/10"></div>
-
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 py-8">
         <div className="text-center max-w-4xl mx-auto">
           {/* Title */}
           <h2 className="text-3xl md:text-5xl font-black mb-12">

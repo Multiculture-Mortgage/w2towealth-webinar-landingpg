@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Award, Users2, TrendingUp, Quote } from "lucide-react";
-import headshotImage from "@/assets/headshot.jpg";
 
 const testimonials = [
   {
@@ -28,7 +27,7 @@ const AboutSection = () => {
           <div className="order-2 lg:order-1">
             <div className="relative">
               <img 
-                src={headshotImage} 
+                src="/lovable-uploads/eebbfb3a-615e-4617-b7b0-d6fc4424ba7c.png"
                 alt="Multiculture Mortgage LLC Team" 
                 className="w-full rounded-2xl shadow-xl"
               />

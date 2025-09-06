@@ -91,7 +91,7 @@ const HeroSection = () => {
 
             <div className="mb-8">
               <img 
-                src="/lovable-uploads/a1e56193-8dfe-4b00-a7a3-e59bf9e47fe4.png" 
+                src="/lovable-uploads/f614d342-c143-429e-b200-dd7293cc6f2a.png" 
                 alt="More Doors = More Cashflow" 
                 className="h-12 w-auto"
               />

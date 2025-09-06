@@ -179,8 +179,8 @@ const HeroSection = () => {
               <span className="text-brand-navy font-extrabold">W2 TO</span>{" "}
               <span className="text-brand-orange font-extrabold">WEALTH</span>
               <br />
-              <span className="text-brand-teal text-3xl md:text-4xl font-extrabold">
-                Through Homeownership
+              <span className="text-brand-teal text-3xl md:text-4xl font-extrabold uppercase">
+                Building Wealth Through Home Ownership
               </span>
             </h1>
             

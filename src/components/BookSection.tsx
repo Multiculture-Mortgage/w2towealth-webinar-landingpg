@@ -3,7 +3,7 @@ import { ExternalLink, BookOpen } from "lucide-react";
 
 const BookSection = () => {
   return (
-    <section className="relative py-16 px-4 bg-gradient-to-br from-background to-secondary/30 overflow-hidden">
+    <section className="relative py-8 px-0 overflow-hidden" style={{ backgroundColor: '#d9514b' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -11,8 +11,8 @@ const BookSection = () => {
         }} />
       </div>
 
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="w-full">
+        <div className="grid lg:grid-cols-2 gap-8 items-center px-6 max-w-7xl mx-auto">
           {/* Book Image */}
           <div className="relative">
             <div className="relative z-10 max-w-md mx-auto lg:mx-0">
@@ -33,40 +33,40 @@ const BookSection = () => {
           </div>
 
           {/* Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium">
                 <BookOpen className="w-4 h-4 mr-2" />
                 New Release
               </div>
               
-              <div className="text-center space-y-2">
-                <h2 className="text-5xl lg:text-6xl font-arvo font-bold leading-tight" style={{ color: '#E7907D' }}>
+              <div className="text-center space-y-1">
+                <h2 className="text-4xl lg:text-5xl font-arvo font-bold leading-tight" style={{ color: '#E7907D' }}>
                   House Hacking
                 </h2>
-                <h3 className="text-3xl lg:text-4xl font-arvo font-bold leading-tight" style={{ color: '#2D4350' }}>
+                <h3 className="text-2xl lg:text-3xl font-arvo font-bold leading-tight" style={{ color: '#2D4350' }}>
                   The American Dream
                 </h3>
-                <p className="text-xl font-roboto-condensed leading-relaxed" style={{ color: '#2D4350' }}>
+                <p className="text-lg font-roboto-condensed leading-relaxed" style={{ color: '#2D4350' }}>
                   Maximizing Cash Flow In An Unaffordable America
                 </p>
               </div>
               
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base text-white/90 leading-relaxed">
                 Discover the proven strategies to maximize cash flow in an unaffordable America. 
                 Learn how to build wealth through smart real estate investing and achieve financial freedom.
               </p>
             </div>
 
-            <div className="space-y-4">
-              <div className="flex flex-wrap gap-3">
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">
+            <div className="space-y-3">
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-white/20 text-white rounded-full text-xs font-medium">
                   Real Estate Strategy
                 </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                <span className="px-2 py-1 bg-white/20 text-white rounded-full text-xs font-medium">
                   Cash Flow Maximization
                 </span>
-                <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm font-medium">
+                <span className="px-2 py-1 bg-white/20 text-white rounded-full text-xs font-medium">
                   Investment Guide
                 </span>
               </div>
@@ -91,10 +91,10 @@ const BookSection = () => {
               </Button>
             </div>
 
-            <div className="pt-4 border-t border-border/50">
-              <p className="text-sm text-muted-foreground">
+            <div className="pt-3 border-t border-white/20">
+              <p className="text-sm text-white/80">
                 "A comprehensive guide that breaks down complex real estate strategies into actionable steps." 
-                <span className="block mt-1 font-medium">- Real Estate Professional</span>
+                <span className="block mt-1 font-medium text-white">- Real Estate Professional</span>
               </p>
             </div>
           </div>

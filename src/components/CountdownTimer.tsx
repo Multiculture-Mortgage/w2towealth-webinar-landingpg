@@ -33,20 +33,20 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="flex items-center space-x-2 text-primary font-bold">
-      <span className="text-sm text-muted-foreground">Time Left:</span>
-      <div className="flex space-x-1">
-        <span className="bg-primary/10 px-2 py-1 rounded text-sm">
-          {timeLeft.days.toString().padStart(2, '0')}d
+    <div className="flex flex-col sm:flex-row items-center gap-2 text-primary font-black">
+      <span className="text-xs sm:text-sm text-muted-foreground font-bold">Time Left:</span>
+      <div className="flex flex-wrap gap-1 justify-center">
+        <span className="bg-primary/10 px-2 py-1 rounded text-sm font-black">
+          {timeLeft.days.toString().padStart(2, '0')}D
         </span>
-        <span className="bg-primary/10 px-2 py-1 rounded text-sm">
-          {timeLeft.hours.toString().padStart(2, '0')}h
+        <span className="bg-primary/10 px-2 py-1 rounded text-sm font-black">
+          {timeLeft.hours.toString().padStart(2, '0')}H
         </span>
-        <span className="bg-primary/10 px-2 py-1 rounded text-sm">
-          {timeLeft.minutes.toString().padStart(2, '0')}m
+        <span className="bg-primary/10 px-2 py-1 rounded text-sm font-black">
+          {timeLeft.minutes.toString().padStart(2, '0')}M
         </span>
-        <span className="bg-primary/10 px-2 py-1 rounded text-sm">
-          {timeLeft.seconds.toString().padStart(2, '0')}s
+        <span className="bg-primary/10 px-2 py-1 rounded text-sm font-black">
+          {timeLeft.seconds.toString().padStart(2, '0')}S
         </span>
       </div>
     </div>

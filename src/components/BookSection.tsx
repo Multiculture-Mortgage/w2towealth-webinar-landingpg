@@ -12,12 +12,12 @@ const BookSection = () => {
       </div>
 
       <div className="w-full">
-        <div className="grid lg:grid-cols-2 gap-8 items-center px-6 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center h-full px-8 xl:px-16">
           {/* Book Image */}
-          <div className="relative">
-            <div className="relative z-10 max-w-md mx-auto lg:mx-0">
+          <div className="relative flex justify-center lg:justify-end lg:pr-8">
+            <div className="relative z-10 w-full max-w-md lg:max-w-lg">
               <div className="relative group">
-                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 <img 
                   src="/lovable-uploads/5aa94387-5b12-41fa-8385-80effa22b7a9.png" 
                   alt="House Hacking The American Dream book cover"
@@ -28,12 +28,12 @@ const BookSection = () => {
             
             {/* Floating Elements */}
             <div className="absolute top-8 -right-4 opacity-20">
-              <BookOpen className="w-16 h-16 text-primary animate-pulse" />
+              <BookOpen className="w-16 h-16 text-white animate-pulse" />
             </div>
           </div>
 
           {/* Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col justify-center w-full lg:pl-8">
             <div className="space-y-3">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium">
                 <BookOpen className="w-4 h-4 mr-2" />

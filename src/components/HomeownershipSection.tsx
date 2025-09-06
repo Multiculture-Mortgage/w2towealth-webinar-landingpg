@@ -86,6 +86,7 @@ const HomeownershipSection = () => {
             </p>
             <Button 
               size="lg" 
+              onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white text-brand-orange hover:bg-white/90 font-bold px-8 py-4 text-lg"
             >
               Join The Webinar Now

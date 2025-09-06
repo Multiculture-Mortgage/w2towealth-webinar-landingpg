@@ -11,7 +11,7 @@ const DevelopmentSection = () => {
             />
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            See how strategic planning and innovative design create maximum value in residential development projects.
+            When you have more cash flow, you have more options. Your share of the mortgage can be cut in half if not more.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ const DevelopmentSection = () => {
 
         <div className="mt-16 text-center">
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 text-primary">
-            <span className="font-medium">Smart Development = Maximum ROI</span>
+            <span className="font-medium">Building is Cheaper Than Buying.</span>
           </div>
         </div>
       </div>

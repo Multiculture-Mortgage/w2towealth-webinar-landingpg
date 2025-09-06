@@ -11,7 +11,7 @@ const ChartTeaserSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           {/* Text Content */}
           <div className="lg:w-1/2 text-center lg:text-left">
-            <h3 className="text-2xl md:text-3xl font-black text-brand-navy mb-2 drop-shadow-md">
+            <h3 className="text-3xl md:text-4xl font-black text-brand-navy mb-2 drop-shadow-md">
               Is it cheaper to rent or to buy?
             </h3>
             <p className="text-lg text-brand-orange font-semibold">
@@ -30,8 +30,8 @@ const ChartTeaserSection = () => {
                     className="w-3/4 h-auto mx-auto rounded-lg shadow-sm mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity"
                   />
                   {/* Pulsing Magnifying Glass */}
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg animate-pulse">
-                    <Search className="h-5 w-5 text-brand-navy" />
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-[0_4px_12px_rgba(0,0,0,0.4)] animate-pulse">
+                    <Search className="h-6 w-6 text-brand-navy" />
                   </div>
                 </div>
               </DialogTrigger>

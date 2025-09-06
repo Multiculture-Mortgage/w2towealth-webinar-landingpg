@@ -67,6 +67,7 @@ const BenefitsSection = () => {
     border: string;
     animationDelay: string;
   }>>([]);
+  const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
 
   useEffect(() => {
     const generateRandomPositions = () => {
@@ -129,6 +130,15 @@ const BenefitsSection = () => {
     };
 
     setQuestionPositions(generateRandomPositions());
+  }, []);
+
+  // Auto-cycle through questions every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveQuestionIndex((prev) => (prev + 1) % questions.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -197,10 +207,16 @@ const BenefitsSection = () => {
               const position = questionPositions[index];
               if (!position) return null;
               
+              const isActive = index === activeQuestionIndex;
+              
               return (
                 <div 
                   key={index}
-                  className="absolute animate-fade-in hover:scale-110 hover:z-20 hover:animate-[float_1s_ease-in-out_infinite] transition-all duration-150 cursor-pointer group"
+                  className={`absolute animate-fade-in transition-all duration-150 cursor-pointer group ${
+                    isActive 
+                      ? 'scale-110 z-20 animate-[float_1s_ease-in-out_infinite]' 
+                      : 'hover:scale-110 hover:z-20 hover:animate-[float_1s_ease-in-out_infinite]'
+                  }`}
                   style={{ 
                     top: position.top,
                     left: position.left,
@@ -208,7 +224,7 @@ const BenefitsSection = () => {
                     animationDelay: position.animationDelay
                   }}
                 >
-                  <div className={`${position.background} shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border ${position.border} drop-shadow-md backdrop-blur-sm group-hover:shadow-2xl`}>
+                  <div className={`${position.background} shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border ${position.border} drop-shadow-md backdrop-blur-sm ${isActive ? 'shadow-2xl' : 'group-hover:shadow-2xl'}`}>
                     "{question}"
                   </div>
                 </div>

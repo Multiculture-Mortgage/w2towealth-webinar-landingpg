@@ -176,7 +176,7 @@ const BenefitsSection = () => {
               return (
                 <div 
                   key={index}
-                  className="absolute animate-fade-in hover:scale-110 hover:z-20 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+                  className="absolute animate-fade-in hover:scale-110 hover:z-20 hover:animate-[float_1s_ease-in-out_infinite] transition-all duration-300 cursor-pointer group"
                   style={{ 
                     top: position.top,
                     left: position.left,
@@ -184,7 +184,7 @@ const BenefitsSection = () => {
                     animationDelay: position.animationDelay
                   }}
                 >
-                  <div className={`${position.background} shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border ${position.border} drop-shadow-md backdrop-blur-sm group-hover:animate-pulse`}>
+                  <div className={`${position.background} shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border ${position.border} drop-shadow-md backdrop-blur-sm group-hover:shadow-2xl`}>
                     "{question}"
                   </div>
                 </div>

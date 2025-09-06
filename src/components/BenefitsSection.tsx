@@ -100,17 +100,86 @@ const BenefitsSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10 pt-8">
+        {/* Question Cloud */}
+        <div className="text-center mb-20 relative">
+          <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-12">
+            Questions We'll Answer
+          </h2>
+          <div className="relative h-80 max-w-4xl mx-auto">
+            {/* Question bubbles */}
+            <div className="absolute top-0 left-1/4 transform -rotate-3 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <div className="bg-white shadow-lg rounded-2xl px-4 py-3 text-sm font-medium text-brand-navy border border-brand-orange/20">
+                "How much do I need to start?"
+              </div>
+            </div>
+            
+            <div className="absolute top-8 right-1/4 transform rotate-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-4 py-3 text-sm font-medium text-brand-navy border border-brand-teal/20">
+                "What about my credit score?"
+              </div>
+            </div>
+            
+            <div className="absolute top-16 left-1/2 transform -translate-x-1/2 -rotate-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="bg-white shadow-lg rounded-2xl px-4 py-3 text-sm font-medium text-brand-navy border border-brand-orange/20">
+                "Can I do this with a full-time job?"
+              </div>
+            </div>
+            
+            <div className="absolute top-32 left-8 transform rotate-3 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="bg-gradient-to-r from-brand-teal/10 to-brand-orange/10 shadow-lg rounded-2xl px-4 py-3 text-sm font-medium text-brand-navy border border-brand-teal/20">
+                "How do I find good deals?"
+              </div>
+            </div>
+            
+            <div className="absolute top-24 right-8 transform -rotate-2 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <div className="bg-white shadow-lg rounded-2xl px-4 py-3 text-sm font-medium text-brand-navy border border-brand-orange/20">
+                "What if the market crashes?"
+              </div>
+            </div>
+            
+            <div className="absolute top-48 left-1/3 transform rotate-1 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-4 py-3 text-sm font-medium text-brand-navy border border-brand-teal/20">
+                "Should I buy or build?"
+              </div>
+            </div>
+            
+            <div className="absolute top-56 right-1/3 transform -rotate-3 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+              <div className="bg-white shadow-lg rounded-2xl px-4 py-3 text-sm font-medium text-brand-navy border border-brand-orange/20">
+                "How much cash flow is realistic?"
+              </div>
+            </div>
+            
+            <div className="absolute bottom-16 left-1/4 transform rotate-2 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+              <div className="bg-gradient-to-r from-brand-teal/10 to-brand-orange/10 shadow-lg rounded-2xl px-4 py-3 text-sm font-medium text-brand-navy border border-brand-teal/20">
+                "What about property management?"
+              </div>
+            </div>
+            
+            <div className="absolute bottom-8 right-1/4 transform -rotate-1 animate-fade-in" style={{ animationDelay: '0.9s' }}>
+              <div className="bg-white shadow-lg rounded-2xl px-4 py-3 text-sm font-medium text-brand-navy border border-brand-orange/20">
+                "How do I qualify for loans?"
+              </div>
+            </div>
+            
+            <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 rotate-1 animate-fade-in" style={{ animationDelay: '1.0s' }}>
+              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-4 py-3 text-sm font-medium text-brand-navy border border-brand-teal/20">
+                "Is house hacking right for me?"
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-16">
           <Badge className="bg-brand-teal text-white mb-4 px-4 py-2">
-            WEBINAR CURRICULUM
+            WEBINAR AGENDA
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-navy">
-            What You'll Master in 90 Minutes
+            What You'll Learn in 60 Minutes
           </h2>
           <p className="text-lg text-brand-gray max-w-2xl mx-auto">
-            A comprehensive roadmap to transform your W-2 salary into a 
-            wealth-building real estate investment strategy.
+            A comprehensive roadmap to transform your W-2 salary into 
+            wealth-building homeownership, the strategic way.
           </p>
         </div>
 

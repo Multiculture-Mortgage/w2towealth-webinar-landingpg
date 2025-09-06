@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Calendar, Clock, Users, AlertCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import ReCAPTCHA from 'react-google-recaptcha';
+
 import CountdownTimer from './CountdownTimer';
 
 const HeroSection = () => {
@@ -22,6 +22,22 @@ const HeroSection = () => {
   });
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Set up global callbacks for Turnstile
+  useEffect(() => {
+    (window as any).onTurnstileCallback = (token: string) => {
+      setCaptchaToken(token);
+    };
+
+    (window as any).onTurnstileError = () => {
+      setCaptchaToken(null);
+    };
+
+    return () => {
+      delete (window as any).onTurnstileCallback;
+      delete (window as any).onTurnstileError;
+    };
+  }, []);
 
   const validateName = (name: string) => {
     if (!name.trim()) return "Name is required";
@@ -96,9 +112,9 @@ const HeroSection = () => {
       return;
     }
 
-    // Check captcha
+    // Check Turnstile
     if (!captchaToken) {
-      alert("Please complete the reCAPTCHA verification");
+      alert("Please complete the security verification");
       setIsSubmitting(false);
       return;
     }
@@ -125,9 +141,6 @@ const HeroSection = () => {
     }
   };
 
-  const onCaptchaChange = (token: string | null) => {
-    setCaptchaToken(token);
-  };
 
   return (
     <section className="bg-gradient-subtle py-20 relative overflow-hidden">
@@ -281,12 +294,14 @@ const HeroSection = () => {
                     )}
                   </div>
 
-                  {/* reCAPTCHA */}
+                  {/* Cloudflare Turnstile */}
                   <div className="flex justify-center">
-                    <ReCAPTCHA
-                      sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" // Test key, replace with your actual site key
-                      onChange={onCaptchaChange}
-                    />
+                    <div
+                      className="cf-turnstile"
+                      data-sitekey="0x4AAAAAABzv-jxJBEpvYMZ_"
+                      data-callback="onTurnstileCallback"
+                      data-error-callback="onTurnstileError"
+                    ></div>
                   </div>
 
                   <Button 

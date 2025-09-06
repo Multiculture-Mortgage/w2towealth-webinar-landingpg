@@ -3,10 +3,13 @@ const DevelopmentSection = () => {
     <section className="py-20 px-4 bg-gradient-to-br from-secondary/20 to-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Strategic Development
-            <span className="block text-primary">Maximizing Every Square Foot</span>
-          </h2>
+          <div className="mb-6">
+            <img 
+              src="/lovable-uploads/a1e56193-8dfe-4b00-a7a3-e59bf9e47fe4.png" 
+              alt="More Doors = More Cashflow" 
+              className="h-24 w-auto mx-auto"
+            />
+          </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             See how strategic planning and innovative design create maximum value in residential development projects.
           </p>

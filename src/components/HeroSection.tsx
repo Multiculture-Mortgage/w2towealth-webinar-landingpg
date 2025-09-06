@@ -14,8 +14,22 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="bg-gradient-subtle py-20">
-      <div className="container mx-auto px-6">
+    <section className="bg-gradient-subtle py-20 relative overflow-hidden">
+      {/* Background Texture Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-brand-orange rounded-full blur-3xl"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-brand-teal rounded-full blur-2xl"></div>
+        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-brand-orange rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-28 h-28 bg-brand-teal rounded-full blur-2xl"></div>
+      </div>
+      
+      {/* Geometric Pattern Overlay */}
+      <div className="absolute inset-0 opacity-3" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--brand-navy)) 1px, transparent 0)`,
+        backgroundSize: '40px 40px'
+      }}></div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div>

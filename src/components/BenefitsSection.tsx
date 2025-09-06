@@ -46,8 +46,28 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section className="py-20 bg-white relative overflow-hidden">
+      {/* Background Texture */}
+      <div className="absolute inset-0 opacity-3">
+        <div className="absolute top-0 left-0 w-full h-full" style={{
+          backgroundImage: `linear-gradient(45deg, hsl(var(--brand-teal) / 0.03) 25%, transparent 25%), 
+                           linear-gradient(-45deg, hsl(var(--brand-orange) / 0.03) 25%, transparent 25%), 
+                           linear-gradient(45deg, transparent 75%, hsl(var(--brand-teal) / 0.03) 75%), 
+                           linear-gradient(-45deg, transparent 75%, hsl(var(--brand-orange) / 0.03) 75%)`,
+          backgroundSize: '60px 60px',
+          backgroundPosition: '0 0, 0 30px, 30px -30px, -30px 0px'
+        }}></div>
+      </div>
+
+      {/* Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-16 h-16 border-2 border-brand-orange/10 rounded-lg rotate-12"></div>
+        <div className="absolute top-40 right-20 w-12 h-12 border-2 border-brand-teal/10 rounded-full"></div>
+        <div className="absolute bottom-32 left-1/4 w-20 h-20 border-2 border-brand-orange/10 rounded-lg -rotate-6"></div>
+        <div className="absolute bottom-20 right-1/3 w-14 h-14 border-2 border-brand-teal/10 rounded-full"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <Badge className="bg-brand-teal text-white mb-4 px-4 py-2">

@@ -12,8 +12,8 @@ const BookSection = () => {
       </div>
 
       {/* Book Image - Absolute positioned */}
-      <div className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-10">
-        <div className="relative w-64 md:w-72 lg:w-80">
+      <div className="absolute left-1/2 md:left-4 top-4 md:top-1/2 transform -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2 z-10">
+        <div className="relative w-72 md:w-72 lg:w-80 mb-8 md:mb-0">
           <div className="absolute -inset-3 bg-gradient-to-r from-white/20 to-white/10 rounded-xl blur-lg"></div>
           <img 
             src="/lovable-uploads/5aa94387-5b12-41fa-8385-80effa22b7a9.png" 
@@ -24,8 +24,8 @@ const BookSection = () => {
       </div>
 
       {/* Content Area - Takes remaining space */}
-      <div className="relative z-20 pt-4 md:pt-0 md:ml-64 lg:ml-80 mr-4 flex items-center min-h-[300px] md:min-h-[400px]">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 lg:gap-8 w-full mt-64 md:mt-0">
+      <div className="relative z-20 pt-4 md:pt-0 md:ml-64 lg:ml-80 mr-4 flex items-center min-h-[450px] md:min-h-[400px]">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 lg:gap-8 w-full mt-80 md:mt-0">
           
           {/* Title Section */}
           <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg flex-shrink-0 w-full md:w-auto">

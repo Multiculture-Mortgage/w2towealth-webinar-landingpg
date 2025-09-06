@@ -89,9 +89,12 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="text-2xl font-black mb-8">
-              <span className="text-white border-4 border-black px-3 py-1 rounded-lg font-black">MORE DOORS</span>{" "}
-              <span className="text-brand-orange font-black" style={{WebkitTextStroke: '2px white'}}>= MORE CASHFLOW</span>
+            <div className="mb-8">
+              <img 
+                src="/lovable-uploads/a1e56193-8dfe-4b00-a7a3-e59bf9e47fe4.png" 
+                alt="More Doors = More Cashflow" 
+                className="h-12 w-auto"
+              />
             </div>
           </div>
 

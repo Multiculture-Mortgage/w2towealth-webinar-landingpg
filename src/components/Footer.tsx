@@ -70,7 +70,14 @@ const Footer = () => {
               Seats are filling fast. Reserve your spot today for this 
               exclusive wealth-building masterclass.
             </p>
-            <Button className="bg-brand-orange hover:bg-brand-orange-light text-white font-bold">
+            <Button className="bg-brand-orange hover:bg-brand-orange-light text-white font-bold"
+              onClick={() => {
+                const signupForm = document.getElementById('signup-form');
+                if (signupForm) {
+                  signupForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+              }}
+            >
               Register Now
             </Button>
           </div>

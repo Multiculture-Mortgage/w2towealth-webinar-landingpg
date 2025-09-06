@@ -3,14 +3,108 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
-import { Calendar, Clock, Users } from "lucide-react";
+import { Calendar, Clock, Users, AlertCircle } from "lucide-react";
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const HeroSection = () => {
-  const [email, setEmail] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: ""
+  });
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: ""
+  });
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleRegistration = (e: React.FormEvent) => {
+  const validateName = (name: string) => {
+    if (!name.trim()) return "Name is required";
+    if (name.trim().length < 2) return "Name must be at least 2 characters";
+    if (!/^[a-zA-Z\s'-]+$/.test(name.trim())) return "Name contains invalid characters";
+    return "";
+  };
+
+  const validateEmail = (email: string) => {
+    if (!email.trim()) return "Email is required";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) return "Please enter a valid email address";
+    return "";
+  };
+
+  const validatePhone = (phone: string) => {
+    if (!phone.trim()) return "Phone number is required";
+    const phoneRegex = /^[\+]?[(]?[\d\s\-\(\)\.]{10,}$/;
+    if (!phoneRegex.test(phone.trim())) return "Please enter a valid phone number";
+    return "";
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    
+    // Clear error when user starts typing
+    if (errors[field as keyof typeof errors]) {
+      setErrors(prev => ({ ...prev, [field]: "" }));
+    }
+  };
+
+  const handleRegistration = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Registration email:", email);
+    setIsSubmitting(true);
+
+    // Validate all fields
+    const nameError = validateName(formData.name);
+    const emailError = validateEmail(formData.email);
+    const phoneError = validatePhone(formData.phone);
+
+    const newErrors = {
+      name: nameError,
+      email: emailError,
+      phone: phoneError
+    };
+
+    setErrors(newErrors);
+
+    // Check if there are any errors
+    const hasErrors = Object.values(newErrors).some(error => error !== "");
+    
+    if (hasErrors) {
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Check captcha
+    if (!captchaToken) {
+      alert("Please complete the reCAPTCHA verification");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Simulate form submission
+    try {
+      console.log("Registration data:", { ...formData, captchaToken });
+      
+      // Here you would typically send the data to your backend
+      // await submitRegistration({ ...formData, captchaToken });
+      
+      alert("Registration successful! You'll receive a confirmation email shortly.");
+      
+      // Reset form
+      setFormData({ name: "", email: "", phone: "" });
+      setCaptchaToken(null);
+      
+    } catch (error) {
+      console.error("Registration error:", error);
+      alert("Registration failed. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const onCaptchaChange = (token: string | null) => {
+    setCaptchaToken(token);
   };
 
   return (
@@ -100,7 +194,7 @@ const HeroSection = () => {
 
           {/* Registration Card */}
           <div>
-            <Card className="shadow-xl border-0">
+            <Card className="shadow-xl border-0" id="signup-form">
               <CardHeader className="text-center pb-4">
                 <CardTitle className="text-2xl font-bold text-brand-navy">
                   Reserve Your Spot Today
@@ -111,19 +205,71 @@ const HeroSection = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <form onSubmit={handleRegistration} className="space-y-4">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="h-12 text-base"
-                  />
+                  {/* Name Field */}
+                  <div>
+                    <Input
+                      type="text"
+                      placeholder="Full Name"
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      className={`h-12 text-base ${errors.name ? 'border-red-500 focus:border-red-500' : ''}`}
+                    />
+                    {errors.name && (
+                      <div className="flex items-center mt-1 text-red-500 text-sm">
+                        <AlertCircle className="h-4 w-4 mr-1" />
+                        {errors.name}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Email Field */}
+                  <div>
+                    <Input
+                      type="email"
+                      placeholder="Email Address"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      className={`h-12 text-base ${errors.email ? 'border-red-500 focus:border-red-500' : ''}`}
+                    />
+                    {errors.email && (
+                      <div className="flex items-center mt-1 text-red-500 text-sm">
+                        <AlertCircle className="h-4 w-4 mr-1" />
+                        {errors.email}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Phone Field */}
+                  <div>
+                    <Input
+                      type="tel"
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      className={`h-12 text-base ${errors.phone ? 'border-red-500 focus:border-red-500' : ''}`}
+                    />
+                    {errors.phone && (
+                      <div className="flex items-center mt-1 text-red-500 text-sm">
+                        <AlertCircle className="h-4 w-4 mr-1" />
+                        {errors.phone}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* reCAPTCHA */}
+                  <div className="flex justify-center">
+                    <ReCAPTCHA
+                      sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" // Test key, replace with your actual site key
+                      onChange={onCaptchaChange}
+                    />
+                  </div>
+
                   <Button 
                     type="submit" 
-                    className="w-full h-12 text-lg font-bold bg-gradient-primary hover:opacity-90 transition-opacity"
+                    disabled={isSubmitting}
+                    className="w-full h-12 text-lg font-bold bg-gradient-primary hover:opacity-90 transition-opacity disabled:opacity-50"
                   >
-                    REGISTER FREE NOW
+                    {isSubmitting ? "REGISTERING..." : "REGISTER FREE NOW"}
                   </Button>
                 </form>
                 
@@ -132,7 +278,7 @@ const HeroSection = () => {
                     ✓ 100% Free Access ✓ Instant Confirmation ✓ Bonus Materials
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    No spam. Unsubscribe anytime.
+                    No spam. Unsubscribe anytime. Your information is secure.
                   </p>
                 </div>
               </CardContent>

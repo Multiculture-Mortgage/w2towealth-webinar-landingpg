@@ -60,10 +60,10 @@ const HeroSection = () => {
             </Badge>
             
             <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight font-montserrat drop-shadow-lg">
-              <span className="text-brand-navy">W2 TO</span>{" "}
-              <span className="text-brand-orange">WEALTH</span>
+              <span className="text-brand-navy font-extrabold">W2 TO</span>{" "}
+              <span className="text-brand-orange font-extrabold">WEALTH</span>
               <br />
-              <span className="text-brand-teal text-3xl md:text-4xl">
+              <span className="text-brand-teal text-3xl md:text-4xl font-extrabold">
                 Through Homeownership
               </span>
             </h1>
@@ -89,9 +89,9 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="text-2xl font-bold mb-8 border-4 border-black inline-block px-4 py-2 rounded-lg">
-              <span className="text-white">MORE DOORS</span>{" "}
-              <span className="text-brand-orange" style={{WebkitTextStroke: '2px white'}}>= MORE CASHFLOW</span>
+            <div className="text-2xl font-black mb-8">
+              <span className="text-white border-4 border-black px-3 py-1 rounded-lg font-black">MORE DOORS</span>{" "}
+              <span className="text-brand-orange font-black" style={{WebkitTextStroke: '2px white'}}>= MORE CASHFLOW</span>
             </div>
           </div>
 

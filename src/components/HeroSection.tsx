@@ -7,6 +7,7 @@ import { Calendar, Clock, Users, AlertCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 import CountdownTimer from './CountdownTimer';
+import { getTurnstileSiteKey } from '@/config/turnstile';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -298,7 +299,7 @@ const HeroSection = () => {
                   <div className="flex justify-center">
                     <div
                       className="cf-turnstile"
-                      data-sitekey="0x4AAAAAABzv-jxJBEpvYMZ_"
+                      data-sitekey={getTurnstileSiteKey()}
                       data-callback="onTurnstileCallback"
                       data-error-callback="onTurnstileError"
                     ></div>

@@ -39,7 +39,7 @@ const ChartTeaserSection = () => {
         setCurrentQuestionIndex(nextQuestionIndex);
         setNextQuestionIndex((nextQuestionIndex + 1) % questions.length);
         setIsAnimating(false);
-      }, 600); // Full animation duration
+      }, 1200); // Slower animation duration
     }, 5000);
 
     return () => clearInterval(interval);
@@ -54,7 +54,7 @@ const ChartTeaserSection = () => {
             <div className="relative h-24 md:h-28 overflow-hidden">
               {/* Current Question */}
               <div
-                className={`absolute inset-0 transition-all duration-600 ease-in-out ${
+                className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
                   isAnimating
                     ? 'opacity-0 transform -translate-y-full'
                     : 'opacity-100 transform translate-y-0'
@@ -70,7 +70,7 @@ const ChartTeaserSection = () => {
               
               {/* Next Question (slides up from bottom during animation) */}
               <div
-                className={`absolute inset-0 transition-all duration-600 ease-in-out ${
+                className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
                   isAnimating
                     ? 'opacity-100 transform translate-y-0'
                     : 'opacity-0 transform translate-y-full'

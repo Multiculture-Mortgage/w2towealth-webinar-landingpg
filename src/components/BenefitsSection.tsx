@@ -10,6 +10,7 @@ import {
   PieChart,
   Shield
 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const benefits = [
   {
@@ -44,7 +45,68 @@ const benefits = [
   }
 ];
 
+const questions = [
+  "How much do I need to start?",
+  "What about my credit score?",
+  "Can I do this with a full-time job?",
+  "How do I find good deals?",
+  "What if the market crashes?",
+  "Should I buy or build?",
+  "How much cash flow is realistic?",
+  "What about property management?",
+  "How do I qualify for loans?",
+  "Is house hacking right for me?"
+];
+
 const BenefitsSection = () => {
+  const [questionPositions, setQuestionPositions] = useState<Array<{
+    top: string;
+    left: string;
+    rotation: number;
+    background: string;
+    border: string;
+    animationDelay: string;
+  }>>([]);
+
+  useEffect(() => {
+    const generateRandomPositions = () => {
+      const positions = [];
+      const usedAreas: Array<{x: number, y: number, width: number, height: number}> = [];
+      
+      for (let i = 0; i < questions.length; i++) {
+        let attempts = 0;
+        let position;
+        
+        do {
+          const top = Math.random() * 80; // 0-80% from top
+          const left = Math.random() * 80; // 0-80% from left
+          const rotation = (Math.random() - 0.5) * 6; // -3 to 3 degrees
+          
+          position = {
+            top: `${top}%`,
+            left: `${left}%`,
+            rotation,
+            background: Math.random() > 0.5 
+              ? "bg-white/90" 
+              : "bg-gradient-to-r from-brand-teal/10 to-brand-orange/10",
+            border: Math.random() > 0.5 
+              ? "border-brand-orange/20" 
+              : "border-brand-teal/20",
+            animationDelay: `${i * 0.1}s`
+          };
+          
+          attempts++;
+        } while (attempts < 50); // Prevent infinite loop
+        
+        positions.push(position);
+      }
+      
+      return positions;
+    };
+
+    setQuestionPositions(generateRandomPositions());
+  }, []);
+
   return (
     <section className="py-20 bg-background relative overflow-hidden">
       {/* Wavy Separator at Top */}
@@ -107,65 +169,27 @@ const BenefitsSection = () => {
           </h2>
           <div className="relative h-[500px] w-full max-w-7xl mx-auto">
             {/* Question bubbles */}
-            <div className="absolute top-0 left-1/6 transform -rotate-3 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.1s' }}>
-              <div className="bg-white/90 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
-                "How much do I need to start?"
-              </div>
-            </div>
-            
-            <div className="absolute top-16 right-1/6 transform rotate-2 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.2s' }}>
-              <div className="bg-gradient-to-r from-brand-teal/10 to-brand-orange/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-teal/20 drop-shadow-md backdrop-blur-sm">
-                "What about my credit score?"
-              </div>
-            </div>
-            
-            <div className="absolute top-32 left-1/2 transform -translate-x-1/2 -rotate-1 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.3s' }}>
-              <div className="bg-white/90 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
-                "Can I do this with a full-time job?"
-              </div>
-            </div>
-            
-            <div className="absolute top-80 left-4 transform rotate-3 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.4s' }}>
-              <div className="bg-gradient-to-r from-brand-teal/10 to-brand-orange/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-teal/20 drop-shadow-md backdrop-blur-sm">
-                "How do I find good deals?"
-              </div>
-            </div>
-            
-            <div className="absolute top-64 right-4 transform -rotate-2 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.5s' }}>
-              <div className="bg-white/90 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
-                "What if the market crashes?"
-              </div>
-            </div>
-            
-            <div className="absolute top-120 left-1/4 transform rotate-1 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.6s' }}>
-              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-teal/20 drop-shadow-md backdrop-blur-sm">
-                "Should I buy or build?"
-              </div>
-            </div>
-            
-            <div className="absolute top-128 right-1/4 transform -rotate-3 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.7s' }}>
-              <div className="bg-white/90 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
-                "How much cash flow is realistic?"
-              </div>
-            </div>
-            
-            <div className="absolute bottom-48 left-1/5 transform rotate-2 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.8s' }}>
-              <div className="bg-gradient-to-r from-brand-teal/10 to-brand-orange/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-teal/20 drop-shadow-md backdrop-blur-sm">
-                "What about property management?"
-              </div>
-            </div>
-            
-            <div className="absolute bottom-32 right-1/5 transform -rotate-1 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '0.9s' }}>
-              <div className="bg-white/90 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-orange/20 drop-shadow-md backdrop-blur-sm">
-                "How do I qualify for loans?"
-              </div>
-            </div>
-            
-            <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 rotate-1 animate-fade-in hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer" style={{ animationDelay: '1.0s' }}>
-              <div className="bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border border-brand-teal/20 drop-shadow-md backdrop-blur-sm">
-                "Is house hacking right for me?"
-              </div>
-            </div>
+            {questions.map((question, index) => {
+              const position = questionPositions[index];
+              if (!position) return null;
+              
+              return (
+                <div 
+                  key={index}
+                  className="absolute animate-fade-in hover:scale-110 hover:z-20 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+                  style={{ 
+                    top: position.top,
+                    left: position.left,
+                    transform: `rotate(${position.rotation}deg)`,
+                    animationDelay: position.animationDelay
+                  }}
+                >
+                  <div className={`${position.background} shadow-lg rounded-2xl px-6 py-4 text-lg md:text-xl font-black text-brand-navy border ${position.border} drop-shadow-md backdrop-blur-sm group-hover:animate-pulse`}>
+                    "{question}"
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 

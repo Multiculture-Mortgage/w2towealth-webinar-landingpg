@@ -200,7 +200,7 @@ const BenefitsSection = () => {
               return (
                 <div 
                   key={index}
-                  className="absolute animate-fade-in hover:scale-110 hover:z-20 hover:animate-[float_1s_ease-in-out_infinite] transition-all duration-300 cursor-pointer group"
+                  className="absolute animate-fade-in hover:scale-110 hover:z-20 hover:animate-[float_1s_ease-in-out_infinite] transition-all duration-150 cursor-pointer group"
                   style={{ 
                     top: position.top,
                     left: position.left,

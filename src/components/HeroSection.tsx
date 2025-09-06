@@ -15,33 +15,39 @@ const HeroSection = () => {
 
   return (
     <section className="bg-gradient-subtle py-20 relative overflow-hidden">
-      {/* Property Photo Backgrounds */}
-      <div className="absolute inset-0 opacity-3">
-        <div className="absolute top-0 right-0 w-1/2 h-1/2">
-          <img 
-            src="/lovable-uploads/84f850f2-3417-499a-82b5-e953f162c627.png" 
-            alt="Investment Property" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3">
-          <img 
-            src="/lovable-uploads/3a87bf2d-9ef7-4224-b887-dc977122b26f.png" 
-            alt="Luxury Interior" 
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* Softly Blended Property Photos */}
+      <div className="absolute inset-0 opacity-8">
+        <div 
+          className="absolute top-0 right-0 w-1/2 h-1/2 opacity-60"
+          style={{
+            backgroundImage: `url(/lovable-uploads/84f850f2-3417-499a-82b5-e953f162c627.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            maskImage: `radial-gradient(ellipse at center, black 20%, transparent 70%)`,
+            WebkitMaskImage: `radial-gradient(ellipse at center, black 20%, transparent 70%)`
+          }}
+        ></div>
+        <div 
+          className="absolute bottom-0 left-0 w-1/3 h-1/3 opacity-50"
+          style={{
+            backgroundImage: `url(/lovable-uploads/3a87bf2d-9ef7-4224-b887-dc977122b26f.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            maskImage: `radial-gradient(ellipse at center, black 30%, transparent 80%)`,
+            WebkitMaskImage: `radial-gradient(ellipse at center, black 30%, transparent 80%)`
+          }}
+        ></div>
       </div>
       
-      {/* Gradient Overlays for Texture */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-white opacity-60"></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/5 via-transparent to-brand-teal/5"></div>
+      {/* Soft Gradient Overlays for Seamless Blending */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/3 via-transparent to-brand-teal/3"></div>
 
       {/* Wavy Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1440 800" preserveAspectRatio="none">
-          <path d="M0,160 C320,100 420,200 640,180 C860,160 1120,80 1440,120 L1440,0 L0,0 Z" fill="hsl(var(--brand-orange) / 0.08)"/>
-          <path d="M0,320 C360,280 480,360 720,340 C960,320 1200,240 1440,280 L1440,0 L0,0 Z" fill="hsl(var(--brand-teal) / 0.08)"/>
+          <path d="M0,160 C320,100 420,200 640,180 C860,160 1120,80 1440,120 L1440,0 L0,0 Z" fill="hsl(var(--brand-orange) / 0.06)"/>
+          <path d="M0,320 C360,280 480,360 720,340 C960,320 1200,240 1440,280 L1440,0 L0,0 Z" fill="hsl(var(--brand-teal) / 0.06)"/>
         </svg>
       </div>
 

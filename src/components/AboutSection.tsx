@@ -28,46 +28,56 @@ const AboutSection = () => {
         </svg>
       </div>
 
-      {/* Property Showcase Background */}
-      <div className="absolute inset-0 opacity-6">
-        <div className="absolute top-1/4 right-10 w-1/3 h-1/2">
-          <img 
-            src="/lovable-uploads/84f850f2-3417-499a-82b5-e953f162c627.png" 
-            alt="Investment Property Exterior" 
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="absolute bottom-1/4 left-10 w-1/4 h-1/3">
-          <img 
-            src="/lovable-uploads/3a87bf2d-9ef7-4224-b887-dc977122b26f.png" 
-            alt="Bedroom Interior" 
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
+      {/* Beautifully Blended Property Photos */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute top-1/4 right-10 w-1/3 h-1/2 opacity-25"
+          style={{
+            backgroundImage: `url(/lovable-uploads/84f850f2-3417-499a-82b5-e953f162c627.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            maskImage: `radial-gradient(ellipse 70% 50% at center, black 20%, transparent 60%)`,
+            WebkitMaskImage: `radial-gradient(ellipse 70% 50% at center, black 20%, transparent 60%)`,
+            filter: 'blur(1px)',
+            borderRadius: '12px'
+          }}
+        ></div>
+        <div 
+          className="absolute bottom-1/4 left-10 w-1/4 h-1/3 opacity-30"
+          style={{
+            backgroundImage: `url(/lovable-uploads/3a87bf2d-9ef7-4224-b887-dc977122b26f.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            maskImage: `radial-gradient(ellipse 60% 60% at center, black 25%, transparent 65%)`,
+            WebkitMaskImage: `radial-gradient(ellipse 60% 60% at center, black 25%, transparent 65%)`,
+            filter: 'blur(1px)',
+            borderRadius: '12px'
+          }}
+        ></div>
       </div>
 
-      {/* Elegant Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/75 to-white/90"></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/8 via-transparent to-brand-teal/8"></div>
+      {/* Multi-Layer Blending */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/70 to-background/85"></div>
+      <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/4 via-transparent to-brand-teal/4"></div>
 
       {/* Curved Design Accents */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <svg className="absolute top-1/4 right-10 w-32 h-64 opacity-8" viewBox="0 0 100 200">
+        <svg className="absolute top-1/4 right-10 w-32 h-64 opacity-6" viewBox="0 0 100 200">
           <path d="M0,0 Q100,100 0,200 L100,200 L100,0 Z" fill="hsl(var(--brand-teal) / 0.05)"/>
         </svg>
-        <svg className="absolute bottom-1/4 left-10 w-40 h-48 opacity-8" viewBox="0 0 100 200">
+        <svg className="absolute bottom-1/4 left-10 w-40 h-48 opacity-6" viewBox="0 0 100 200">
           <path d="M100,0 Q0,100 100,200 L0,200 L0,0 Z" fill="hsl(var(--brand-orange) / 0.05)"/>
         </svg>
       </div>
 
-      {/* Subtle Texture Lines */}
+      {/* Fine Texture Enhancement */}
       <div className="absolute inset-0 opacity-3" style={{
         backgroundImage: `repeating-linear-gradient(
           45deg,
           transparent,
-          transparent 20px,
-          hsl(var(--brand-teal) / 0.02) 20px,
-          hsl(var(--brand-teal) / 0.02) 22px
+          transparent 30px,
+          hsl(var(--brand-teal) / 0.02) 30px,
+          hsl(var(--brand-teal) / 0.02) 31px
         )`
       }}></div>
 

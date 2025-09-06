@@ -46,7 +46,7 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       {/* Wavy Separator at Top */}
       <div className="absolute top-0 left-0 w-full overflow-hidden">
         <svg className="relative block w-full h-16" viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -54,39 +54,47 @@ const BenefitsSection = () => {
         </svg>
       </div>
 
-      {/* Property Photo Texture */}
-      <div className="absolute inset-0 opacity-4">
-        <div className="absolute top-1/4 left-0 w-1/3 h-1/2">
-          <img 
-            src="/lovable-uploads/48e440a1-ac81-4f6c-b194-0af2cad87659.png" 
-            alt="Modern Kitchen" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute bottom-0 right-0 w-2/5 h-1/3">
-          <img 
-            src="/lovable-uploads/91aa4631-3794-4e2c-b7dd-30d4a336c824.png" 
-            alt="Luxury Bathroom" 
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {/* Elegantly Masked Property Photos */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute top-1/4 left-0 w-1/3 h-1/2 opacity-40"
+          style={{
+            backgroundImage: `url(/lovable-uploads/48e440a1-ac81-4f6c-b194-0af2cad87659.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            maskImage: `linear-gradient(to right, black 10%, transparent 60%)`,
+            WebkitMaskImage: `linear-gradient(to right, black 10%, transparent 60%)`,
+            filter: 'blur(0.5px)'
+          }}
+        ></div>
+        <div 
+          className="absolute bottom-0 right-0 w-2/5 h-1/3 opacity-35"
+          style={{
+            backgroundImage: `url(/lovable-uploads/91aa4631-3794-4e2c-b7dd-30d4a336c824.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            maskImage: `linear-gradient(to left, black 20%, transparent 70%)`,
+            WebkitMaskImage: `linear-gradient(to left, black 20%, transparent 70%)`,
+            filter: 'blur(0.5px)'
+          }}
+        ></div>
       </div>
 
-      {/* Sophisticated Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/85 to-white/95"></div>
+      {/* Soft Blending Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/75 to-background/90"></div>
       
-      {/* Subtle Texture Lines */}
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: `linear-gradient(90deg, transparent 98%, hsl(var(--brand-teal)) 100%)`,
-        backgroundSize: '100px 100%'
+      {/* Subtle Texture Enhancement */}
+      <div className="absolute inset-0 opacity-4" style={{
+        backgroundImage: `linear-gradient(90deg, transparent 97%, hsl(var(--brand-teal) / 0.1) 100%)`,
+        backgroundSize: '80px 100%'
       }}></div>
 
       {/* Curved Accent Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <svg className="absolute top-1/4 right-0 w-64 h-64 opacity-5" viewBox="0 0 200 200">
+        <svg className="absolute top-1/4 right-0 w-64 h-64 opacity-4" viewBox="0 0 200 200">
           <path d="M50,200 Q200,50 200,0 L200,200 Z" fill="hsl(var(--brand-orange))"/>
         </svg>
-        <svg className="absolute bottom-1/4 left-0 w-48 h-48 opacity-5" viewBox="0 0 200 200">
+        <svg className="absolute bottom-1/4 left-0 w-48 h-48 opacity-4" viewBox="0 0 200 200">
           <path d="M0,0 Q150,200 200,50 L0,0 Z" fill="hsl(var(--brand-teal))"/>
         </svg>
       </div>

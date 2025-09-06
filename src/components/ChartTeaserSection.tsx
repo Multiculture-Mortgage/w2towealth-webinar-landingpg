@@ -5,7 +5,6 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 const ChartTeaserSection = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [nextQuestionIndex, setNextQuestionIndex] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const questions = [
@@ -31,19 +30,20 @@ const ChartTeaserSection = () => {
     }
   ];
 
+  const nextQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIsAnimating(true);
       
       setTimeout(() => {
-        setCurrentQuestionIndex(nextQuestionIndex);
-        setNextQuestionIndex((nextQuestionIndex + 1) % questions.length);
+        setCurrentQuestionIndex((prev) => (prev + 1) % questions.length);
         setIsAnimating(false);
       }, 1200); // Slower animation duration
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [nextQuestionIndex, questions.length]);
+  }, [questions.length]);
 
   return (
     <section className="py-12 bg-gradient-to-r from-brand-orange/5 to-brand-teal/5 border-y border-border/20">

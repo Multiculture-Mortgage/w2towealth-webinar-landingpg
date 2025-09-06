@@ -214,8 +214,8 @@ const BenefitsSection = () => {
                   key={index}
                   className={`absolute animate-fade-in transition-all duration-150 cursor-pointer group ${
                     isActive 
-                      ? 'scale-110 z-20 animate-[float_1s_ease-in-out_infinite]' 
-                      : 'hover:scale-110 hover:z-20 hover:animate-[float_1s_ease-in-out_infinite]'
+                      ? 'scale-110 z-20 animate-[float_2.5s_ease-in-out_infinite]' 
+                      : 'hover:scale-110 hover:z-20 hover:animate-[float_2.5s_ease-in-out_infinite]'
                   }`}
                   style={{ 
                     top: position.top,

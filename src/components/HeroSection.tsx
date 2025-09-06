@@ -59,7 +59,7 @@ const HeroSection = () => {
               FREE WEBINAR - LIMITED SEATS
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight font-montserrat drop-shadow-lg">
               <span className="text-brand-navy">W2 TO</span>{" "}
               <span className="text-brand-orange">WEALTH</span>
               <br />
@@ -89,8 +89,9 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="text-2xl font-bold text-brand-orange mb-8">
-              MORE DOORS = MORE CASHFLOW
+            <div className="text-2xl font-bold mb-8 border-4 border-black inline-block px-4 py-2 rounded-lg">
+              <span className="text-white">MORE DOORS</span>{" "}
+              <span className="text-brand-orange" style={{WebkitTextStroke: '2px white'}}>= MORE CASHFLOW</span>
             </div>
           </div>
 

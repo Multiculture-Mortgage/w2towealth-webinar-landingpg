@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer className="bg-brand-navy text-white py-12 relative overflow-hidden">
+    <footer className="bg-black text-white py-12 relative overflow-hidden">
       {/* Background Texture */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full" style={{

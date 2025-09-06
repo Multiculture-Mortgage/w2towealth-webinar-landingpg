@@ -132,7 +132,7 @@ const BenefitsSection = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#EDF0F3' }}>
       {/* Wavy Separator at Top */}
       <div className="absolute top-0 left-0 w-full overflow-hidden">
         <svg className="relative block w-full h-16" viewBox="0 0 1440 100" preserveAspectRatio="none">

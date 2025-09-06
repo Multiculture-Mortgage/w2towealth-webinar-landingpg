@@ -54,11 +54,7 @@ const ChartTeaserSection = () => {
             <div className="relative h-24 md:h-28 overflow-hidden">
               {/* Current Question - slides up and out */}
               <div
-                className={`absolute inset-0 transition-all duration-1000 ease-out ${
-                  isAnimating
-                    ? 'opacity-0 transform -translate-y-full'
-                    : 'opacity-100 transform translate-y-0'
-                }`}
+                className={`absolute inset-0 ${isAnimating ? 'transition-all duration-1000 ease-out opacity-0 transform -translate-y-full' : 'opacity-100 transform translate-y-0'}`}
               >
                 <h3 className="text-3xl md:text-4xl font-black text-brand-navy mb-2 drop-shadow-md">
                   {questions[currentQuestionIndex].title}

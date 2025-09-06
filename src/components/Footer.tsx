@@ -21,7 +21,6 @@ const Footer = () => {
       <div className="absolute inset-0 pointer-events-none opacity-3">
         <div className="absolute top-10 right-10 text-6xl font-black text-white/5 transform rotate-12">LLC</div>
         <div className="absolute bottom-10 left-10 text-4xl font-black text-white/5 transform -rotate-6">MORTGAGE</div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-8xl font-black text-white/3">M</div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">

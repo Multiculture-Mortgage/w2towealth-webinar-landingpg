@@ -67,19 +67,10 @@ const BookSection = () => {
               <Button 
                 size="lg" 
                 className="group bg-yellow-500 hover:bg-yellow-600 text-black"
-                onClick={() => window.open('https://hhtadbook.com', '_blank')}
+                onClick={() => window.open('https://hhtadbook.com/', '_blank', 'noopener,noreferrer')}
               >
                 Get Your Copy Now
                 <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="bg-white/20 border-white text-white hover:bg-white hover:text-red-600"
-                onClick={() => window.open('https://hhtadbook.com', '_blank')}
-              >
-                Learn More
               </Button>
             </div>
 

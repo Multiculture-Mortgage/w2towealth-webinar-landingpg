@@ -21,6 +21,7 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
 				montserrat: ['Montserrat', 'sans-serif'],
+				'black-ops': ['Black Ops One', 'cursive'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

@@ -59,11 +59,11 @@ const HeroSection = () => {
               FREE WEBINAR - LIMITED SEATS
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight font-montserrat drop-shadow-lg">
-              <span className="text-brand-navy font-extrabold">W2 TO</span>{" "}
-              <span className="text-brand-orange font-extrabold">WEALTH</span>
+            <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight font-black-ops drop-shadow-lg">
+              <span className="text-brand-navy">W2 TO</span>{" "}
+              <span className="text-brand-orange">WEALTH</span>
               <br />
-              <span className="text-brand-teal text-3xl md:text-4xl font-extrabold">
+              <span className="text-brand-teal text-3xl md:text-4xl">
                 Through Homeownership
               </span>
             </h1>
@@ -89,9 +89,9 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="text-2xl font-black mb-8">
-              <span className="text-white border-4 border-black px-3 py-1 rounded-lg font-black">MORE DOORS</span>{" "}
-              <span className="text-brand-orange font-black" style={{WebkitTextStroke: '2px white'}}>= MORE CASHFLOW</span>
+            <div className="text-2xl font-black mb-8 font-black-ops">
+              <span className="text-white" style={{WebkitTextStroke: '3px black'}}>MORE DOORS</span>{" "}
+              <span className="text-brand-orange" style={{WebkitTextStroke: '2px white'}}>= MORE CASHFLOW</span>
             </div>
           </div>
 

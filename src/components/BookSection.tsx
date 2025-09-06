@@ -3,37 +3,36 @@ import { ExternalLink, BookOpen } from "lucide-react";
 
 const BookSection = () => {
   return (
-    <section className="relative py-8 px-0 overflow-hidden w-full" style={{ backgroundColor: '#d9514b' }}>
+    <section className="relative py-8 overflow-hidden w-screen" style={{ backgroundColor: '#d9514b' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046-8-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
       </div>
 
-      <div className="w-full h-full">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 h-full min-h-[400px] px-8 lg:px-16">
-          {/* Book Image */}
-          <div className="relative flex justify-center lg:justify-end flex-shrink-0 lg:w-1/2">
-            <div className="relative z-10 w-full max-w-sm lg:max-w-md">
-              <div className="relative group">
-                <div className="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-                <img 
-                  src="/lovable-uploads/5aa94387-5b12-41fa-8385-80effa22b7a9.png" 
-                  alt="House Hacking The American Dream book cover"
-                  className="relative z-10 w-full h-auto rounded-2xl shadow-2xl transform group-hover:scale-105 transition-all duration-500"
-                />
-              </div>
-            </div>
-            
-            {/* Floating Elements */}
-            <div className="absolute top-8 -right-4 opacity-20">
-              <BookOpen className="w-16 h-16 text-white animate-pulse" />
+      <div className="w-screen flex flex-col lg:flex-row items-center gap-8 lg:gap-0 min-h-[400px] px-4 sm:px-8 lg:px-12 xl:px-20">
+        {/* Book Image */}
+        <div className="relative flex justify-center flex-shrink-0 w-full lg:w-1/2">
+          <div className="relative z-10 w-full max-w-xs sm:max-w-sm lg:max-w-md">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <img 
+                src="/lovable-uploads/5aa94387-5b12-41fa-8385-80effa22b7a9.png" 
+                alt="House Hacking The American Dream book cover"
+                className="relative z-10 w-full h-auto rounded-2xl shadow-2xl transform group-hover:scale-105 transition-all duration-500"
+              />
             </div>
           </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-8 -right-4 opacity-20">
+            <BookOpen className="w-16 h-16 text-white animate-pulse" />
+          </div>
+        </div>
 
-          {/* Content */}
-          <div className="space-y-6 flex flex-col justify-center w-full lg:w-1/2 flex-grow">
+        {/* Content */}
+        <div className="space-y-6 flex flex-col justify-center w-full lg:w-1/2 lg:pl-8 xl:pl-16">
             <div className="space-y-3">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium">
                 <BookOpen className="w-4 h-4 mr-2" />
@@ -99,7 +98,6 @@ const BookSection = () => {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 };

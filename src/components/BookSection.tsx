@@ -40,7 +40,7 @@ const BookSection = () => {
                 New Release
               </div>
               
-              <div className="text-center space-y-1">
+              <div className="text-center space-y-1 bg-white p-4 rounded-lg shadow-lg">
                 <h2 className="text-4xl lg:text-5xl font-arvo font-bold leading-tight" style={{ color: '#E7907D' }}>
                   House Hacking
                 </h2>

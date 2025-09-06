@@ -76,29 +76,53 @@ const BenefitsSection = () => {
       for (let i = 0; i < questions.length; i++) {
         let attempts = 0;
         let position;
+        let isValidPosition = false;
         
         do {
-          const top = Math.random() * 80; // 0-80% from top
-          const left = Math.random() * 80; // 0-80% from left
+          const top = Math.random() * 70 + 5; // 5-75% from top for better spacing
+          const left = Math.random() * 70 + 5; // 5-75% from left for better spacing
           const rotation = (Math.random() - 0.5) * 6; // -3 to 3 degrees
           
-          position = {
-            top: `${top}%`,
-            left: `${left}%`,
-            rotation,
-            background: Math.random() > 0.5 
-              ? "bg-white/90" 
-              : "bg-gradient-to-r from-brand-teal/10 to-brand-orange/10",
-            border: Math.random() > 0.5 
-              ? "border-brand-orange/20" 
-              : "border-brand-teal/20",
-            animationDelay: `${i * 0.1}s`
-          };
+          // Estimated dimensions for collision detection (in percentage)
+          const estimatedWidth = 20; // roughly 20% of container width
+          const estimatedHeight = 8; // roughly 8% of container height
+          
+          // Check for overlaps with existing positions
+          isValidPosition = usedAreas.every(area => {
+            const horizontalClear = (left > area.x + area.width) || (left + estimatedWidth < area.x);
+            const verticalClear = (top > area.y + area.height) || (top + estimatedHeight < area.y);
+            return horizontalClear || verticalClear;
+          });
+          
+          if (isValidPosition || attempts > 100) {
+            position = {
+              top: `${top}%`,
+              left: `${left}%`,
+              rotation,
+              background: Math.random() > 0.5 
+                ? "bg-white/90" 
+                : "bg-gradient-to-r from-brand-teal/10 to-brand-orange/10",
+              border: Math.random() > 0.5 
+                ? "border-brand-orange/20" 
+                : "border-brand-teal/20",
+              animationDelay: `${i * 0.1}s`
+            };
+            
+            // Add this position to used areas
+            usedAreas.push({
+              x: left,
+              y: top,
+              width: estimatedWidth,
+              height: estimatedHeight
+            });
+          }
           
           attempts++;
-        } while (attempts < 50); // Prevent infinite loop
+        } while (!isValidPosition && attempts < 100);
         
-        positions.push(position);
+        if (position) {
+          positions.push(position);
+        }
       }
       
       return positions;

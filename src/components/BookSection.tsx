@@ -4,6 +4,16 @@ import { ExternalLink, BookOpen } from "lucide-react";
 const BookSection = () => {
   return (
     <section className="relative py-8 overflow-hidden w-full min-h-[300px]" style={{ backgroundColor: '#d9514b' }}>
+      {/* Book Raffle Banner */}
+      <div className="relative z-30 bg-yellow-400 text-center py-3 px-4">
+        <h3 className="text-xl md:text-2xl font-bold text-black">
+          🎉 **BOOKS WILL BE RAFFLED OFF** 🎉
+        </h3>
+        <p className="text-xs text-black/70 mt-1">
+          **to attendees that stay until the end.
+        </p>
+      </div>
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

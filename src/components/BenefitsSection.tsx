@@ -54,17 +54,32 @@ const BenefitsSection = () => {
         </svg>
       </div>
 
-      {/* Background Texture */}
-      <div className="absolute inset-0 opacity-3">
-        <div className="absolute top-0 left-0 w-full h-full" style={{
-          backgroundImage: `linear-gradient(45deg, hsl(var(--brand-teal) / 0.03) 25%, transparent 25%), 
-                           linear-gradient(-45deg, hsl(var(--brand-orange) / 0.03) 25%, transparent 25%), 
-                           linear-gradient(45deg, transparent 75%, hsl(var(--brand-teal) / 0.03) 75%), 
-                           linear-gradient(-45deg, transparent 75%, hsl(var(--brand-orange) / 0.03) 75%)`,
-          backgroundSize: '60px 60px',
-          backgroundPosition: '0 0, 0 30px, 30px -30px, -30px 0px'
-        }}></div>
+      {/* Property Photo Texture */}
+      <div className="absolute inset-0 opacity-4">
+        <div className="absolute top-1/4 left-0 w-1/3 h-1/2">
+          <img 
+            src="/lovable-uploads/48e440a1-ac81-4f6c-b194-0af2cad87659.png" 
+            alt="Modern Kitchen" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute bottom-0 right-0 w-2/5 h-1/3">
+          <img 
+            src="/lovable-uploads/91aa4631-3794-4e2c-b7dd-30d4a336c824.png" 
+            alt="Luxury Bathroom" 
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
+
+      {/* Sophisticated Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/85 to-white/95"></div>
+      
+      {/* Subtle Texture Lines */}
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: `linear-gradient(90deg, transparent 98%, hsl(var(--brand-teal)) 100%)`,
+        backgroundSize: '100px 100%'
+      }}></div>
 
       {/* Curved Accent Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

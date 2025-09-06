@@ -15,27 +15,35 @@ const HeroSection = () => {
 
   return (
     <section className="bg-gradient-subtle py-20 relative overflow-hidden">
+      {/* Property Photo Backgrounds */}
+      <div className="absolute inset-0 opacity-3">
+        <div className="absolute top-0 right-0 w-1/2 h-1/2">
+          <img 
+            src="/lovable-uploads/84f850f2-3417-499a-82b5-e953f162c627.png" 
+            alt="Investment Property" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3">
+          <img 
+            src="/lovable-uploads/3a87bf2d-9ef7-4224-b887-dc977122b26f.png" 
+            alt="Luxury Interior" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+      
+      {/* Gradient Overlays for Texture */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-white opacity-60"></div>
+      <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/5 via-transparent to-brand-teal/5"></div>
+
       {/* Wavy Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1440 800" preserveAspectRatio="none">
-          <path d="M0,160 C320,100 420,200 640,180 C860,160 1120,80 1440,120 L1440,0 L0,0 Z" fill="hsl(var(--brand-orange) / 0.05)"/>
-          <path d="M0,320 C360,280 480,360 720,340 C960,320 1200,240 1440,280 L1440,0 L0,0 Z" fill="hsl(var(--brand-teal) / 0.05)"/>
+          <path d="M0,160 C320,100 420,200 640,180 C860,160 1120,80 1440,120 L1440,0 L0,0 Z" fill="hsl(var(--brand-orange) / 0.08)"/>
+          <path d="M0,320 C360,280 480,360 720,340 C960,320 1200,240 1440,280 L1440,0 L0,0 Z" fill="hsl(var(--brand-teal) / 0.08)"/>
         </svg>
       </div>
-      
-      {/* Background Texture Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-brand-orange rounded-full blur-3xl"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-brand-teal rounded-full blur-2xl"></div>
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-brand-orange rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-28 h-28 bg-brand-teal rounded-full blur-2xl"></div>
-      </div>
-      
-      {/* Geometric Pattern Overlay */}
-      <div className="absolute inset-0 opacity-3" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--brand-navy)) 1px, transparent 0)`,
-        backgroundSize: '40px 40px'
-      }}></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

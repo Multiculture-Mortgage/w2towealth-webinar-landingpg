@@ -28,22 +28,27 @@ const AboutSection = () => {
         </svg>
       </div>
 
-      {/* Dynamic Background Elements */}
-      <div className="absolute inset-0 opacity-4">
-        <div className="absolute top-0 left-0 w-full h-full" style={{
-          backgroundImage: `conic-gradient(from 0deg at 50% 50%, 
-                           hsl(var(--brand-orange) / 0.1) 0deg, 
-                           transparent 60deg, 
-                           hsl(var(--brand-teal) / 0.1) 120deg, 
-                           transparent 180deg, 
-                           hsl(var(--brand-orange) / 0.1) 240deg, 
-                           transparent 300deg, 
-                           hsl(var(--brand-teal) / 0.1) 360deg)`,
-          backgroundSize: '400px 400px',
-          backgroundPosition: '0 0, 200px 200px',
-          animation: 'spin 60s linear infinite'
-        }}></div>
+      {/* Property Showcase Background */}
+      <div className="absolute inset-0 opacity-6">
+        <div className="absolute top-1/4 right-10 w-1/3 h-1/2">
+          <img 
+            src="/lovable-uploads/84f850f2-3417-499a-82b5-e953f162c627.png" 
+            alt="Investment Property Exterior" 
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
+        <div className="absolute bottom-1/4 left-10 w-1/4 h-1/3">
+          <img 
+            src="/lovable-uploads/3a87bf2d-9ef7-4224-b887-dc977122b26f.png" 
+            alt="Bedroom Interior" 
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
       </div>
+
+      {/* Elegant Gradient Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/75 to-white/90"></div>
+      <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/8 via-transparent to-brand-teal/8"></div>
 
       {/* Curved Design Accents */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -55,15 +60,16 @@ const AboutSection = () => {
         </svg>
       </div>
 
-      {/* Scattered Geometric Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/6 w-3 h-3 bg-brand-orange/20 rounded-full animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-brand-teal/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-4 h-4 bg-brand-orange/15 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-1/3 right-1/6 w-3 h-3 bg-brand-teal/15 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-1/2 left-1/12 w-2 h-2 bg-brand-orange/25 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute top-3/4 right-1/12 w-3 h-3 bg-brand-teal/20 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-      </div>
+      {/* Subtle Texture Lines */}
+      <div className="absolute inset-0 opacity-3" style={{
+        backgroundImage: `repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          hsl(var(--brand-teal) / 0.02) 20px,
+          hsl(var(--brand-teal) / 0.02) 22px
+        )`
+      }}></div>
 
       <div className="container mx-auto px-6 relative z-10 pt-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

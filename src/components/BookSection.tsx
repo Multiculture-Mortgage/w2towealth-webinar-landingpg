@@ -75,7 +75,7 @@ const BookSection = () => {
               </span>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
               <Button 
                 size="lg" 
                 className="group bg-yellow-500 hover:bg-yellow-600 text-black"

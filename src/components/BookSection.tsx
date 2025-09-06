@@ -12,34 +12,34 @@ const BookSection = () => {
       </div>
 
       {/* Book Image - Absolute positioned */}
-      <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
-        <div className="relative w-48 lg:w-56">
-          <div className="absolute -inset-2 bg-gradient-to-r from-white/20 to-white/10 rounded-xl blur-lg"></div>
+      <div className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-10">
+        <div className="relative w-64 md:w-72 lg:w-80">
+          <div className="absolute -inset-3 bg-gradient-to-r from-white/20 to-white/10 rounded-xl blur-lg"></div>
           <img 
             src="/lovable-uploads/5aa94387-5b12-41fa-8385-80effa22b7a9.png" 
             alt="House Hacking The American Dream book cover"
-            className="relative z-10 w-full h-auto rounded-xl shadow-xl"
+            className="relative z-10 w-full h-auto rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
           />
         </div>
       </div>
 
       {/* Content Area - Takes remaining space */}
-      <div className="relative z-20 ml-52 lg:ml-64 mr-4 flex items-center min-h-[300px]">
-        <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 w-full">
+      <div className="relative z-20 pt-4 md:pt-0 md:ml-64 lg:ml-80 mr-4 flex items-center min-h-[300px] md:min-h-[400px]">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 lg:gap-8 w-full mt-64 md:mt-0">
           
           {/* Title Section */}
-          <div className="bg-white p-4 rounded-lg shadow-lg flex-shrink-0">
+          <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg flex-shrink-0 w-full md:w-auto">
             <div className="inline-flex items-center px-2 py-1 rounded-full bg-red-100 text-red-600 text-xs font-medium mb-2">
               <BookOpen className="w-3 h-3 mr-1" />
               New Release
             </div>
-            <h2 className="text-2xl lg:text-3xl font-arvo font-bold leading-tight" style={{ color: '#E7907D' }}>
+            <h2 className="text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-arvo font-bold leading-tight" style={{ color: '#E7907D' }}>
               House Hacking
             </h2>
-            <h3 className="text-lg lg:text-xl font-arvo font-bold leading-tight" style={{ color: '#2D4350' }}>
+            <h3 className="text-xl md:text-lg lg:text-xl xl:text-2xl font-arvo font-bold leading-tight" style={{ color: '#2D4350' }}>
               The American Dream
             </h3>
-            <p className="text-sm font-roboto-condensed leading-relaxed" style={{ color: '#2D4350' }}>
+            <p className="text-base md:text-sm lg:text-base font-roboto-condensed leading-relaxed" style={{ color: '#2D4350' }}>
               Maximizing Cash Flow In An Unaffordable America
             </p>
           </div>

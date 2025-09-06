@@ -13,8 +13,8 @@ const BookSection = () => {
 
       {/* Book Image - Absolute positioned */}
       <div className="absolute left-1/2 md:left-4 top-4 md:top-1/2 transform -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2 z-10">
-        <div className="relative w-72 md:w-72 lg:w-80 mb-8 md:mb-0">
-          <div className="absolute -inset-3 bg-gradient-to-r from-white/20 to-white/10 rounded-xl blur-lg"></div>
+        <div className="relative w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] mb-8 md:mb-0">
+          <div className="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-xl blur-lg"></div>
           <img 
             src="/lovable-uploads/5aa94387-5b12-41fa-8385-80effa22b7a9.png" 
             alt="House Hacking The American Dream book cover"
@@ -24,7 +24,7 @@ const BookSection = () => {
       </div>
 
       {/* Content Area - Takes remaining space */}
-      <div className="relative z-20 pt-4 md:pt-0 md:ml-64 lg:ml-80 mr-4 flex items-center min-h-[450px] md:min-h-[400px]">
+      <div className="relative z-20 pt-4 md:pt-0 md:ml-80 lg:ml-96 xl:ml-[36rem] mr-4 flex items-center min-h-[450px] md:min-h-[400px]">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 lg:gap-8 w-full mt-80 md:mt-0">
           
           {/* Title Section */}

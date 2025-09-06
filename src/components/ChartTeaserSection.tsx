@@ -52,7 +52,7 @@ const ChartTeaserSection = () => {
           {/* Text Content */}
           <div className="lg:w-1/2 text-center lg:text-left">
             <div className="relative h-24 md:h-28 overflow-hidden">
-              {/* Current Question */}
+              {/* Current Question - slides up and out */}
               <div
                 className={`absolute inset-0 transition-all duration-1000 ease-out ${
                   isAnimating
@@ -68,21 +68,22 @@ const ChartTeaserSection = () => {
                 </p>
               </div>
               
-              {/* Next Question (slides up from bottom during animation) */}
-              <div
-                className={`absolute inset-0 transition-all duration-1000 ease-in ${
-                  isAnimating
-                    ? 'opacity-100 transform translate-y-0'
-                    : 'opacity-0 transform translate-y-full'
-                }`}
-              >
-                <h3 className="text-3xl md:text-4xl font-black text-brand-navy mb-2 drop-shadow-md">
-                  {questions[nextQuestionIndex].title}
-                </h3>
-                <p className="text-lg text-brand-orange font-semibold">
-                  {questions[nextQuestionIndex].subtitle}
-                </p>
-              </div>
+              {/* Next Question - slides up from bottom only during animation */}
+              {isAnimating && (
+                <div
+                  className="absolute inset-0 transform translate-y-full opacity-0"
+                  style={{
+                    animation: 'slide-up-fade-in 1000ms ease-in forwards'
+                  }}
+                >
+                  <h3 className="text-3xl md:text-4xl font-black text-brand-navy mb-2 drop-shadow-md">
+                    {questions[nextQuestionIndex].title}
+                  </h3>
+                  <p className="text-lg text-brand-orange font-semibold">
+                    {questions[nextQuestionIndex].subtitle}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
           

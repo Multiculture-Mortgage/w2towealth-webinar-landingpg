@@ -40,10 +40,17 @@ const BookSection = () => {
                 New Release
               </div>
               
-              <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                House Hacking
-                <span className="block text-primary">The American Dream</span>
-              </h2>
+              <div className="text-center space-y-2">
+                <h2 className="text-5xl lg:text-6xl font-arvo font-bold leading-tight" style={{ color: '#E7907D' }}>
+                  House Hacking
+                </h2>
+                <h3 className="text-3xl lg:text-4xl font-arvo font-bold leading-tight" style={{ color: '#2D4350' }}>
+                  The American Dream
+                </h3>
+                <p className="text-xl font-roboto-condensed leading-relaxed" style={{ color: '#2D4350' }}>
+                  Maximizing Cash Flow In An Unaffordable America
+                </p>
+              </div>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Discover the proven strategies to maximize cash flow in an unaffordable America. 

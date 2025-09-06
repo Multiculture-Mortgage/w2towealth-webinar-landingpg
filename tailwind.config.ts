@@ -21,6 +21,8 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
 				montserrat: ['Montserrat', 'sans-serif'],
+				'arvo': ['Arvo', 'serif'],
+				'roboto-condensed': ['Roboto Condensed', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -72,6 +74,10 @@ export default {
 					teal: 'hsl(var(--brand-teal))',
 					'teal-light': 'hsl(var(--brand-teal-light))',
 					navy: 'hsl(var(--brand-navy))'
+				},
+				book: {
+					'house-hacking': '#E7907D',
+					'american-dream': '#2D4350',
 				}
 			},
 			borderRadius: {

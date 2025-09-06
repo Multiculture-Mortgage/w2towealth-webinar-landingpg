@@ -1,98 +1,104 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
-import heroBackground from "@/assets/hero-background.jpg";
-import logoLight from "@/assets/logo-light.png";
+import { Calendar, Clock, Users } from "lucide-react";
 
 const HeroSection = () => {
   const [email, setEmail] = useState("");
 
   const handleRegistration = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle registration logic here
     console.log("Registration email:", email);
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBackground})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/80 via-brand-teal/70 to-brand-orange/60"></div>
-      </div>
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        {/* Logo */}
-        <div className="mb-8">
-          <img 
-            src={logoLight} 
-            alt="Multiculture Mortgage LLC" 
-            className="h-16 mx-auto mb-4"
-          />
-        </div>
+    <section className="bg-gradient-subtle py-20">
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <div>
+            <Badge className="bg-brand-orange text-white mb-6 text-sm px-4 py-2">
+              FREE WEBINAR - LIMITED SEATS
+            </Badge>
+            
+            <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
+              <span className="text-brand-navy">W2 TO</span>{" "}
+              <span className="text-brand-orange">WEALTH</span>
+              <br />
+              <span className="text-brand-teal text-3xl md:text-4xl">
+                Through Homeownership
+              </span>
+            </h1>
+            
+            <p className="text-xl text-brand-gray mb-8 leading-relaxed">
+              Turn your 9-to-5 income into <strong>real estate assets</strong> and build 
+              generational wealth through strategic property investments.
+            </p>
 
-        {/* Main Headline */}
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 leading-tight">
-            <span className="text-brand-orange">MORE DOORS</span>
-            <br />
-            <span className="text-white">=</span>
-            <br />
-            <span className="text-brand-orange">MORE CASHFLOW</span>
-          </h1>
-        </div>
-
-        {/* Webinar Title */}
-        <div className="mb-6">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4">
-            W2 TO <span className="text-brand-orange">WEALTH</span>
-          </h2>
-          <h3 className="text-2xl md:text-4xl font-black text-brand-orange">
-            WEBINAR
-          </h3>
-        </div>
-
-        {/* Subtitle */}
-        <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto font-medium">
-          TURN YOUR 9 TO 5 INCOME INTO REAL ESTATE ASSETS
-        </p>
-
-        {/* Date */}
-        <div className="mb-8">
-          <p className="text-2xl md:text-3xl font-bold text-brand-orange">
-            JUNE 12TH, 2025
-          </p>
-        </div>
-
-        {/* Registration Form */}
-        <Card className="max-w-md mx-auto p-6 bg-white/95 backdrop-blur-sm shadow-strong">
-          <form onSubmit={handleRegistration} className="space-y-4">
-            <div>
-              <Input
-                type="email"
-                placeholder="Enter your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="text-center text-lg py-3"
-              />
+            {/* Event Details */}
+            <div className="space-y-3 mb-8">
+              <div className="flex items-center text-brand-navy">
+                <Calendar className="h-5 w-5 text-brand-orange mr-3" />
+                <span className="font-semibold">June 12th, 2025</span>
+              </div>
+              <div className="flex items-center text-brand-navy">
+                <Clock className="h-5 w-5 text-brand-orange mr-3" />
+                <span className="font-semibold">90 Minutes + Live Q&A</span>
+              </div>
+              <div className="flex items-center text-brand-navy">
+                <Users className="h-5 w-5 text-brand-orange mr-3" />
+                <span className="font-semibold">Limited to 500 Attendees</span>
+              </div>
             </div>
-            <Button 
-              type="submit" 
-              size="lg" 
-              className="w-full text-lg font-bold py-3 bg-gradient-cta hover:shadow-strong transform hover:scale-105 transition-all duration-300"
-            >
-              REGISTER NOW!
-            </Button>
-          </form>
-          <p className="text-sm text-muted-foreground mt-4">
-            Secure your spot - Limited seats available
-          </p>
-        </Card>
+
+            <div className="text-2xl font-bold text-brand-orange mb-8">
+              MORE DOORS = MORE CASHFLOW
+            </div>
+          </div>
+
+          {/* Registration Card */}
+          <div>
+            <Card className="shadow-xl border-0">
+              <CardHeader className="text-center pb-4">
+                <CardTitle className="text-2xl font-bold text-brand-navy">
+                  Reserve Your Spot Today
+                </CardTitle>
+                <p className="text-brand-gray">
+                  Join professionals already building wealth through real estate
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <form onSubmit={handleRegistration} className="space-y-4">
+                  <Input
+                    type="email"
+                    placeholder="Enter your email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="h-12 text-base"
+                  />
+                  <Button 
+                    type="submit" 
+                    className="w-full h-12 text-lg font-bold bg-gradient-primary hover:opacity-90 transition-opacity"
+                  >
+                    REGISTER FREE NOW
+                  </Button>
+                </form>
+                
+                <div className="text-center space-y-2">
+                  <p className="text-sm text-brand-gray">
+                    ✓ 100% Free Access ✓ Instant Confirmation ✓ Bonus Materials
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    No spam. Unsubscribe anytime.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

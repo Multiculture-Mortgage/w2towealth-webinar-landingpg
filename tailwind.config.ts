@@ -79,13 +79,15 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			backgroundImage: {
-				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-section': 'var(--gradient-section)',
-				'gradient-cta': 'var(--gradient-cta)'
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-subtle': 'var(--gradient-subtle)'
 			},
 			boxShadow: {
-				'soft': 'var(--shadow-soft)',
-				'strong': 'var(--shadow-strong)'
+				'sm': 'var(--shadow-sm)',
+				'md': 'var(--shadow-md)', 
+				'lg': 'var(--shadow-lg)',
+				'xl': 'var(--shadow-xl)'
 			},
 			keyframes: {
 				'accordion-down': {

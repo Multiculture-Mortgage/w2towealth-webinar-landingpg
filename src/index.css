@@ -8,52 +8,55 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Brand Colors */
-    --brand-orange: 18 100% 60%;
-    --brand-orange-light: 18 100% 70%;
-    --brand-teal: 180 100% 20%;
-    --brand-teal-light: 180 50% 30%;
-    --brand-navy: 210 40% 15%;
+    /* Modern Brand Colors */
+    --brand-orange: 22 100% 52%;
+    --brand-orange-light: 22 100% 62%;
+    --brand-teal: 190 85% 35%;
+    --brand-teal-light: 190 75% 45%;
+    --brand-navy: 220 26% 14%;
+    --brand-gray: 220 9% 46%;
     
-    /* Semantic Colors */
-    --background: 0 0% 98%;
-    --foreground: 210 40% 15%;
+    /* Clean Modern Palette */
+    --background: 0 0% 100%;
+    --foreground: 220 26% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 40% 15%;
+    --card-foreground: 220 26% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 15%;
+    --popover-foreground: 220 26% 14%;
 
-    --primary: 18 100% 60%;
+    --primary: 22 100% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 180 100% 20%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 26% 14%;
 
-    --muted: 210 20% 95%;
-    --muted-foreground: 210 20% 50%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 18 100% 70%;
+    --accent: 190 85% 35%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 95%;
-    --ring: 18 100% 60%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 22 100% 52%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(var(--brand-orange-light)));
-    --gradient-section: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-cta: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(var(--brand-teal)));
+    /* Modern Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(var(--brand-orange-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--brand-teal)), hsl(var(--brand-teal-light)));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
     
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -2px hsl(var(--brand-orange) / 0.1);
-    --shadow-strong: 0 10px 40px -10px hsl(var(--brand-orange) / 0.3);
+    /* Clean Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 26% 14% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 26% 14% / 0.1), 0 2px 4px -1px hsl(220 26% 14% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 26% 14% / 0.1), 0 4px 6px -2px hsl(220 26% 14% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(220 26% 14% / 0.1), 0 10px 10px -5px hsl(220 26% 14% / 0.04);
     
-    --radius: 0.75rem;
+    --radius: 0.5rem;
   }
 
   .dark {

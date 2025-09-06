@@ -1,95 +1,123 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, Award, Users2, TrendingUp } from "lucide-react";
+import { Star, Award, Users2, TrendingUp, Quote } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "Sarah Mitchell",
+    role: "Software Engineer",
+    content: "I went from zero properties to three rental units in 18 months. The strategies from this webinar completely changed my financial trajectory.",
+    rating: 5
+  },
+  {
+    name: "Marcus Johnson", 
+    role: "Marketing Manager",
+    content: "The step-by-step approach made real estate investing feel achievable. Now I have consistent passive income alongside my day job.",
+    rating: 5
+  }
+];
 
 const AboutSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Content */}
           <div>
-            <Badge className="bg-brand-orange text-white mb-4">
-              Your Host & Expert Guide
+            <Badge className="bg-brand-navy text-white mb-4 px-4 py-2">
+              YOUR EXPERT INSTRUCTOR
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-black mb-6">
-              Learn From a <span className="text-brand-orange">Proven Expert</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              As the founder of Multiculture Mortgage LLC, our expert has helped hundreds of professionals transition from traditional employment to building substantial wealth through strategic real estate investments.
-            </p>
             
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start space-x-3">
-                <Award className="h-6 w-6 text-brand-orange flex-shrink-0 mt-1" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-navy">
+              Learn From a Proven Real Estate Professional
+            </h2>
+            
+            <p className="text-lg text-brand-gray mb-8 leading-relaxed">
+              As the founder of Multiculture Mortgage LLC, our instructor has personally helped 
+              hundreds of working professionals transition from traditional employment to building 
+              substantial wealth through strategic real estate investments.
+            </p>
+
+            <div className="space-y-6 mb-8">
+              <div className="flex items-start space-x-4">
+                <div className="bg-brand-orange text-white p-2 rounded-lg">
+                  <Award className="h-5 w-5" />
+                </div>
                 <div>
-                  <h4 className="font-semibold">Licensed Mortgage Professional</h4>
-                  <p className="text-muted-foreground">Over 10 years helping clients secure optimal financing for investment properties</p>
+                  <h4 className="font-bold text-brand-navy">15+ Years Experience</h4>
+                  <p className="text-brand-gray">Licensed mortgage professional with extensive real estate investment expertise</p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-3">
-                <Users2 className="h-6 w-6 text-brand-orange flex-shrink-0 mt-1" />
+              <div className="flex items-start space-x-4">
+                <div className="bg-brand-teal text-white p-2 rounded-lg">
+                  <Users2 className="h-5 w-5" />
+                </div>
                 <div>
-                  <h4 className="font-semibold">500+ Successful Clients</h4>
-                  <p className="text-muted-foreground">Guided professionals from first-time buyers to seasoned investors</p>
+                  <h4 className="font-bold text-brand-navy">500+ Successful Clients</h4>
+                  <p className="text-brand-gray">Guided professionals from first-time buyers to seasoned investors</p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-3">
-                <TrendingUp className="h-6 w-6 text-brand-orange flex-shrink-0 mt-1" />
+              <div className="flex items-start space-x-4">
+                <div className="bg-brand-navy text-white p-2 rounded-lg">
+                  <TrendingUp className="h-5 w-5" />
+                </div>
                 <div>
-                  <h4 className="font-semibold">$100M+ in Transactions</h4>
-                  <p className="text-muted-foreground">Facilitated millions in real estate investments and wealth creation</p>
+                  <h4 className="font-bold text-brand-navy">$100M+ in Transactions</h4>
+                  <p className="text-brand-gray">Facilitated millions in real estate investments and wealth creation</p>
                 </div>
               </div>
             </div>
 
-            <Button size="lg" className="bg-gradient-cta text-white font-bold">
-              Register for Free Access
+            <Button className="bg-gradient-primary text-white font-bold px-8 py-3">
+              Secure Your Spot Now
             </Button>
           </div>
 
-          {/* Stats Cards */}
+          {/* Stats & Testimonials */}
           <div className="space-y-6">
-            <Card className="bg-brand-orange text-white">
-              <CardContent className="p-6 text-center">
-                <div className="text-4xl font-black mb-2">15+</div>
-                <div className="text-lg font-semibold">Years Experience</div>
-                <div className="text-sm opacity-90">In Real Estate & Finance</div>
-              </CardContent>
-            </Card>
-            
+            {/* Quick Stats */}
             <div className="grid grid-cols-2 gap-4">
-              <Card className="bg-brand-teal text-white">
-                <CardContent className="p-4 text-center">
-                  <div className="text-2xl font-black mb-1">500+</div>
-                  <div className="text-sm font-semibold">Happy Clients</div>
+              <Card className="bg-brand-orange text-white border-0">
+                <CardContent className="p-6 text-center">
+                  <div className="text-3xl font-black mb-1">500+</div>
+                  <div className="text-sm font-medium">Happy Clients</div>
                 </CardContent>
               </Card>
-              
-              <Card className="bg-brand-navy text-white">
-                <CardContent className="p-4 text-center">
-                  <div className="text-2xl font-black mb-1">98%</div>
-                  <div className="text-sm font-semibold">Success Rate</div>
+              <Card className="bg-brand-teal text-white border-0">
+                <CardContent className="p-6 text-center">
+                  <div className="text-3xl font-black mb-1">98%</div>
+                  <div className="text-sm font-medium">Success Rate</div>
                 </CardContent>
               </Card>
             </div>
-            
-            <Card className="border-2 border-brand-orange">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-brand-orange fill-current" />
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground italic">
-                  "This webinar completely changed my perspective on wealth building. I went from zero properties to owning three rental units in just 18 months!"
-                </p>
-                <p className="text-sm font-semibold mt-2">- Sarah M., Software Engineer</p>
-              </CardContent>
-            </Card>
+
+            {/* Testimonials */}
+            <div className="space-y-4">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="border-l-4 border-l-brand-orange">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3 mb-3">
+                      <Quote className="h-5 w-5 text-brand-orange flex-shrink-0 mt-1" />
+                      <p className="text-brand-gray italic">"{testimonial.content}"</p>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-brand-navy">{testimonial.name}</p>
+                        <p className="text-sm text-brand-gray">{testimonial.role}</p>
+                      </div>
+                      <div className="flex">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 text-brand-orange fill-current" />
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </div>

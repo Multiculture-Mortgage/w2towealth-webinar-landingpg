@@ -1,95 +1,112 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, DollarSign, Home, TrendingUp, Users, BookOpen } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { 
+  DollarSign, 
+  Home, 
+  TrendingUp, 
+  Users, 
+  BookOpen, 
+  Target,
+  PieChart,
+  Shield
+} from "lucide-react";
 
 const benefits = [
   {
-    icon: <DollarSign className="h-8 w-8 text-brand-orange" />,
-    title: "Create Multiple Income Streams",
-    description: "Learn proven strategies to generate passive income through real estate investments while keeping your W-2 job."
+    icon: <Target className="h-6 w-6" />,
+    title: "Strategic Property Selection",
+    description: "Learn our proven system for identifying high-ROI rental properties in emerging markets."
   },
   {
-    icon: <Home className="h-8 w-8 text-brand-orange" />,
-    title: "Real Estate Investment Mastery",
-    description: "Discover how to identify, analyze, and acquire profitable rental properties that build long-term wealth."
+    icon: <DollarSign className="h-6 w-6" />,
+    title: "Multiple Income Streams", 
+    description: "Create passive income through rentals while leveraging appreciation for long-term wealth."
   },
   {
-    icon: <TrendingUp className="h-8 w-8 text-brand-orange" />,
-    title: "Financial Growth Acceleration",
-    description: "Transform your salary into a wealth-building machine through strategic property investments and appreciation."
+    icon: <PieChart className="h-6 w-6" />,
+    title: "Portfolio Diversification",
+    description: "Build a balanced real estate portfolio that generates consistent monthly cash flow."
   },
   {
-    icon: <Users className="h-8 w-8 text-brand-orange" />,
+    icon: <Shield className="h-6 w-6" />,
+    title: "Risk Mitigation Strategies",
+    description: "Protect your investments with proper insurance, legal structures, and market analysis."
+  },
+  {
+    icon: <TrendingUp className="h-6 w-6" />,
+    title: "Wealth Acceleration",
+    description: "Use leverage and compound growth to build wealth faster than traditional investments."
+  },
+  {
+    icon: <Users className="h-6 w-6" />,
     title: "Expert Network Access",
-    description: "Connect with experienced investors, lenders, and real estate professionals who can accelerate your journey."
-  },
-  {
-    icon: <BookOpen className="h-8 w-8 text-brand-orange" />,
-    title: "Comprehensive Education",
-    description: "Get step-by-step guidance on financing, property management, tax strategies, and scaling your portfolio."
-  },
-  {
-    icon: <CheckCircle className="h-8 w-8 text-brand-orange" />,
-    title: "Proven Success Framework",
-    description: "Follow a tested system that has helped thousands transition from W-2 employees to successful investors."
+    description: "Connect with experienced investors, contractors, and real estate professionals."
   }
 ];
 
 const BenefitsSection = () => {
   return (
-    <section className="py-20 bg-gradient-section">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        {/* Section Header */}
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-black mb-6">
-            What You'll <span className="text-brand-orange">Discover</span>
+          <Badge className="bg-brand-teal text-white mb-4 px-4 py-2">
+            WEBINAR CURRICULUM
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-navy">
+            What You'll Master in 90 Minutes
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            This comprehensive webinar will equip you with the knowledge and strategies needed to build wealth through real estate, even while working full-time.
+          <p className="text-lg text-brand-gray max-w-2xl mx-auto">
+            A comprehensive roadmap to transform your W-2 salary into a 
+            wealth-building real estate investment strategy.
           </p>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {benefits.map((benefit, index) => (
-            <Card key={index} className="group hover:shadow-soft transition-all duration-300 hover:-translate-y-2">
-              <CardContent className="p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  {benefit.icon}
+            <Card key={index} className="border border-border hover:shadow-md transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-brand-orange text-white p-3 rounded-lg flex-shrink-0">
+                    {benefit.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-brand-navy mb-2">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-sm text-brand-gray leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-foreground">
-                  {benefit.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {benefit.description}
-                </p>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl p-8 shadow-strong max-w-2xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-black mb-4">
-              Ready to Transform Your <span className="text-brand-orange">Financial Future?</span>
+        {/* Bonus Section */}
+        <Card className="bg-gradient-subtle border-2 border-brand-orange">
+          <CardContent className="p-8 text-center">
+            <h3 className="text-2xl font-bold text-brand-navy mb-4">
+              🎁 Exclusive Bonus Materials
             </h3>
-            <p className="text-muted-foreground mb-6">
-              Join hundreds of professionals who are already building wealth through real estate investing.
-            </p>
-            <div className="flex items-center justify-center space-x-2 text-brand-teal font-semibold">
-              <CheckCircle className="h-5 w-5" />
-              <span>100% Free Webinar</span>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div>
+                <div className="text-brand-orange font-semibold mb-2">Property Analysis Toolkit</div>
+                <p className="text-sm text-brand-gray">Spreadsheets and calculators to evaluate deals</p>
+              </div>
+              <div>
+                <div className="text-brand-orange font-semibold mb-2">Market Research Guide</div>
+                <p className="text-sm text-brand-gray">Step-by-step area analysis methodology</p>
+              </div>
+              <div>
+                <div className="text-brand-orange font-semibold mb-2">Financing Checklist</div>
+                <p className="text-sm text-brand-gray">Complete guide to securing investment loans</p>
+              </div>
             </div>
-            <div className="flex items-center justify-center space-x-2 text-brand-teal font-semibold">
-              <CheckCircle className="h-5 w-5" />
-              <span>Live Q&A Session</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2 text-brand-teal font-semibold">
-              <CheckCircle className="h-5 w-5" />
-              <span>Exclusive Bonus Materials</span>
-            </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );

@@ -4,10 +4,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { Calendar, Clock, Users, AlertCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import ReCAPTCHA from 'react-google-recaptcha';
 import CountdownTimer from './CountdownTimer';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -108,7 +110,8 @@ const HeroSection = () => {
       // Here you would typically send the data to your backend
       // await submitRegistration({ ...formData, captchaToken });
       
-      alert("Registration successful! You'll receive a confirmation email shortly.");
+      // Navigate to friend invite page on successful registration
+      navigate('/friend-invite');
       
       // Reset form
       setFormData({ name: "", email: "", phone: "" });

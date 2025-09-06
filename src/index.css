@@ -8,9 +8,9 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Exact Ad Colors */
-    --brand-orange: 22 100% 60%;
-    --brand-orange-light: 22 100% 65%;
+    /* Exact Brand Colors */
+    --brand-orange: 37 98% 50%;
+    --brand-orange-light: 37 98% 60%;
     --brand-teal: 186 100% 30%;
     --brand-teal-light: 186 80% 40%;
     --brand-navy: 215 25% 27%;
@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 27%;
 
-    --primary: 22 100% 60%;
+    --primary: 37 98% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 14% 96%;
@@ -43,7 +43,7 @@ All colors MUST be HSL.
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 22 100% 60%;
+    --ring: 37 98% 50%;
 
     /* Modern Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(var(--brand-orange-light)));

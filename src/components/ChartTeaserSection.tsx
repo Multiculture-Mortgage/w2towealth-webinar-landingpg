@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 const ChartTeaserSection = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [nextQuestionIndex, setNextQuestionIndex] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const questions = [
@@ -35,13 +36,14 @@ const ChartTeaserSection = () => {
       setIsAnimating(true);
       
       setTimeout(() => {
-        setCurrentQuestionIndex((prev) => (prev + 1) % questions.length);
+        setCurrentQuestionIndex(nextQuestionIndex);
+        setNextQuestionIndex((nextQuestionIndex + 1) % questions.length);
         setIsAnimating(false);
-      }, 300); // Half of animation duration for smooth transition
+      }, 600); // Full animation duration
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [questions.length]);
+  }, [nextQuestionIndex, questions.length]);
 
   return (
     <section className="py-12 bg-gradient-to-r from-brand-orange/5 to-brand-teal/5 border-y border-border/20">
@@ -50,10 +52,11 @@ const ChartTeaserSection = () => {
           {/* Text Content */}
           <div className="lg:w-1/2 text-center lg:text-left">
             <div className="relative h-24 md:h-28 overflow-hidden">
+              {/* Current Question */}
               <div
                 className={`absolute inset-0 transition-all duration-600 ease-in-out ${
                   isAnimating
-                    ? 'opacity-0 transform -translate-y-8'
+                    ? 'opacity-0 transform -translate-y-full'
                     : 'opacity-100 transform translate-y-0'
                 }`}
               >
@@ -62,6 +65,22 @@ const ChartTeaserSection = () => {
                 </h3>
                 <p className="text-lg text-brand-orange font-semibold">
                   {questions[currentQuestionIndex].subtitle}
+                </p>
+              </div>
+              
+              {/* Next Question (slides up from bottom during animation) */}
+              <div
+                className={`absolute inset-0 transition-all duration-600 ease-in-out ${
+                  isAnimating
+                    ? 'opacity-100 transform translate-y-0'
+                    : 'opacity-0 transform translate-y-full'
+                }`}
+              >
+                <h3 className="text-3xl md:text-4xl font-black text-brand-navy mb-2 drop-shadow-md">
+                  {questions[nextQuestionIndex].title}
+                </h3>
+                <p className="text-lg text-brand-orange font-semibold">
+                  {questions[nextQuestionIndex].subtitle}
                 </p>
               </div>
             </div>

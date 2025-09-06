@@ -3,7 +3,7 @@ import { ExternalLink, BookOpen } from "lucide-react";
 
 const BookSection = () => {
   return (
-    <section className="relative py-8 px-0 overflow-hidden" style={{ backgroundColor: '#d9514b' }}>
+    <section className="relative py-8 px-0 overflow-hidden w-full" style={{ backgroundColor: '#d9514b' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -11,11 +11,11 @@ const BookSection = () => {
         }} />
       </div>
 
-      <div className="w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center h-full px-8 xl:px-16">
+      <div className="w-full h-full">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 h-full min-h-[400px] px-8 lg:px-16">
           {/* Book Image */}
-          <div className="relative flex justify-center lg:justify-end lg:pr-8">
-            <div className="relative z-10 w-full max-w-md lg:max-w-lg">
+          <div className="relative flex justify-center lg:justify-end flex-shrink-0 lg:w-1/2">
+            <div className="relative z-10 w-full max-w-sm lg:max-w-md">
               <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 <img 
@@ -33,7 +33,7 @@ const BookSection = () => {
           </div>
 
           {/* Content */}
-          <div className="space-y-6 flex flex-col justify-center w-full lg:pl-8">
+          <div className="space-y-6 flex flex-col justify-center w-full lg:w-1/2 flex-grow">
             <div className="space-y-3">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium">
                 <BookOpen className="w-4 h-4 mr-2" />

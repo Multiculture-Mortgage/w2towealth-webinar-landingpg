@@ -50,6 +50,24 @@ const HeroSection = () => {
     }
   };
 
+  const handleInputBlur = (field: string, value: string) => {
+    let error = "";
+    
+    switch (field) {
+      case 'name':
+        error = validateName(value);
+        break;
+      case 'email':
+        error = validateEmail(value);
+        break;
+      case 'phone':
+        error = validatePhone(value);
+        break;
+    }
+    
+    setErrors(prev => ({ ...prev, [field]: error }));
+  };
+
   const handleRegistration = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -212,6 +230,7 @@ const HeroSection = () => {
                       placeholder="Full Name"
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
+                      onBlur={(e) => handleInputBlur('name', e.target.value)}
                       className={`h-12 text-base ${errors.name ? 'border-red-500 focus:border-red-500' : ''}`}
                     />
                     {errors.name && (
@@ -229,6 +248,7 @@ const HeroSection = () => {
                       placeholder="Email Address"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
+                      onBlur={(e) => handleInputBlur('email', e.target.value)}
                       className={`h-12 text-base ${errors.email ? 'border-red-500 focus:border-red-500' : ''}`}
                     />
                     {errors.email && (
@@ -246,6 +266,7 @@ const HeroSection = () => {
                       placeholder="Phone Number"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
+                      onBlur={(e) => handleInputBlur('phone', e.target.value)}
                       className={`h-12 text-base ${errors.phone ? 'border-red-500 focus:border-red-500' : ''}`}
                     />
                     {errors.phone && (

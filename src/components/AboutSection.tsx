@@ -98,7 +98,7 @@ const AboutSection = () => {
           {/* Content */}
           <div className="order-1 lg:order-2">
             <Badge className="bg-brand-navy text-white mb-4 px-4 py-2">
-              YOUR EXPERT INSTRUCTORS
+              YOUR LICENSED WEBINAR HOSTS
             </Badge>
             
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-navy">
@@ -106,9 +106,8 @@ const AboutSection = () => {
             </h2>
             
             <p className="text-lg text-brand-gray mb-8 leading-relaxed">
-              As the founders of Multiculture Mortgage LLC, our team has personally helped 
-              hundreds of working professionals transition from traditional employment to building 
-              substantial wealth through strategic real estate investments.
+              As founders of Multiculture Mortgage LLC and active real estate developer-builders, Lavon and his wife Diana are positioned to personally help 
+              you and your family to leverage your employment to build wealth through strategic real estate ownership.
             </p>
 
             <div className="space-y-6 mb-8">
@@ -117,8 +116,8 @@ const AboutSection = () => {
                   <Award className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-brand-navy">15+ Years Experience</h4>
-                  <p className="text-brand-gray">Licensed mortgage professionals with extensive real estate investment expertise</p>
+                  <h4 className="font-bold text-brand-navy">5+ Years Licensed Mortgage Experience & 10+ years of Real Estate Ownership Experience</h4>
+                  <p className="text-brand-gray">A Licensed professional Real Estate power couple with in depth underwriting guideline knowledge, home buying, and home selling experience to get you to the closing table.</p>
                 </div>
               </div>
               
@@ -127,8 +126,8 @@ const AboutSection = () => {
                   <Users2 className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-brand-navy">500+ Successful Clients</h4>
-                  <p className="text-brand-gray">Guided professionals from first-time buyers to seasoned investors</p>
+                  <h4 className="font-bold text-brand-navy">Many Successful Client Closings</h4>
+                  <p className="text-brand-gray">Guided home owners from first-time buyers to seasoned investors</p>
                 </div>
               </div>
               
@@ -137,8 +136,8 @@ const AboutSection = () => {
                   <TrendingUp className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-brand-navy">$100M+ in Transactions</h4>
-                  <p className="text-brand-gray">Facilitated millions in real estate investments and wealth creation</p>
+                  <h4 className="font-bold text-brand-navy">$5M+ in Real Estate Investements Owned and Developed</h4>
+                  <p className="text-brand-gray">Facilitated millions in real estate development and home ownership creation</p>
                 </div>
               </div>
             </div>

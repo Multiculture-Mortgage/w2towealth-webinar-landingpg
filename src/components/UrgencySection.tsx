@@ -45,7 +45,7 @@ const UrgencySection = () => {
             </h2>
             
             <p className="text-xl md:text-2xl text-muted-foreground">
-              Its time to take action. We want to help you get there.
+              We all know life is short and no person is promised tomorrow but we don't always act like we know that. Its time to take action. We want to help you take the next steps.
             </p>
           </div>
         </div>

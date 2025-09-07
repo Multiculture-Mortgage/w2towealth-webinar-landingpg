@@ -34,7 +34,7 @@ const CountdownTimer = () => {
 
   return (
     <div className="flex flex-col sm:flex-row items-center gap-4 text-primary font-black">
-      <span className="text-base sm:text-lg text-muted-foreground font-bold">Time Left:</span>
+      <span className="text-base sm:text-lg text-muted-foreground font-bold uppercase">Time Left:</span>
       <div className="flex flex-wrap gap-2 justify-center">
         <span className="bg-primary/10 px-4 py-2 rounded-lg text-2xl font-black">
           {timeLeft.days.toString().padStart(2, '0')}D

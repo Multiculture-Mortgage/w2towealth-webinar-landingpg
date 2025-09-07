@@ -24,7 +24,7 @@ const BookSection = () => {
       </div>
 
       {/* Book Image - Absolute positioned */}
-      <div className="absolute left-1/2 md:left-4 top-4 md:top-1/2 transform -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2 z-10">
+      <div className="absolute left-1/2 md:left-4 top-24 md:top-1/2 transform -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2 z-10">
         <div className="relative w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] mb-8 md:mb-0">
           <div className="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-xl blur-lg"></div>
           <img 

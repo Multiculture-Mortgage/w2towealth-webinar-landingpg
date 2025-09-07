@@ -50,7 +50,7 @@ const ChartTeaserSection = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-8">
           {/* Text Content */}
-          <div className="w-full lg:w-1/2 text-center lg:text-left relative z-30 bg-white/80 lg:bg-transparent p-6 lg:p-0 rounded-xl lg:rounded-none shadow-lg lg:shadow-none mb-4 lg:mb-0">
+          <div className="w-full lg:w-1/2 text-center lg:text-left relative z-30 bg-transparent p-6 lg:p-0 rounded-xl rounded-none shadow-lg shadow-none mb-4 mb-0">
             <div className="relative h-32 md:h-36 lg:h-28 overflow-hidden">
               {/* Current Question - slides up and out */}
               <div

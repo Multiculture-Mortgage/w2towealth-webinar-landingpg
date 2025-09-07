@@ -25,7 +25,7 @@ const UrgencySection = () => {
                   </div>
                 </div>
               </DialogTrigger>
-              <DialogContent className="max-w-6xl w-full p-0" aria-describedby="lifespan-chart-description">
+              <DialogContent className="max-w-4xl w-full p-2" aria-describedby="lifespan-chart-description">
                 <div className="sr-only" id="lifespan-chart-description">
                   Full size view of the American life expectancy chart showing remaining years by current age
                 </div>

@@ -201,7 +201,7 @@ const BenefitsSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-16">
             Questions We'll Answer
           </h2>
-          <div className="relative h-[500px] w-full max-w-7xl mx-auto">
+          <div className="relative h-[500px] lg:h-[500px] md:h-[1200px] sm:h-[1200px] w-full max-w-7xl mx-auto">
             {/* Question bubbles */}
             {questions.map((question, index) => {
               const position = questionPositions[index];
@@ -233,7 +233,7 @@ const BenefitsSection = () => {
             
             {/* Overlay Image - Responsive positioning */}
             <div 
-              className="absolute top-[520px] left-1/2 transform -translate-x-1/2 md:top-0 md:left-auto md:right-[-480px] md:transform-none w-[640px] h-[768px] opacity-85 z-10"
+              className="absolute top-[520px] left-1/2 transform -translate-x-1/2 lg:top-0 lg:left-auto lg:right-[-480px] lg:transform-none w-[640px] h-[768px] opacity-85 z-10"
               style={{
                 backgroundImage: `url(/lovable-uploads/cbc109f7-c822-4ba1-9912-a4c9909a3c15.png)`,
                 backgroundSize: 'cover',
@@ -246,7 +246,7 @@ const BenefitsSection = () => {
         </div>
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 mt-16 lg:mt-0">
           <Badge className="bg-brand-teal text-white mb-4 px-4 py-2">
             WEBINAR AGENDA
           </Badge>

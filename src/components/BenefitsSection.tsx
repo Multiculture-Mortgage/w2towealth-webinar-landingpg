@@ -201,7 +201,7 @@ const BenefitsSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-16">
             Questions We'll Answer
           </h2>
-          <div className="relative h-[500px] lg:h-[500px] md:h-[1200px] sm:h-[1200px] w-full max-w-7xl mx-auto">
+          <div className="relative h-[500px] lg:h-[500px] md:h-[1400px] sm:h-[1400px] w-full max-w-7xl mx-auto mb-8 lg:mb-0">
             {/* Question bubbles */}
             {questions.map((question, index) => {
               const position = questionPositions[index];
@@ -246,7 +246,7 @@ const BenefitsSection = () => {
         </div>
 
         {/* Header */}
-        <div className="text-center mb-16 mt-32 lg:mt-0">
+        <div className="text-center mb-16">
           <Badge className="bg-brand-teal text-white mb-4 px-4 py-2">
             WEBINAR AGENDA
           </Badge>

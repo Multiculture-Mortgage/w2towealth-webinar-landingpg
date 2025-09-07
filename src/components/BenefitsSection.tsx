@@ -80,11 +80,12 @@ const BenefitsSection = () => {
         let isValidPosition = false;
         
         do {
-          // On mobile/tablet, keep questions in upper 70% to avoid image overlap
+          // On mobile/tablet, keep questions in upper area only
           const isMobile = window.innerWidth < 1024;
-          const maxTop = isMobile ? 50 : 70; // Reduced from 70% to 50% on mobile
-          const top = Math.random() * maxTop + 5; // 5-55% on mobile, 5-75% on desktop
-          const left = Math.random() * 70 + 5; // 5-75% from left for better spacing
+          const maxTop = isMobile ? 30 : 70; // Much smaller area on mobile - only top 30%
+          const maxLeft = isMobile ? 60 : 70; // Slightly smaller left area on mobile
+          const top = Math.random() * maxTop + 5; // 5-35% on mobile, 5-75% on desktop
+          const left = Math.random() * maxLeft + 5; // 5-65% on mobile, 5-75% on desktop
           const rotation = (Math.random() - 0.5) * 6; // -3 to 3 degrees
           
           // Estimated dimensions for collision detection (in percentage)
@@ -204,7 +205,7 @@ const BenefitsSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-12">
             Questions We'll Answer
           </h2>
-          <div className="relative h-[500px] lg:h-[500px] md:h-[600px] sm:h-[600px] w-full max-w-7xl mx-auto mb-8 lg:mb-0">
+          <div className="relative h-[300px] lg:h-[500px] md:h-[400px] sm:h-[350px] w-full max-w-7xl mx-auto mb-8 lg:mb-0">
             {/* Question bubbles */}
             {questions.map((question, index) => {
               const position = questionPositions[index];
@@ -236,7 +237,7 @@ const BenefitsSection = () => {
             
             {/* Overlay Image - Responsive positioning */}
             <div 
-              className="absolute top-[420px] left-1/2 transform -translate-x-1/2 lg:top-0 lg:left-auto lg:right-[-480px] lg:transform-none w-[640px] h-[768px] opacity-85 z-10"
+              className="absolute top-[220px] left-1/2 transform -translate-x-1/2 lg:top-0 lg:left-auto lg:right-[-480px] lg:transform-none w-[640px] h-[768px] opacity-85 z-5"
               style={{
                 backgroundImage: `url(/lovable-uploads/cbc109f7-c822-4ba1-9912-a4c9909a3c15.png)`,
                 backgroundSize: 'cover',
@@ -249,7 +250,7 @@ const BenefitsSection = () => {
         </div>
 
         {/* Header */}
-        <div className="text-center mb-16 mt-[800px] md:mt-[80px] lg:mt-0">
+        <div className="text-center mb-16 mt-[300px] md:mt-[200px] lg:mt-0">
           <Badge className="bg-brand-teal text-white mb-4 px-4 py-2">
             WEBINAR AGENDA
           </Badge>

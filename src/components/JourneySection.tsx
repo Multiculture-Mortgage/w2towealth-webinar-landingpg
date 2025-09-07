@@ -79,9 +79,10 @@ const JourneySection = () => {
 
       {/* Animated Card */}
       <div
-        className={`absolute left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 ${
+        className={`absolute transform transition-opacity duration-1000 ${
           isVisible ? 'opacity-100 animate-journey-card' : 'opacity-0'
         }`}
+        style={{ top: '45%', left: '50%' }}
       >
         <div className="bg-white rounded-lg shadow-2xl p-6 border-2 border-brand-orange transform-gpu">
           <div className="w-24 h-24 mx-auto mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-brand-orange to-brand-orange/80">

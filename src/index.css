@@ -156,30 +156,37 @@ All colors MUST be HSL.
 
   @keyframes journey-card {
     0% {
-      bottom: 20%;
+      top: 45%;
       left: 50%;
-      transform: translateX(-50%) scale(0.3) translateZ(0);
+      transform: translateX(-50%) translateY(-50%) scale(0.05);
       opacity: 0;
     }
-    15% {
+    10% {
+      opacity: 1;
+    }
+    25% {
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(0.15);
       opacity: 1;
     }
     50% {
-      bottom: 40%;
-      left: 50%;
-      transform: translateX(-50%) scale(0.8) translateZ(0);
+      top: 60%;
+      transform: translateX(-50%) translateY(-50%) scale(0.4);
       opacity: 1;
     }
-    85% {
-      bottom: 60%;
-      left: 50%;
-      transform: translateX(-50%) scale(1.2) translateZ(0);
+    75% {
+      top: 75%;
+      transform: translateX(-50%) translateY(-50%) scale(0.8);
+      opacity: 1;
+    }
+    90% {
+      top: 85%;
+      transform: translateX(-50%) translateY(-50%) scale(1.2);
       opacity: 1;
     }
     100% {
-      bottom: 80%;
-      left: 50%;
-      transform: translateX(-50%) scale(1.5) translateZ(0);
+      top: 95%;
+      transform: translateX(-50%) translateY(-50%) scale(1.8);
       opacity: 0;
     }
   }

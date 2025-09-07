@@ -184,7 +184,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div>
+          <div className="text-center lg:text-left">
             <Badge className="bg-brand-orange text-white mb-6 text-sm px-4 py-2">
               FREE WEBINAR - LIMITED SEATS
             </Badge>
@@ -205,21 +205,21 @@ const HeroSection = () => {
 
             {/* Event Details */}
             <div className="space-y-3 mb-8">
-              <div className="flex items-center text-brand-navy">
+              <div className="flex items-center justify-center lg:justify-start text-brand-navy">
                 <Calendar className="h-5 w-5 text-brand-orange mr-3" />
                 <span className="font-semibold">June 12th, 2025</span>
               </div>
-              <div className="flex items-center text-brand-navy">
+              <div className="flex items-center justify-center lg:justify-start text-brand-navy">
                 <Clock className="h-5 w-5 text-brand-orange mr-3" />
                 <span className="font-semibold">90 Minutes + Live Q&A</span>
               </div>
-              <div className="flex items-center text-brand-navy">
+              <div className="flex items-center justify-center lg:justify-start text-brand-navy">
                 <Users className="h-5 w-5 text-brand-orange mr-3" />
                 <span className="font-semibold">Limited to 500 Attendees</span>
               </div>
             </div>
 
-            <div className="mb-8">
+            <div className="mb-8 flex justify-center lg:justify-start">
               <img 
                 src="/lovable-uploads/f614d342-c143-429e-b200-dd7293cc6f2a.png" 
                 alt="More Doors = More Cashflow" 

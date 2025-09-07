@@ -50,13 +50,13 @@ const ChartTeaserSection = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-8">
           {/* Text Content */}
-          <div className="lg:w-1/2 text-center lg:text-left z-20 relative">
-            <div className="relative h-24 md:h-28 overflow-hidden">
+          <div className="w-full lg:w-1/2 text-center lg:text-left relative z-30 bg-white/80 lg:bg-transparent p-6 lg:p-0 rounded-xl lg:rounded-none shadow-lg lg:shadow-none mb-4 lg:mb-0">
+            <div className="relative h-32 md:h-36 lg:h-28 overflow-hidden">
               {/* Current Question - slides up and out */}
               <div
                 className={`absolute inset-0 ${isAnimating ? 'transition-all duration-1000 ease-out opacity-0 transform -translate-y-full' : 'opacity-100 transform translate-y-0'}`}
               >
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-brand-navy mb-2 drop-shadow-md">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-brand-navy mb-2 drop-shadow-md leading-tight">
                   {questions[currentQuestionIndex].title}
                 </h3>
                 <p className="text-base md:text-lg text-brand-orange font-semibold">
@@ -72,7 +72,7 @@ const ChartTeaserSection = () => {
                     animation: 'slide-up-fade-in 1000ms ease-in forwards'
                   }}
                 >
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-brand-navy mb-2 drop-shadow-md">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-brand-navy mb-2 drop-shadow-md leading-tight">
                     {questions[nextQuestionIndex].title}
                   </h3>
                   <p className="text-base md:text-lg text-brand-orange font-semibold">
@@ -84,7 +84,7 @@ const ChartTeaserSection = () => {
           </div>
           
           {/* Chart Image with Lightbox */}
-          <div className="lg:w-1/2 relative group z-10">
+          <div className="w-full lg:w-1/2 relative group z-10">
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
               <DialogTrigger asChild>
                 <div className="relative cursor-pointer">

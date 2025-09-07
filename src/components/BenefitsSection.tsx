@@ -197,7 +197,7 @@ const BenefitsSection = () => {
 
       <div className="container mx-auto px-6 relative z-10 pt-8">
         {/* Question Cloud */}
-        <div className="text-center mb-12 relative">
+        <div className="text-center mb-6 relative">
           <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-12">
             Questions We'll Answer
           </h2>

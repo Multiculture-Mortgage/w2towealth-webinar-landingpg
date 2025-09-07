@@ -231,9 +231,9 @@ const BenefitsSection = () => {
               );
             })}
             
-            {/* Overlay Image Below Question Cloud */}
+            {/* Overlay Image - Right Side Top */}
             <div 
-              className="absolute top-[400px] left-0 w-80 h-96 opacity-30 z-10"
+              className="absolute top-0 right-0 w-[640px] h-[768px] opacity-85 z-10"
               style={{
                 backgroundImage: `url(/lovable-uploads/cbc109f7-c822-4ba1-9912-a4c9909a3c15.png)`,
                 backgroundSize: 'cover',

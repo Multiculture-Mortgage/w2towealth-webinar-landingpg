@@ -17,7 +17,7 @@ const UrgencySection = () => {
                   <img 
                     src="/lovable-uploads/032d8af8-642f-4ffc-87ff-266f166e4346.png" 
                     alt="American Life Expectancy Chart - How long do Americans live and remaining years by age"
-                    className="w-3/4 h-48 md:h-64 object-cover object-center mx-auto rounded-lg shadow-sm mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity"
+                    className="w-3/4 h-40 md:h-52 object-cover object-top mx-auto rounded-lg shadow-sm mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity"
                   />
                   {/* Pulsing Magnifying Glass */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-[0_4px_12px_rgba(0,0,0,0.4)] animate-pulse">

@@ -33,41 +33,38 @@ const JourneySection = () => {
         </svg>
       </div>
 
-      {/* Road Container with Perspective */}
-      <div className="absolute inset-0 flex items-end justify-center" style={{ perspective: '1000px' }}>
-        <div 
-          className="relative w-full h-full"
-          style={{
-            transformStyle: 'preserve-3d',
-            transform: 'rotateX(60deg) translateY(50%)'
-          }}
+      {/* Road */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <svg 
+          viewBox="0 0 800 600" 
+          className="w-full h-full"
+          style={{ transform: 'perspective(800px) rotateX(45deg)' }}
         >
-          {/* Road */}
-          <div 
-            className="absolute bottom-0 left-1/2 bg-gray-800 opacity-80"
-            style={{
-              width: '8px',
-              height: '100vh',
-              transform: 'translateX(-50%) scaleY(4)',
-              transformOrigin: 'bottom',
-              background: 'linear-gradient(to top, #374151 0%, #374151 45%, transparent 100%)'
-            }}
+          {/* Road Surface */}
+          <path
+            d="M 400 50 
+               L 450 50
+               L 600 600
+               L 200 600
+               L 350 50
+               Z"
+            fill="#374151"
+            opacity="0.9"
           />
           
-          {/* Road Center Line */}
-          <div 
-            className="absolute bottom-0 left-1/2 bg-yellow-300 opacity-60"
-            style={{
-              width: '2px',
-              height: '100vh',
-              transform: 'translateX(-50%) scaleY(4)',
-              transformOrigin: 'bottom',
-              background: 'linear-gradient(to top, #fde047 0%, #fde047 45%, transparent 100%)',
-              backgroundSize: '2px 40px',
-              backgroundImage: 'repeating-linear-gradient(to top, #fde047 0px, #fde047 20px, transparent 20px, transparent 40px)'
-            }}
+          {/* Road Center Dashed Line */}
+          <path
+            d="M 400 50 L 400 600"
+            stroke="#fde047"
+            strokeWidth="4"
+            strokeDasharray="20 15"
+            opacity="0.8"
           />
-        </div>
+          
+          {/* Road Edges */}
+          <path d="M 350 50 L 200 600" stroke="#1f2937" strokeWidth="2" opacity="0.6" />
+          <path d="M 450 50 L 600 600" stroke="#1f2937" strokeWidth="2" opacity="0.6" />
+        </svg>
       </div>
 
       {/* Section Title */}

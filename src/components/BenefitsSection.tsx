@@ -80,7 +80,10 @@ const BenefitsSection = () => {
         let isValidPosition = false;
         
         do {
-          const top = Math.random() * 70 + 5; // 5-75% from top for better spacing
+          // On mobile/tablet, keep questions in upper 70% to avoid image overlap
+          const isMobile = window.innerWidth < 1024;
+          const maxTop = isMobile ? 50 : 70; // Reduced from 70% to 50% on mobile
+          const top = Math.random() * maxTop + 5; // 5-55% on mobile, 5-75% on desktop
           const left = Math.random() * 70 + 5; // 5-75% from left for better spacing
           const rotation = (Math.random() - 0.5) * 6; // -3 to 3 degrees
           

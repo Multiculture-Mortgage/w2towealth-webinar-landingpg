@@ -201,7 +201,7 @@ const BenefitsSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-12">
             Questions We'll Answer
           </h2>
-          <div className="relative h-[500px] lg:h-[500px] md:h-[1400px] sm:h-[1400px] w-full max-w-7xl mx-auto mb-8 lg:mb-0">
+          <div className="relative h-[500px] lg:h-[500px] md:h-[600px] sm:h-[600px] w-full max-w-7xl mx-auto mb-8 lg:mb-0">
             {/* Question bubbles */}
             {questions.map((question, index) => {
               const position = questionPositions[index];
@@ -212,7 +212,7 @@ const BenefitsSection = () => {
               return (
                 <div 
                   key={index}
-                  className={`absolute animate-fade-in transition-all duration-150 cursor-pointer group z-20 ${
+                  className={`absolute animate-fade-in transition-all duration-150 cursor-pointer group z-30 ${
                     isActive 
                       ? 'scale-110 animate-[float_1s_ease-in-out_infinite]' 
                       : 'hover:scale-110 hover:animate-[float_1s_ease-in-out_infinite]'
@@ -233,7 +233,7 @@ const BenefitsSection = () => {
             
             {/* Overlay Image - Responsive positioning */}
             <div 
-              className="absolute top-[520px] left-1/2 transform -translate-x-1/2 lg:top-0 lg:left-auto lg:right-[-480px] lg:transform-none w-[640px] h-[768px] opacity-85 z-10"
+              className="absolute top-[420px] left-1/2 transform -translate-x-1/2 lg:top-0 lg:left-auto lg:right-[-480px] lg:transform-none w-[640px] h-[768px] opacity-85 z-10"
               style={{
                 backgroundImage: `url(/lovable-uploads/cbc109f7-c822-4ba1-9912-a4c9909a3c15.png)`,
                 backgroundSize: 'cover',

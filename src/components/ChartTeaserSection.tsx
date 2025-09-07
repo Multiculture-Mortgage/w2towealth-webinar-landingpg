@@ -99,7 +99,10 @@ const ChartTeaserSection = () => {
                   </div>
                 </div>
               </DialogTrigger>
-              <DialogContent className="max-w-5xl w-full p-0">
+              <DialogContent className="max-w-5xl w-full p-0" aria-describedby="chart-description">
+                <div className="sr-only" id="chart-description">
+                  Full size view of the Owner Costs vs Rent comparison chart
+                </div>
                 <img 
                   src="/lovable-uploads/a2bf3a61-c911-4e09-93eb-630ab9dce576.png" 
                   alt="Owner Costs vs. Rent Chart - Full Size"

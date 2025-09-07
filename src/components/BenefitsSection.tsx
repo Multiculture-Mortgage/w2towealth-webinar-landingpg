@@ -216,7 +216,7 @@ const BenefitsSection = () => {
               return (
                 <div 
                   key={index}
-                  className={`absolute animate-fade-in transition-all duration-150 cursor-pointer group z-30 ${
+                  className={`absolute animate-fade-in transition-all duration-150 cursor-pointer group z-50 ${
                     isActive 
                       ? 'scale-110 animate-[float_1s_ease-in-out_infinite]' 
                       : 'hover:scale-110 hover:animate-[float_1s_ease-in-out_infinite]'

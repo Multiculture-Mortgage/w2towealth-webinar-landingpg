@@ -153,4 +153,34 @@ All colors MUST be HSL.
       opacity: 1;
     }
   }
+
+  @keyframes journey-card {
+    0% {
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%) scale(0.3) translateZ(0);
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    50% {
+      bottom: 40%;
+      left: 50%;
+      transform: translateX(-50%) scale(0.8) translateZ(0);
+      opacity: 1;
+    }
+    85% {
+      bottom: 60%;
+      left: 50%;
+      transform: translateX(-50%) scale(1.2) translateZ(0);
+      opacity: 1;
+    }
+    100% {
+      bottom: 80%;
+      left: 50%;
+      transform: translateX(-50%) scale(1.5) translateZ(0);
+      opacity: 0;
+    }
+  }
 }

@@ -246,7 +246,7 @@ const BenefitsSection = () => {
         </div>
 
         {/* Header */}
-        <div className="text-center mb-16 mt-96 lg:mt-0">
+        <div className="text-center mb-16 mt-[800px] lg:mt-0">
           <Badge className="bg-brand-teal text-white mb-4 px-4 py-2">
             WEBINAR AGENDA
           </Badge>

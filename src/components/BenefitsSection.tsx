@@ -242,8 +242,8 @@ const BenefitsSection = () => {
                 backgroundImage: `url(/lovable-uploads/cbc109f7-c822-4ba1-9912-a4c9909a3c15.png)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                maskImage: `radial-gradient(ellipse 70% 80% at center, black 30%, transparent 80%)`,
-                WebkitMaskImage: `radial-gradient(ellipse 70% 80% at center, black 30%, transparent 80%)`,
+                maskImage: `radial-gradient(ellipse 110% 100% at center, black 50%, transparent 60%)`,
+                WebkitMaskImage: `radial-gradient(ellipse 110% 100% at center, black 50%, transparent 60%)`,
               }}
             ></div>
           </div>

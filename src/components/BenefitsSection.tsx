@@ -230,6 +230,18 @@ const BenefitsSection = () => {
                 </div>
               );
             })}
+            
+            {/* Overlay Image Below Question Cloud */}
+            <div 
+              className="absolute top-[400px] left-0 w-80 h-96 opacity-30 z-10"
+              style={{
+                backgroundImage: `url(/lovable-uploads/cbc109f7-c822-4ba1-9912-a4c9909a3c15.png)`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                maskImage: `radial-gradient(ellipse 70% 80% at center, black 30%, transparent 80%)`,
+                WebkitMaskImage: `radial-gradient(ellipse 70% 80% at center, black 30%, transparent 80%)`,
+              }}
+            ></div>
           </div>
         </div>
 

@@ -7,7 +7,7 @@ const DevelopmentSection = () => {
             <img 
               src="/lovable-uploads/f614d342-c143-429e-b200-dd7293cc6f2a.png" 
               alt="More Doors = More Cashflow" 
-              className="h-24 w-auto mx-auto"
+              className="h-16 md:h-20 lg:h-24 w-auto mx-auto max-w-full"
             />
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

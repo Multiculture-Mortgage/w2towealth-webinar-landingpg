@@ -230,7 +230,7 @@ const HeroSection = () => {
 
           {/* Registration Card */}
           <div>
-            <Card className="shadow-xl border-0 bg-brand-teal/10 backdrop-blur-sm" id="signup-form">
+            <Card className="shadow-xl border-0 bg-brand-teal" id="signup-form">
               <CardHeader className="text-center pb-4">
                 <CardTitle className="text-2xl font-bold text-brand-navy">
                   Register For Our Next Webinar 

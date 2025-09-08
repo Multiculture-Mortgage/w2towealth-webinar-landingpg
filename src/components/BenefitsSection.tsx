@@ -8,45 +8,45 @@ import {
   BookOpen, 
   Target,
   PieChart,
-  Shield
+  Shield, FilePenLine
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const benefits = [
   {
     icon: <Target className="h-6 w-6" />,
-    title: "Strategic Property Selection",
-    description: "Learn our proven system for identifying high-ROI rental properties in emerging markets."
+    title: "What You Need To Qualify For A Home Loan",
+    description: "Also how two or more unit properties can be easier to qualify for. We will breakdown how your debt-to-income ratio works (DTI)."
   },
   {
-    icon: <DollarSign className="h-6 w-6" />,
-    title: "Multiple Income Streams", 
-    description: "Create passive income through rentals while leveraging appreciation for long-term wealth."
-  },
-  {
-    icon: <PieChart className="h-6 w-6" />,
-    title: "Portfolio Diversification",
-    description: "Build a balanced real estate portfolio that generates consistent monthly cash flow."
-  },
-  {
-    icon: <Shield className="h-6 w-6" />,
-    title: "Risk Mitigation Strategies",
-    description: "Protect your investments with proper insurance, legal structures, and market analysis."
-  },
-  {
-    icon: <TrendingUp className="h-6 w-6" />,
-    title: "Wealth Acceleration",
-    description: "Use leverage and compound growth to build wealth faster than traditional investments."
+    icon: <FilePenLine className="h-6 w-6" />,
+    title: "Your Mortgage Payment Breakdown",
+    description: "The make up of your mortgage payment and how the interest rate on your mortgage can be manipulated."
   },
   {
     icon: <Users className="h-6 w-6" />,
-    title: "Expert Network Access",
-    description: "Connect with experienced investors, contractors, and real estate professionals."
+    title: "The Home Purchase Process",
+    description: "The Pre-Approval process and how to determine your budget, How to search for home deals, what happens once you are under contract, and the loan closing process."
+  },
+  {
+    icon: <TrendingUp className="h-6 w-6" />,
+    title: "Forced Appreciation",
+    description: "Yes, you can force the value of your property to increase in value. We will cover what it is and how Forced Appreciation can put instant equity in your pocket from day one."
+  },
+  {
+    icon: <PieChart className="h-6 w-6" />,
+    title: "New Lending Rules",
+    description: "The rules have recently changed around low down payment mortgages for multi-unit and Accessory Dwelling Units (ADUs)."
+  },
+  {
+    icon: <DollarSign className="h-6 w-6" />,
+    title: "Homeownership By The Numbers",
+    description: "The actual benefits of homeownership from a wholistic viewpoint. We will show the raw numbers of owning vs renting over the last 17 year period."
   }
 ];
 
 const questions = [
-  "How much do I need to start?",
+  "How much do I need to put down?",
   "What about my credit score?",
   "Can I do this with a full-time job?",
   "How do I find good deals?",
@@ -54,7 +54,7 @@ const questions = [
   "Should I buy or build?",
   "How much cash flow is realistic?",
   "What about property management?",
-  "How do I qualify for loans?",
+  "Are there any down payment assistance programs available?",
   "Is house hacking right for me?"
 ];
 

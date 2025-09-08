@@ -189,8 +189,8 @@ const HeroSection = () => {
               FREE WEBINAR - LIMITED SEATS
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight font-montserrat drop-shadow-lg">
-              <span className="text-brand-navy font-extrabold">W2 TO</span>{" "}
+            <h1 className="text-6xl md:text-6xl font-black mb-6 leading-tight font-montserrat drop-shadow-lg">
+              <span className="text-brand-navy font-extrabold">W-2 TO</span>{" "}
               <span className="text-brand-orange font-extrabold">WEALTH</span>
               <br />
               <span className="text-brand-teal text-3xl md:text-4xl font-extrabold uppercase">
@@ -200,7 +200,7 @@ const HeroSection = () => {
             
             <p className="text-xl text-brand-gray mb-8 leading-relaxed">
               Turn your 9-to-5 income into <strong>real estate assets</strong> and build 
-              generational wealth through strategic property investments.
+              generational wealth through strategic homeownership.
             </p>
 
             {/* Event Details */}
@@ -211,11 +211,11 @@ const HeroSection = () => {
               </div>
               <div className="flex items-center justify-center lg:justify-start text-brand-navy">
                 <Clock className="h-5 w-5 text-brand-orange mr-3" />
-                <span className="font-semibold">90 Minutes + Live Q&A</span>
+                <span className="font-semibold">60 Minutes + Live Q&A</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start text-brand-navy">
                 <Users className="h-5 w-5 text-brand-orange mr-3" />
-                <span className="font-semibold">Limited to 500 Attendees</span>
+                <span className="font-semibold">Limited to 100 Attendees</span>
               </div>
             </div>
 
@@ -223,7 +223,7 @@ const HeroSection = () => {
               <img 
                 src="/lovable-uploads/f614d342-c143-429e-b200-dd7293cc6f2a.png" 
                 alt="More Doors = More Cashflow" 
-                className="h-12 w-auto"
+                className="h-14 w-auto"
               />
             </div>
           </div>
@@ -233,10 +233,11 @@ const HeroSection = () => {
             <Card className="shadow-xl border-0" id="signup-form">
               <CardHeader className="text-center pb-4">
                 <CardTitle className="text-2xl font-bold text-brand-navy">
-                  Reserve Your Spot Today
+                  Register For Our Next Webinar 
                 </CardTitle>
                 <p className="text-brand-gray">
-                  Join professionals already building wealth through real estate
+                  We will be breaking down the logic and math behind why homeownership in general is necessary and why we prefer 2-4 units for first time home buyers and investors alike. Start looking at home ownership as an investment or it can become a nightmare. <br/><br/>
+                  If you are already wealthy then this webinar may not be for you. This is for those that are looking to pull themselves up by their bootstraps!
                 </p>
               </CardHeader>
               <CardContent className="space-y-4">

@@ -12,7 +12,10 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: undefined,
+        manualChunks: {
+          // PostHog analytics
+          'posthog': ['posthog-js', 'posthog-js/react'],        
+        },
       },
     },
   },

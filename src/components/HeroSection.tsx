@@ -206,7 +206,7 @@ const HeroSection = () => {
             <div className="space-y-3 mb-8">
               <div className="flex items-center justify-center lg:justify-start text-brand-navy">
                 <Calendar className="h-5 w-5 text-brand-orange mr-3" />
-                <span className="font-semibold">June 12th, 2025</span>
+                <span className="font-semibold">June 17th, 2025, 6:00 PM CST</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start text-brand-navy">
                 <Clock className="h-5 w-5 text-brand-orange mr-3" />

@@ -117,7 +117,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-brand-navy">5+ Years Licensed Mortgage Experience & 10+ years of Real Estate Ownership Experience</h4>
-                  <p className="text-brand-gray">A Licensed professional Real Estate power couple with in depth underwriting guideline knowledge, home buying, and home selling experience to get you to the closing table.</p>
+                  <p className="text-brand-gray">Married Licensed Real Estate Professionals with a combined in depth knowledge of underwriting guidelines, the home buying process, and the home selling process to get you to the closing table.</p>
                 </div>
               </div>
               
@@ -127,7 +127,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-brand-navy">Many Successful Client Closings</h4>
-                  <p className="text-brand-gray">Guided home owners from first-time buyers to seasoned investors</p>
+                  <p className="text-brand-gray">Guided home owners from first-time buyers to investors</p>
                 </div>
               </div>
               

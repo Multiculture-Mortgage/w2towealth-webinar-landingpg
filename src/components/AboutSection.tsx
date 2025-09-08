@@ -97,7 +97,7 @@ const AboutSection = () => {
 
           {/* Content */}
           <div className="order-1 lg:order-2">
-            <Badge className="bg-brand-navy text-white mb-6 text-lg px-4 py-2">
+            <Badge className="bg-brand-navy text-white mb-6 text-lg sm:text-md px-4 py-2">
               YOUR LICENSED WEBINAR HOSTS
             </Badge>
             

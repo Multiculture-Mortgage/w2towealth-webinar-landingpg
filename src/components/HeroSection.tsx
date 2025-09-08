@@ -189,18 +189,17 @@ const HeroSection = () => {
               FREE WEBINAR - LIMITED SEATS
             </Badge>
             
-            <h1 className="text-6xl md:text-6xl font-black mb-6 leading-tight font-montserrat drop-shadow-lg">
-              <span className="text-brand-navy font-extrabold">W-2 TO</span>{" "}
-              <span className="text-brand-orange font-extrabold">WEALTH</span>
-              <br />
-              <span className="text-brand-teal text-3xl md:text-4xl font-extrabold uppercase">
+            <h1 className="font-black mb-6 leading-tight font-montserrat drop-shadow-lg">
+              <span className="text-brand-navy font-black text-7xl md:text-6xl">W-2 TO</span>{" "}
+              <span className="text-brand-orange font-black text-7xl md:text-6xl">WEALTH</span>
+              <br /><br />
+              <span className="text-brand-teal text-4xl md:text-4xl sm:text-4xl font-extrabold uppercase leading-[3rem]">
                 Building Wealth Through Home Ownership
               </span>
             </h1>
             
             <p className="text-xl text-brand-gray mb-8 leading-relaxed">
-              Turn your 9-to-5 income into <strong>real estate assets</strong> and build 
-              generational wealth through strategic homeownership.
+              Turn your 9-to-5 income into <strong>income generating real estate assets</strong> through strategic home ownership.
             </p>
 
             {/* Event Details */}
@@ -237,7 +236,7 @@ const HeroSection = () => {
                 </CardTitle>
                 <p className="text-brand-navy/80">
                   We will be breaking down the logic and math behind why homeownership in general is necessary and why we prefer 2-4 units for first time home buyers and investors alike. Start looking at home ownership as an investment or it can become a nightmare. <br/><br/>
-                  If you are already wealthy then this webinar may not be for you. This is for those that are looking to pull themselves up by their bootstraps!
+                  This is for those that are looking to pull themselves up by their bootstraps!
                 </p>
               </CardHeader>
               <CardContent className="space-y-4">

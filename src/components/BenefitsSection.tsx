@@ -251,7 +251,7 @@ const BenefitsSection = () => {
 
         {/* Header */}
         <div className="text-center mb-16 mt-[800px] md:mt-[650px] lg:mt-0">
-          <Badge className="bg-brand-teal text-white mb-4 px-4 py-2">
+          <Badge className="bg-brand-teal text-white mb-4 px-4 py-2 text-lg">
             WEBINAR AGENDA
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-navy">
@@ -285,8 +285,8 @@ const BenefitsSection = () => {
             </Card>
           ))}
         </div>
-
-        {/* Bonus Section */}
+ 
+        {/* Bonus Section 
         <Card className="bg-gradient-subtle border-2 border-brand-orange">
           <CardContent className="p-8 text-center">
             <h3 className="text-2xl font-bold text-brand-navy mb-4">
@@ -308,6 +308,7 @@ const BenefitsSection = () => {
             </div>
           </CardContent>
         </Card>
+        */}
       </div>
     </section>
   );

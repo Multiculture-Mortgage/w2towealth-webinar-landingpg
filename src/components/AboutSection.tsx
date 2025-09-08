@@ -97,7 +97,7 @@ const AboutSection = () => {
 
           {/* Content */}
           <div className="order-1 lg:order-2">
-            <Badge className="bg-brand-navy text-white mb-4 px-4 py-2">
+            <Badge className="bg-brand-navy text-white mb-6 text-lg px-4 py-2">
               YOUR LICENSED WEBINAR HOSTS
             </Badge>
             
@@ -142,7 +142,9 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <Button className="bg-gradient-primary text-white font-bold px-8 py-3">
+            <Button 
+              onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })} 
+              className="bg-gradient-primary text-white font-bold px-8 py-3">
               Secure Your Spot Now
             </Button>
           </div>

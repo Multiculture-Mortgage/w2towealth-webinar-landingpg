@@ -230,12 +230,12 @@ const HeroSection = () => {
 
           {/* Registration Card */}
           <div>
-            <Card className="shadow-xl border-0" id="signup-form">
+            <Card className="shadow-xl border-0 bg-brand-teal/10 backdrop-blur-sm" id="signup-form">
               <CardHeader className="text-center pb-4">
                 <CardTitle className="text-2xl font-bold text-brand-navy">
                   Register For Our Next Webinar 
                 </CardTitle>
-                <p className="text-brand-gray">
+                <p className="text-brand-navy/80">
                   We will be breaking down the logic and math behind why homeownership in general is necessary and why we prefer 2-4 units for first time home buyers and investors alike. Start looking at home ownership as an investment or it can become a nightmare. <br/><br/>
                   If you are already wealthy then this webinar may not be for you. This is for those that are looking to pull themselves up by their bootstraps!
                 </p>

@@ -33,7 +33,7 @@ const Footer = () => {
             <img 
               src={logoLight} 
               alt="Multiculture Mortgage LLC" 
-              className="h-14 mb-4 invert"
+              className="h-14 mb-4 brightness-0 invert"
             />
             <p className="text-white/80 text-sm leading-relaxed">
               Empowering professionals to build wealth through strategic 
@@ -96,7 +96,7 @@ const Footer = () => {
               <img
                 src={equalHousing}
                 alt="Equal Housing Opportunity"
-                className="h-14 mb-4 brightness-0"
+                className="h-14 mb-4 brightness-0 invert"
               />
               <img
                 src={narRealtors}

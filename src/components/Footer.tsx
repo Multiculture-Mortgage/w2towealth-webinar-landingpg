@@ -96,7 +96,7 @@ const Footer = () => {
               <img
                 src={equalHousing}
                 alt="Equal Housing Opportunity"
-                className="h-14 mb-4 brightness-0 invert"
+                className="h-14 mb-4 brightness-0"
               />
               <img
                 src={narRealtors}

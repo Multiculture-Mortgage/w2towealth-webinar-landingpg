@@ -89,7 +89,7 @@ const Footer = () => {
         <div className="border-t border-white/20 pt-8">
           <div className="grid md:grid-cols-3 gap-4 text-sm text-white/60">
             <div>
-              <p>&copy; 2025 Multiculture Mortgage LLC. All rights reserved.</p>
+              <p>Copyright &copy; 2025 Multiculture Mortgage LLC. All rights reserved.</p>
               <p className="mt-1">NMLS #2455872 | Equal Housing Opportunity</p>
             </div>
             <div className="flex flex-row gap-4 justify-left">

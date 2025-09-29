@@ -61,11 +61,7 @@ const HeroSection = ({ showChallenge = false }: HeroSectionProps) => {
               <span className="text-brand-orange font-black text-7xl md:text-6xl">WEALTH</span>
               <br /><br />
               <span className="text-brand-teal text-4xl md:text-4xl sm:text-4xl font-extrabold uppercase leading-[3rem]">
-<<<<<<< HEAD
-                Building Net-Worth Through Home Ownership
-=======
-                {showChallenge ? "5-Day Real Estate Challenge" : "Building Wealth Through Home Ownership"}
->>>>>>> d2083cfbf5fe456ed8f00ee0a114968e54e9a6d1
+                {showChallenge ? "5-Day Real Estate Challenge" : "Building Net-Worth Through Home Ownership"}
               </span>
             </h1>
             

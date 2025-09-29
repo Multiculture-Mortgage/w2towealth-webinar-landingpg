@@ -194,7 +194,7 @@ const HeroSection = () => {
               <span className="text-brand-orange font-black text-7xl md:text-6xl">WEALTH</span>
               <br /><br />
               <span className="text-brand-teal text-4xl md:text-4xl sm:text-4xl font-extrabold uppercase leading-[3rem]">
-                Building Wealth Through Home Ownership
+                Building Net-Worth Through Home Ownership
               </span>
             </h1>
             

@@ -2,12 +2,26 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, Users } from "lucide-react";
 import WebinarRegistrationForm from './WebinarRegistrationForm';
 import ChallengeRegistrationForm from './ChallengeRegistrationForm';
+import { format } from 'date-fns';
 
 interface HeroSectionProps {
   showChallenge?: boolean;
+  challengeDate?: string | null;
 }
 
-const HeroSection = ({ showChallenge = false }: HeroSectionProps) => {
+const HeroSection = ({ showChallenge = false, challengeDate }: HeroSectionProps) => {
+  const formatChallengeDate = (dateString: string) => {
+    try {
+      const date = new Date(dateString);
+      return format(date, "MMMM do, yyyy, h:mm a 'CST'");
+    } catch (error) {
+      return "June 17th, 2025, 6:00 PM CST";
+    }
+  };
+
+  const displayDate = showChallenge && challengeDate 
+    ? formatChallengeDate(challengeDate)
+    : "June 17th, 2025, 6:00 PM CST";
 
 
   return (
@@ -76,7 +90,7 @@ const HeroSection = ({ showChallenge = false }: HeroSectionProps) => {
             <div className="space-y-3 mb-8">
               <div className="flex items-center justify-center lg:justify-start text-brand-navy">
                 <Calendar className="h-5 w-5 text-brand-orange mr-3" />
-                <span className="font-semibold">June 17th, 2025, 6:00 PM CST</span>
+                <span className="font-semibold">{displayDate}</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start text-brand-navy">
                 <Clock className="h-5 w-5 text-brand-orange mr-3" />

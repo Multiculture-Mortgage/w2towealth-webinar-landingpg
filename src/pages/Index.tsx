@@ -17,17 +17,29 @@ interface WebinarData {
 const Index = () => {
   const [showChallenge, setShowChallenge] = useState(false);
   const [challengeDate, setChallengeDate] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchWebinarData = async (wid: string) => {
+      setIsLoading(true);
+      setError(null);
       try {
         const response = await fetch(`https://multiculturemortgage.com/wp-json/jet-cct/webinars/${wid}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch webinar data');
+        }
         const data: WebinarData = await response.json();
         if (data.challenge_date) {
           setChallengeDate(data.challenge_date);
+        } else {
+          setError('No challenge date available');
         }
       } catch (error) {
         console.error('Failed to fetch webinar data:', error);
+        setError('Unable to load challenge details. Please try again later.');
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -49,7 +61,12 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* <Header /> */}
-      <HeroSection showChallenge={showChallenge} challengeDate={challengeDate} />
+      <HeroSection 
+        showChallenge={showChallenge} 
+        challengeDate={challengeDate}
+        isLoading={isLoading}
+        error={error}
+      />
       <ChartTeaserSection />
       <BenefitsSection />
       <HomeownershipSection />

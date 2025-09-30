@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, Users } from "lucide-react";
+import { Calendar, Clock, Users, AlertCircle, Loader2 } from "lucide-react";
 import WebinarRegistrationForm from './WebinarRegistrationForm';
 import ChallengeRegistrationForm from './ChallengeRegistrationForm';
 import { format } from 'date-fns';
@@ -7,15 +7,17 @@ import { format } from 'date-fns';
 interface HeroSectionProps {
   showChallenge?: boolean;
   challengeDate?: string | null;
+  isLoading?: boolean;
+  error?: string | null;
 }
 
-const HeroSection = ({ showChallenge = false, challengeDate }: HeroSectionProps) => {
+const HeroSection = ({ showChallenge = false, challengeDate, isLoading = false, error = null }: HeroSectionProps) => {
   const formatChallengeDate = (dateString: string) => {
     try {
       const date = new Date(dateString);
       return format(date, "MMMM do, yyyy, h:mm a 'CST'");
     } catch (error) {
-      return "June 17th, 2025, 6:00 PM CST";
+      return null;
     }
   };
 
@@ -90,7 +92,19 @@ const HeroSection = ({ showChallenge = false, challengeDate }: HeroSectionProps)
             <div className="space-y-3 mb-8">
               <div className="flex items-center justify-center lg:justify-start text-brand-navy">
                 <Calendar className="h-5 w-5 text-brand-orange mr-3" />
-                <span className="font-semibold">{displayDate}</span>
+                {isLoading ? (
+                  <div className="flex items-center gap-2">
+                    <Loader2 className="h-4 w-4 animate-spin text-brand-orange" />
+                    <span className="font-semibold text-brand-gray">Loading event details...</span>
+                  </div>
+                ) : error ? (
+                  <div className="flex items-center gap-2">
+                    <AlertCircle className="h-4 w-4 text-brand-orange" />
+                    <span className="font-semibold text-brand-gray">{error}</span>
+                  </div>
+                ) : displayDate ? (
+                  <span className="font-semibold">{displayDate}</span>
+                ) : null}
               </div>
               <div className="flex items-center justify-center lg:justify-start text-brand-navy">
                 <Clock className="h-5 w-5 text-brand-orange mr-3" />

@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, Users, AlertCircle, Loader2 } from "lucide-react";
 import WebinarRegistrationForm from './WebinarRegistrationForm';
 import ChallengeRegistrationForm from './ChallengeRegistrationForm';
-import { format } from 'date-fns';
+import { format, addDays } from 'date-fns';
 
 interface HeroSectionProps {
   showChallenge?: boolean;
@@ -12,17 +12,20 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ showChallenge = false, challengeDate, isLoading = false, error = null }: HeroSectionProps) => {
-  const formatChallengeDate = (dateString: string) => {
+  const formatChallengeDateRange = (dateString: string) => {
     try {
-      const date = new Date(dateString);
-      return format(date, "MMMM do, yyyy, h:mm a 'CST'");
+      const startDate = new Date(dateString);
+      const endDate = addDays(startDate, 5);
+      const startFormatted = format(startDate, "MMMM do");
+      const endFormatted = format(endDate, "MMMM do, yyyy, h:mm a 'CST'");
+      return `${startFormatted} - ${endFormatted}`;
     } catch (error) {
       return null;
     }
   };
 
   const displayDate = showChallenge && challengeDate 
-    ? formatChallengeDate(challengeDate)
+    ? formatChallengeDateRange(challengeDate)
     : "June 17th, 2025, 6:00 PM CST";
 
 

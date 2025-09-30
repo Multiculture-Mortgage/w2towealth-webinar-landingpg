@@ -15,7 +15,7 @@ const HeroSection = ({ showChallenge = false, challengeDate, isLoading = false, 
   const formatChallengeDateRange = (dateString: string) => {
     try {
       const startDate = new Date(dateString);
-      const endDate = addDays(startDate, 5);
+      const endDate = addDays(startDate, 4);
       const startFormatted = format(startDate, "MMMM do");
       const endFormatted = format(endDate, "MMMM do, yyyy, h:mm a 'CST'");
       return `${startFormatted} - ${endFormatted}`;

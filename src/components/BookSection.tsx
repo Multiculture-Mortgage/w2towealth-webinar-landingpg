@@ -8,10 +8,10 @@ const BookSection = () => {
       <div className="relative z-30">
         <div className="bg-gradient-to-r from-transparent via-yellow-400 to-transparent text-center py-3 px-4">
           <h3 className="text-xl md:text-2xl font-bold text-black">
-            🎉 **BOOKS WILL BE RAFFLED OFF** 🎉
+            🎉 **All ATTENDEES WILL GET A DIGITAL COPY** 🎉
           </h3>
           <p className="text-xs text-black/70 mt-1">
-            **to attendees that stay until the end.
+            VIP ticket holders will get a signed copy in the mail.
           </p>
         </div>
       </div>

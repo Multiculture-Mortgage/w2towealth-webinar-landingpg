@@ -127,7 +127,7 @@ const ChallengeRegistrationForm = () => {
       }
     });
 
-    const checkoutUrl = `https://multiculturemortgage.com/checkouts/webinar-checkout/?${checkoutParams.toString()}`;
+    const checkoutUrl = `https://multiculturemortgage.com/checkouts/w2towealth5day-challenge/?${checkoutParams.toString()}`;
 
     // Redirect to checkout page
     window.location.href = checkoutUrl;

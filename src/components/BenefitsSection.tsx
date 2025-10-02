@@ -89,6 +89,9 @@ const BenefitsSection = ({ showChallenge = false }: BenefitsSectionProps) => {
   }>>([]);
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
 
+  // Filter benefits - show only first 6 for webinar, all 9 for challenge
+  const displayedBenefits = showChallenge ? benefits : benefits.slice(0, 6);
+
   useEffect(() => {
     const generateRandomPositions = () => {
       const positions = [];
@@ -285,7 +288,7 @@ const BenefitsSection = ({ showChallenge = false }: BenefitsSectionProps) => {
 
         {/* Benefits Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {benefits.map((benefit, index) => (
+          {displayedBenefits.map((benefit, index) => (
             <Card key={index} className="border border-border hover:shadow-md transition-shadow duration-300">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">

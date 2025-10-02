@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import FriendInvite from "./pages/FriendInvite";
 import NotFound from "./pages/NotFound";
+import { useEffect } from "react";
+import ReactPixel from "react-facebook-pixel";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,6 +19,15 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
+  useEffect(() => {
+    // Initialize Facebook Pixel
+    ReactPixel.init('1498530354084781', undefined, {
+      autoConfig: true,
+      debug: false,
+    });
+    ReactPixel.pageView();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

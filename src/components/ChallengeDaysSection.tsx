@@ -49,14 +49,22 @@ const ChallengeDaysSection = ({ showChallenge }: ChallengeDaysSectionProps) => {
           {days.map((day) => (
             <div 
               key={day.day}
-              className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow flex items-start gap-6"
             >
-              <h3 className="text-xl md:text-2xl font-arvo font-bold mb-3">
-                Day {day.day} - {day.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {day.description}
-              </p>
+              {/* Day Number Graphic */}
+              <div className="flex-shrink-0 w-20 h-20 rounded-full bg-gradient-to-br from-brand-orange to-brand-orange/70 flex items-center justify-center shadow-lg">
+                <span className="text-4xl font-black text-white">{day.day}</span>
+              </div>
+              
+              {/* Content */}
+              <div className="flex-1">
+                <h3 className="text-xl md:text-2xl font-arvo font-bold mb-3">
+                  Day {day.day} - {day.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {day.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

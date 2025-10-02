@@ -2,8 +2,16 @@ import logoLight from "@/assets/MCM Horizontal Logo.png";
 import equalHousing from "@/assets/equal-housing-logowhite-250.png";
 import narRealtors from "@/assets/nar_membership_cmyk_R.png";
 import { Button } from "@/components/ui/button";
+import EventDetails from "@/components/EventDetails";
 
-const Footer = () => {
+interface FooterProps {
+  showChallenge?: boolean;
+  displayDate?: string | null;
+  isLoading?: boolean;
+  error?: string | null;
+}
+
+const Footer = ({ showChallenge = false, displayDate, isLoading = false, error = null }: FooterProps) => {
   return (
     <footer className="bg-black text-white py-12 relative overflow-hidden">
       {/* Background Texture */}
@@ -41,15 +49,18 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Webinar Info */}
+          {/* Event Info */}
           <div>
-            <h4 className="font-bold mb-4 text-brand-orange">Webinar Details</h4>
-            <ul className="space-y-2 text-sm text-white/80">
-              <li>📅 June 17th, 2025, 6:00 PM CST</li>
-              <li>⏱️ 60 minutes + Q&A</li>
-              <li>💻 Live Online Event</li>
-              <li>🎯 Limited to 100 seats</li>
-            </ul>
+            <h4 className="font-bold mb-4 text-brand-orange">
+              {showChallenge ? "Challenge Details" : "Webinar Details"}
+            </h4>
+            <EventDetails 
+              showChallenge={showChallenge}
+              displayDate={displayDate}
+              isLoading={isLoading}
+              error={error}
+              variant="footer"
+            />
           </div>
 
           {/* What You'll Learn

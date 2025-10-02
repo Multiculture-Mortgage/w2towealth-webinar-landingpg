@@ -76,14 +76,19 @@ const Index = () => {
         error={error}
       />
       <ChartTeaserSection />
-      <BenefitsSection />
-      <HomeownershipSection />
+      <BenefitsSection showChallenge={showChallenge} />
+      <HomeownershipSection showChallenge={showChallenge} />
       <ChallengeDaysSection showChallenge={showChallenge} />
       <DevelopmentSection />
       <UrgencySection />
       <AboutSection />
       <BookSection />
-      <Footer />
+      <Footer 
+        showChallenge={showChallenge}
+        displayDate={challengeDate}
+        isLoading={isLoading}
+        error={error}
+      />
     </div>
   );
 };

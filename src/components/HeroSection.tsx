@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, Users, AlertCircle, Loader2 } from "lucide-react";
 import WebinarRegistrationForm from './WebinarRegistrationForm';
 import ChallengeRegistrationForm from './ChallengeRegistrationForm';
+import EventDetails from './EventDetails';
 import { format, addDays } from 'date-fns';
 
 interface HeroSectionProps {
@@ -92,32 +92,13 @@ const HeroSection = ({ showChallenge = false, challengeDate, isLoading = false, 
             </p>
 
             {/* Event Details */}
-            <div className="space-y-3 mb-8">
-              <div className="flex items-center justify-center lg:justify-start text-brand-navy">
-                <Calendar className="h-5 w-5 text-brand-orange mr-3" />
-                {isLoading ? (
-                  <div className="flex items-center gap-2">
-                    <Loader2 className="h-4 w-4 animate-spin text-brand-orange" />
-                    <span className="font-semibold text-brand-gray">Loading event details...</span>
-                  </div>
-                ) : error ? (
-                  <div className="flex items-center gap-2">
-                    <AlertCircle className="h-4 w-4 text-brand-orange" />
-                    <span className="font-semibold text-brand-gray">{error}</span>
-                  </div>
-                ) : displayDate ? (
-                  <span className="font-semibold">{displayDate}</span>
-                ) : null}
-              </div>
-              <div className="flex items-center justify-center lg:justify-start text-brand-navy">
-                <Clock className="h-5 w-5 text-brand-orange mr-3" />
-                <span className="font-semibold">60 Minutes + Live Q&A</span>
-              </div>
-              <div className="flex items-center justify-center lg:justify-start text-brand-navy">
-                <Users className="h-5 w-5 text-brand-orange mr-3" />
-                <span className="font-semibold">Limited to 100 Attendees</span>
-              </div>
-            </div>
+            <EventDetails 
+              showChallenge={showChallenge}
+              displayDate={displayDate}
+              isLoading={isLoading}
+              error={error}
+              variant="hero"
+            />
 
             <div className="mb-8 flex justify-center lg:justify-start">
               <img 

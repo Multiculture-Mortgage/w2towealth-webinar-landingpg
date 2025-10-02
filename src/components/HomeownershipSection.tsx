@@ -2,7 +2,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Quote, Home, TrendingUp } from "lucide-react";
 
-const HomeownershipSection = () => {
+interface HomeownershipSectionProps {
+  showChallenge?: boolean;
+}
+
+const HomeownershipSection = ({ showChallenge = false }: HomeownershipSectionProps) => {
   return (
     <section className="py-20 bg-brand-orange text-white relative overflow-hidden">
       {/* Curved Top Separator */}
@@ -89,7 +93,7 @@ const HomeownershipSection = () => {
               onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white text-brand-orange hover:bg-white/90 font-bold px-8 py-4 text-lg"
             >
-              Join The Webinar Now
+              {showChallenge ? "Join The Challenge" : "Join The Webinar Now"}
             </Button>
           </div>
         </div>

@@ -12,6 +12,10 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
+interface BenefitsSectionProps {
+  showChallenge?: boolean;
+}
+
 const benefits = [
   {
     icon: <Target className="h-6 w-6" />,
@@ -58,7 +62,7 @@ const questions = [
   "Is house hacking right for me?"
 ];
 
-const BenefitsSection = () => {
+const BenefitsSection = ({ showChallenge = false }: BenefitsSectionProps) => {
   const [questionPositions, setQuestionPositions] = useState<Array<{
     top: string;
     left: string;
@@ -252,10 +256,10 @@ const BenefitsSection = () => {
         {/* Header */}
         <div className="text-center mb-16 mt-[800px] md:mt-[650px] lg:mt-0">
           <Badge className="bg-brand-teal text-white mb-4 px-4 py-2 text-lg">
-            WEBINAR AGENDA
+            {showChallenge ? "CHALLENGE AGENDA" : "WEBINAR AGENDA"}
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-navy">
-            What You'll Learn in 60 Minutes
+            {showChallenge ? "What You'll Learn Across 5 Days" : "What You'll Learn in 60 Minutes"}
           </h2>
           <p className="text-lg text-brand-gray max-w-2xl mx-auto">
             A comprehensive roadmap to transform your W-2 salary into 

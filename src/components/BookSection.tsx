@@ -37,60 +37,63 @@ const BookSection = () => {
 
       {/* Content Area - Takes remaining space */}
       <div className="relative z-20 pt-4 md:pt-0 md:ml-80 lg:ml-96 xl:ml-[36rem] px-4 md:mr-4 flex items-center min-h-[450px] md:min-h-[400px]">
-        <div className="flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-6 lg:gap-8 w-full mt-80 md:mt-0">
+        <div className="flex flex-col items-center gap-6 w-full mt-80 md:mt-0 max-w-3xl mx-auto md:mx-0">
           
-          {/* Title Section */}
-          <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg w-full max-w-sm md:w-2/5 lg:w-1/2 text-center mx-auto md:mx-0">
-            <div className="inline-flex items-center px-2 py-1 rounded-full bg-red-100 text-red-600 text-xs font-medium mb-2">
-              <BookOpen className="w-3 h-3 mr-1" />
-              New Release
-            </div>
-            <h2 className="text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-arvo font-bold leading-tight" style={{ color: '#E7907D' }}>
-              House Hacking
-            </h2>
-            <h3 className="text-xl md:text-lg lg:text-xl xl:text-2xl font-arvo font-bold leading-tight" style={{ color: '#2D4350' }}>
-              The American Dream
-            </h3>
-            <p className="text-base md:text-sm lg:text-base font-roboto-condensed leading-relaxed" style={{ color: '#2D4350' }}>
-              Maximizing Cash Flow In An Unaffordable America
-            </p>
-          </div>
-
-          {/* Description and Actions */}
-          <div className="w-full max-w-lg md:max-w-none md:w-3/5 lg:w-1/2 space-y-4 text-center md:text-left mx-auto md:mx-0 px-2 md:px-0">
-            <p className="text-white/90 leading-relaxed">
-              Discover the proven strategies to maximize cash flow in an unaffordable America. 
-              Learn how to build wealth through smart real estate investing and achieve financial freedom.
-            </p>
-            
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span className="px-2 py-1 bg-white/20 text-white rounded-full text-xs font-medium">
-                Real Estate Strategy
-              </span>
-              <span className="px-2 py-1 bg-white/20 text-white rounded-full text-xs font-medium">
-                Cash Flow Maximization
-              </span>
-              <span className="px-2 py-1 bg-white/20 text-white rounded-full text-xs font-medium">
-                Investment Guide
-              </span>
-            </div>
-
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-              <Button 
-                size="lg" 
-                className="group bg-yellow-500 hover:bg-yellow-600 text-black"
-                onClick={() => window.open('https://hhtadbook.com/', '_blank', 'noopener,noreferrer')}
-              >
-                Get Your Copy Now
-                <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
-
-            <div className="pt-3 border-t border-white/20">
-              <p className="text-sm text-white/80">
-                "A comprehensive guide that breaks down complex real estate strategies into actionable steps." 
-                <span className="block mt-1 font-medium text-white">- Real Estate Professional</span>
+          {/* Combined Section - Stacked Layout */}
+          <div className="w-full space-y-6">
+            {/* Title Section */}
+            <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg w-full max-w-md mx-auto text-center">
+              <div className="inline-flex items-center px-2 py-1 rounded-full bg-red-100 text-red-600 text-xs font-medium mb-2">
+                <BookOpen className="w-3 h-3 mr-1" />
+                New Release
+              </div>
+              <h2 className="text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-arvo font-bold leading-tight" style={{ color: '#E7907D' }}>
+                House Hacking
+              </h2>
+              <h3 className="text-xl md:text-lg lg:text-xl xl:text-2xl font-arvo font-bold leading-tight" style={{ color: '#2D4350' }}>
+                The American Dream
+              </h3>
+              <p className="text-base md:text-sm lg:text-base font-roboto-condensed leading-relaxed" style={{ color: '#2D4350' }}>
+                Maximizing Cash Flow In An Unaffordable America
               </p>
+            </div>
+
+            {/* Description and Actions */}
+            <div className="w-full space-y-4 text-center md:text-left">
+              <p className="text-white/90 leading-relaxed">
+                Discover the proven strategies to maximize cash flow in an unaffordable America. 
+                Learn how to build wealth through smart real estate investing and achieve financial freedom.
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
+                <span className="px-2 py-1 bg-white/20 text-white rounded-full text-xs font-medium">
+                  Real Estate Strategy
+                </span>
+                <span className="px-2 py-1 bg-white/20 text-white rounded-full text-xs font-medium">
+                  Cash Flow Maximization
+                </span>
+                <span className="px-2 py-1 bg-white/20 text-white rounded-full text-xs font-medium">
+                  Investment Guide
+                </span>
+              </div>
+
+              <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                <Button 
+                  size="lg" 
+                  className="group bg-yellow-500 hover:bg-yellow-600 text-black"
+                  onClick={() => window.open('https://hhtadbook.com/', '_blank', 'noopener,noreferrer')}
+                >
+                  Get Your Copy Now
+                  <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+
+              <div className="pt-3 border-t border-white/20">
+                <p className="text-sm text-white/80">
+                  "A comprehensive guide that breaks down complex real estate strategies into actionable steps." 
+                  <span className="block mt-1 font-medium text-white">- Real Estate Professional</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -36,11 +36,11 @@ const BookSection = () => {
       </div>
 
       {/* Content Area - Takes remaining space */}
-      <div className="relative z-20 pt-4 md:pt-0 md:ml-80 lg:ml-96 xl:ml-[36rem] px-4 md:mr-4 flex items-center justify-center min-h-[450px] md:min-h-[400px]">
-        <div className="flex flex-col items-center gap-6 w-full mt-80 md:mt-0 max-w-3xl mx-auto">
+      <div className="relative z-20 pt-4 md:pt-0 md:ml-80 lg:ml-96 xl:ml-[36rem] px-4 md:px-8 md:mr-8 flex items-center justify-center min-h-[450px] md:min-h-[400px]">
+        <div className="flex flex-col items-center gap-6 w-full mt-80 md:mt-0 max-w-full mx-auto">
           
           {/* Combined Section - Horizontal Layout */}
-          <div className="w-full flex flex-col md:flex-row gap-6 items-center md:items-start">
+          <div className="w-full flex flex-col md:flex-row gap-6 items-center md:items-center justify-center">
             {/* Title Section */}
             <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg w-full max-w-md md:min-w-[480px] flex-shrink-0 text-center transition-transform duration-300 hover:scale-105 cursor-pointer">
               <div className="inline-flex items-center px-2 py-1 rounded-full bg-red-100 text-red-600 text-xs font-medium mb-2">

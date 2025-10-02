@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { AlertCircle, Calendar, Clock, Users, Share2 } from "lucide-react";
+import { AlertCircle, Calendar, Clock, Users, Share2, StarIcon } from "lucide-react";
 import CountdownTimer from "@/components/CountdownTimer";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -125,15 +125,21 @@ const FriendInvite = ({ showChallenge, displayDate, isLoading, error }: FriendIn
               </p>
 
               {/* Event Reminder */}
-              <div className="flex justify-center items-center space-x-8 mb-8 text-brand-navy">
-                <div className="flex items-center">
-                  <Calendar className="h-5 w-5 text-brand-orange mr-2" />
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center justify-center text-brand-navy">
+                  <Calendar className="h-5 w-5 text-brand-orange mr-3" />
                   <span className="font-semibold">{displayDate || "June 17th, 2025, 6:00 PM CST"}</span>
                 </div>
-                <div className="flex items-center">
-                  <Clock className="h-5 w-5 text-brand-orange mr-2" />
+                <div className="flex items-center justify-center text-brand-navy">
+                  <Clock className="h-5 w-5 text-brand-orange mr-3" />
                   <span className="font-semibold">{showChallenge ? "60 Minutes With Us Each Day" : "60 Minutes + Q&A"}</span>
                 </div>
+                {showChallenge && (
+                  <div className="flex items-center justify-center text-brand-navy">
+                    <StarIcon className="h-5 w-5 text-brand-orange mr-3" />
+                    <span className="font-semibold">Get VIP For An Extra Hour of Q&A Coaching</span>
+                  </div>
+                )}
               </div>
             </div>
 

@@ -5,10 +5,11 @@ import {
   Home, 
   TrendingUp, 
   Users, 
-  BookOpen, 
+  BookOpen,
+  BookOpenCheck,
   Target,
   PieChart,
-  Shield, FilePenLine
+  Shield, FilePenLine, HardHat, Rocket
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -20,7 +21,7 @@ const benefits = [
   {
     icon: <Target className="h-6 w-6" />,
     title: "What You Need To Qualify For A Home Loan",
-    description: "Also how two or more unit properties can be easier to qualify for. We will breakdown how your debt-to-income ratio works (DTI)."
+    description: "Also, how two or more unit properties can be easier to qualify for. We will break down how your debt-to-income ratio works (DTI)."
   },
   {
     icon: <FilePenLine className="h-6 w-6" />,
@@ -30,7 +31,7 @@ const benefits = [
   {
     icon: <Users className="h-6 w-6" />,
     title: "The Home Purchase Process",
-    description: "The Pre-Approval process and how to determine your budget, How to search for home deals, what happens once you are under contract, and the loan closing process."
+    description: "The Pre-Approval process and how to determine your budget, how to search for home deals, what happens once you are under contract, and the loan closing process."
   },
   {
     icon: <TrendingUp className="h-6 w-6" />,
@@ -45,7 +46,22 @@ const benefits = [
   {
     icon: <DollarSign className="h-6 w-6" />,
     title: "Homeownership By The Numbers",
-    description: "The actual benefits of homeownership from a wholistic viewpoint. We will show the raw numbers of owning vs renting over the last 17 year period."
+    description: "The actual benefits of homeownership from a holistic viewpoint. We will show the raw numbers of owning vs renting over the last 17 year period."
+  },
+  {
+    icon: <HardHat className="h-6 w-6" />,
+    title: "We Explain How To Get Up To 30% Off Retail Homes",
+    description: "If you are willing to be patient and follow the process, we can show you how to get homes for up to 30% off of what retail homes sell on the market for."
+  },
+  {
+    icon: <BookOpenCheck className="h-6 w-6" />,
+    title: "Learn The IRS Rule To Wipe Out Your Yearly Tax Liability",
+    description: "If you meet specific IRS rules, you are allowed to use real estate to zero out your tax liability on paper. This will allow you to keep more money in your monthly paycheck."
+  },
+  {
+    icon: <Rocket className="h-6 w-6" />,
+    title: "Accelerate Your Retirement Account Balance",
+    description: "There is a way to accelerate the growth of the funds in your retirement account without lifting a finger. You get to stay focused on your day-to-day job."
   }
 ];
 

@@ -10,6 +10,7 @@ import AboutSection from "@/components/AboutSection";
 import BookSection from "@/components/BookSection";
 import ChallengeDaysSection from "@/components/ChallengeDaysSection";
 import Footer from "@/components/Footer";
+import DebugToggle from "@/components/DebugToggle";
 
 interface WebinarData {
   challenge_date: string;
@@ -20,6 +21,7 @@ const Index = () => {
   const [challengeDate, setChallengeDate] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [debugMode, setDebugMode] = useState(false);
 
   useEffect(() => {
     const fetchWebinarData = async (wid: string) => {
@@ -49,7 +51,7 @@ const Index = () => {
     const pgParam = urlParams.get('pg');
     const widParam = urlParams.get('wid');
     
-    if (pgParam === 'chlg') {
+    if (pgParam === 'chlg' || debugMode) {
       setShowChallenge(true);
       if (widParam) {
         fetchWebinarData(widParam);
@@ -57,12 +59,17 @@ const Index = () => {
     } else {
       setShowChallenge(false);
     }
-  }, []);
+  }, [debugMode]);
+
+  const handleDebugToggle = (isChallenge: boolean) => {
+    setDebugMode(isChallenge);
+  };
 
   return (
     <div className="min-h-screen">
+      <DebugToggle onToggle={handleDebugToggle} />
       {/* <Header /> */}
-      <HeroSection 
+      <HeroSection
         showChallenge={showChallenge} 
         challengeDate={challengeDate}
         isLoading={isLoading}

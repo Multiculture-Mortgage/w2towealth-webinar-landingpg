@@ -82,8 +82,44 @@ const ChallengeRegistrationForm = () => {
     const firstName = nameParts[0] || '';
     const lastName = nameParts.slice(1).join(' ') || '';
 
+    // Helper function to get cookie value
+    const getCookie = (name: string): string | null => {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
+      return null;
+    };
+
+    // Get Facebook cookies
+    const fbp = getCookie('_fbp');
+    const fbc = getCookie('_fbc');
+
+    // Get current URL parameters
+    const currentUrl = new URL(window.location.href);
+    const currentParams = new URLSearchParams(currentUrl.search);
+
     // Construct checkout URL with form data
-    const checkoutUrl = `https://multiculturemortgage.com/checkouts/webinar-checkout/?aero-add-to-checkout=${productId}&aero-qty=1&billing_email=${encodeURIComponent(formData.email)}&billing_first_name=${encodeURIComponent(firstName)}&billing_last_name=${encodeURIComponent(lastName)}&billing_phone=${encodeURIComponent(formData.phone)}`;
+    const checkoutParams = new URLSearchParams({
+      'aero-add-to-checkout': productId,
+      'aero-qty': '1',
+      'billing_email': formData.email,
+      'billing_first_name': firstName,
+      'billing_last_name': lastName,
+      'billing_phone': formData.phone,
+    });
+
+    // Add Facebook cookies if they exist
+    if (fbp) checkoutParams.set('_fbp', fbp);
+    if (fbc) checkoutParams.set('_fbc', fbc);
+
+    // Add any current URL parameters
+    currentParams.forEach((value, key) => {
+      if (!checkoutParams.has(key)) {
+        checkoutParams.set(key, value);
+      }
+    });
+
+    const checkoutUrl = `https://multiculturemortgage.com/checkouts/webinar-checkout/?${checkoutParams.toString()}`;
 
     // Redirect to checkout page
     window.location.href = checkoutUrl;

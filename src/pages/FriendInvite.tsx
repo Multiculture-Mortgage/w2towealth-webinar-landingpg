@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { AlertCircle, Calendar, Clock, Users, Share2, StarIcon } from "lucide-react";
+import { AlertCircle, Calendar, Clock, Users, Share2, StarIcon, Loader2 } from "lucide-react";
 import CountdownTimer from "@/components/CountdownTimer";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -128,7 +128,19 @@ const FriendInvite = ({ showChallenge, displayDate, isLoading, error }: FriendIn
               <div className="space-y-3 mb-8">
                 <div className="flex items-center justify-center text-brand-navy">
                   <Calendar className="h-5 w-5 text-brand-orange mr-3" />
-                  <span className="font-semibold">{displayDate || "June 17th, 2025, 6:00 PM CST"}</span>
+                  {isLoading ? (
+                    <div className="flex items-center gap-2">
+                      <Loader2 className="h-4 w-4 animate-spin text-brand-orange" />
+                      <span className="font-semibold text-brand-gray">Loading event details...</span>
+                    </div>
+                  ) : error ? (
+                    <div className="flex items-center gap-2">
+                      <AlertCircle className="h-4 w-4 text-brand-orange" />
+                      <span className="font-semibold text-brand-gray">{error}</span>
+                    </div>
+                  ) : (
+                    <span className="font-semibold">{displayDate || "June 17th, 2025, 6:00 PM CST"}</span>
+                  )}
                 </div>
                 <div className="flex items-center justify-center text-brand-navy">
                   <Clock className="h-5 w-5 text-brand-orange mr-3" />

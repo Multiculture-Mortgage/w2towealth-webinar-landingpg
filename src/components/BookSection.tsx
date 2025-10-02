@@ -42,7 +42,7 @@ const BookSection = () => {
           {/* Combined Section - Horizontal Layout */}
           <div className="w-full flex flex-col md:flex-row gap-6 items-center md:items-start">
             {/* Title Section */}
-            <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg w-full max-w-md md:max-w-xs flex-shrink-0 text-center transition-transform duration-300 hover:scale-105 cursor-pointer">
+            <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg w-full max-w-md md:min-w-[480px] flex-shrink-0 text-center transition-transform duration-300 hover:scale-105 cursor-pointer">
               <div className="inline-flex items-center px-2 py-1 rounded-full bg-red-100 text-red-600 text-xs font-medium mb-2">
                 <BookOpen className="w-3 h-3 mr-1" />
                 New Release

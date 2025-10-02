@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
 import { AlertCircle } from "lucide-react";
+import ReactPixel from "react-facebook-pixel";
 
 const ChallengeRegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -76,6 +77,15 @@ const ChallengeRegistrationForm = () => {
 
     // Determine product ID based on ticket type
     const productId = formData.ticketType === "vip" ? "5771" : "5770";
+    const ticketValue = formData.ticketType === "vip" ? 97 : 47;
+    
+    // Track Facebook AddToCart event
+    ReactPixel.track('AddToCart', {
+      content_ids: [productId],
+      content_type: 'product',
+      value: ticketValue,
+      currency: 'USD'
+    });
     
     // Split name into first and last name
     const nameParts = formData.name.trim().split(' ');

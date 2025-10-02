@@ -36,8 +36,8 @@ const BookSection = () => {
       </div>
 
       {/* Content Area - Takes remaining space */}
-      <div className="relative z-20 pt-4 md:pt-0 md:ml-80 lg:ml-96 xl:ml-[36rem] px-4 md:mr-4 flex items-center min-h-[450px] md:min-h-[400px]">
-        <div className="flex flex-col items-center gap-6 w-full mt-80 md:mt-0 max-w-3xl mx-auto md:mx-0">
+      <div className="relative z-20 pt-4 md:pt-0 md:ml-80 lg:ml-96 xl:ml-[36rem] px-4 md:mr-4 flex items-center justify-center min-h-[450px] md:min-h-[400px]">
+        <div className="flex flex-col items-center gap-6 w-full mt-80 md:mt-0 max-w-3xl mx-auto">
           
           {/* Combined Section - Stacked Layout */}
           <div className="w-full space-y-6">

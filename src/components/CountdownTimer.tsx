@@ -14,12 +14,13 @@ const CountdownTimer = ({ compact = false, targetDate }: CountdownTimerProps) =>
   });
 
   useEffect(() => {
-    // Use provided target date or default to 7 days from now
-    const target = targetDate ? new Date(targetDate) : (() => {
-      const date = new Date();
-      date.setDate(date.getDate() + 7);
-      return date;
-    })();
+    // Only start countdown when targetDate is provided
+    if (!targetDate) {
+      setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      return;
+    }
+
+    const target = new Date(targetDate);
     
     const timer = setInterval(() => {
       const now = new Date().getTime();

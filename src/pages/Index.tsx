@@ -8,6 +8,7 @@ import DevelopmentSection from "@/components/DevelopmentSection";
 import UrgencySection from "@/components/UrgencySection";
 import AboutSection from "@/components/AboutSection";
 import BookSection from "@/components/BookSection";
+import ChallengeDaysSection from "@/components/ChallengeDaysSection";
 import Footer from "@/components/Footer";
 
 interface WebinarData {
@@ -70,6 +71,7 @@ const Index = () => {
       <ChartTeaserSection />
       <BenefitsSection />
       <HomeownershipSection />
+      <ChallengeDaysSection showChallenge={showChallenge} />
       <DevelopmentSection />
       <UrgencySection />
       <AboutSection />

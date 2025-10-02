@@ -6,13 +6,12 @@ interface DebugToggleProps {
 }
 
 const DebugToggle = ({ onToggle }: DebugToggleProps) => {
+  // Check production status immediately to prevent flash
+  const isProduction = window.location.hostname.includes('multiculturemortgage.com');
   const [isChallenge, setIsChallenge] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible] = useState(!isProduction);
 
   useEffect(() => {
-    // Hide in production (multiculturemortgage.com domain)
-    const isProduction = window.location.hostname.includes('multiculturemortgage.com');
-    setIsVisible(!isProduction);
 
     if (!isProduction) {
       // Load from localStorage

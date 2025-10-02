@@ -2,31 +2,15 @@ import { Badge } from "@/components/ui/badge";
 import WebinarRegistrationForm from './WebinarRegistrationForm';
 import ChallengeRegistrationForm from './ChallengeRegistrationForm';
 import EventDetails from './EventDetails';
-import { format, addDays } from 'date-fns';
 
 interface HeroSectionProps {
   showChallenge?: boolean;
-  challengeDate?: string | null;
+  displayDate?: string | null;
   isLoading?: boolean;
   error?: string | null;
 }
 
-const HeroSection = ({ showChallenge = false, challengeDate, isLoading = false, error = null }: HeroSectionProps) => {
-  const formatChallengeDateRange = (dateString: string) => {
-    try {
-      const startDate = new Date(dateString);
-      const endDate = addDays(startDate, 4);
-      const startFormatted = format(startDate, "MMMM do");
-      const endFormatted = format(endDate, "MMMM do, yyyy, h:mm a 'CST'");
-      return `${startFormatted} - ${endFormatted}`;
-    } catch (error) {
-      return null;
-    }
-  };
-
-  const displayDate = showChallenge && challengeDate 
-    ? formatChallengeDateRange(challengeDate)
-    : "June 17th, 2025, 6:00 PM CST";
+const HeroSection = ({ showChallenge = false, displayDate, isLoading = false, error = null }: HeroSectionProps) => {
 
 
   return (

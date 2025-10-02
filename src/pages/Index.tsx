@@ -11,6 +11,7 @@ import BookSection from "@/components/BookSection";
 import ChallengeDaysSection from "@/components/ChallengeDaysSection";
 import Footer from "@/components/Footer";
 import DebugToggle from "@/components/DebugToggle";
+import { format, addDays } from 'date-fns';
 
 interface WebinarData {
   challenge_date: string;
@@ -22,6 +23,22 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [debugMode, setDebugMode] = useState(false);
+
+  const formatChallengeDateRange = (dateString: string) => {
+    try {
+      const startDate = new Date(dateString);
+      const endDate = addDays(startDate, 4);
+      const startFormatted = format(startDate, "MMMM do");
+      const endFormatted = format(endDate, "MMMM do, yyyy, h:mm a 'CST'");
+      return `${startFormatted} - ${endFormatted}`;
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const displayDate = showChallenge && challengeDate 
+    ? formatChallengeDateRange(challengeDate)
+    : "June 17th, 2025, 6:00 PM CST";
 
   useEffect(() => {
     const fetchWebinarData = async (wid: string) => {
@@ -71,7 +88,7 @@ const Index = () => {
       {/* <Header /> */}
       <HeroSection
         showChallenge={showChallenge} 
-        challengeDate={challengeDate}
+        displayDate={displayDate}
         isLoading={isLoading}
         error={error}
       />
@@ -85,7 +102,7 @@ const Index = () => {
       <BookSection />
       <Footer 
         showChallenge={showChallenge}
-        displayDate={challengeDate}
+        displayDate={displayDate}
         isLoading={isLoading}
         error={error}
       />

@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import DebugToggle from "@/components/DebugToggle";
 import { useEffect } from "react";
 import ReactPixel from "react-facebook-pixel";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,6 +19,20 @@ const queryClient = new QueryClient({
     },
   },
 });
+
+const RedirectHandler = () => {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const redirect = searchParams.get('redirect');
+    if (redirect) {
+      navigate(redirect, { replace: true });
+    }
+  }, [searchParams, navigate]);
+
+  return null;
+};
 
 const App = () => {
   useEffect(() => {
@@ -35,6 +50,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <RedirectHandler />
           <DebugToggle onToggle={() => {}} />
           <Routes>
             <Route path="/" element={<Index />} />

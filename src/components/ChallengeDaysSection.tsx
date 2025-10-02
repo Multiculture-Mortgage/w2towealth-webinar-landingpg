@@ -9,27 +9,27 @@ const ChallengeDaysSection = ({ showChallenge }: ChallengeDaysSectionProps) => {
     {
       day: 1,
       title: "Foundation & Mindset",
-      description: "Learn the fundamental principles of house hacking and develop the mindset needed to succeed in real estate investing. We'll cover the basics of cash flow analysis and how to identify profitable opportunities."
+      description: "Learn the fundamental principles of house hacking and develop the mindset needed to succeed in real estate investing. Discover your 'Why?'. Why is this so important..."
     },
     {
       day: 2,
       title: "Property Analysis & Selection",
-      description: "Master the art of analyzing properties and selecting the right investment. Discover how to calculate returns, assess neighborhoods, and identify properties with the highest potential for cash flow and appreciation."
+      description: "Master the art of analyzing properties and selecting the right investment. Discover how to identify areas with the highest potential for cash flow and appreciation."
     },
     {
       day: 3,
       title: "Financing Strategies",
-      description: "Explore various financing options and strategies to acquire your first property. Learn about conventional loans, FHA loans, and creative financing techniques that can help you get started with minimal capital."
+      description: "Explore various financing options and strategies to acquire your first property. Learn about conventional renovation loans, FHA 203K loans, and creative financing techniques that can help you get started with minimal capital."
     },
     {
       day: 4,
       title: "Property Management & Tenant Relations",
-      description: "Understand the essentials of property management and building positive tenant relationships. We'll cover screening tenants, setting rent prices, handling maintenance, and creating systems for efficient management."
+      description: "Understand the essentials of property management and building positive tenant relationships. Putting systems in place will help facilitate efficient management."
     },
     {
       day: 5,
       title: "Scaling & Long-Term Wealth Building",
-      description: "Develop your roadmap for scaling your real estate portfolio and building long-term wealth. Learn strategies for acquiring multiple properties, leveraging equity, and creating sustainable passive income streams."
+      description: "Develop your roadmap for scaling your real estate portfolio and building long-term wealth. Learn strategies for acquiring multiple properties, accelerating your retirement account, and creating sustainable passive income streams that will lead to your future financial freedom!"
     }
   ];
 

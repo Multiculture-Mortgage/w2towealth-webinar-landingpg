@@ -65,12 +65,16 @@ const EventDetails = ({
       </div>
       <div className="flex items-center justify-center lg:justify-start text-brand-navy">
         <Clock className="h-5 w-5 text-brand-orange mr-3" />
-        <span className="font-semibold">60 Minutes With Us Each Day<br /></span>
+        <span className="font-semibold">
+          {showChallenge ? "60 Minutes With Us Each Day" : "60 Minutes + Q&A"}
+        </span>
       </div>
-      <div className="flex items-center justify-center lg:justify-start text-brand-navy">
-        <StarIcon className="h-5 w-5 text-brand-orange mr-3" />
-        <span className="font-semibold">Get VIP For An Extra Hour of Q&A Coaching</span>
-      </div>
+      {showChallenge && (
+        <div className="flex items-center justify-center lg:justify-start text-brand-navy">
+          <StarIcon className="h-5 w-5 text-brand-orange mr-3" />
+          <span className="font-semibold">Get VIP For An Extra Hour of Q&A Coaching</span>
+        </div>
+      )}
       <div className="flex items-center justify-center lg:justify-start text-brand-navy">
         <Users className="h-5 w-5 text-brand-orange mr-3" />
         <span className="font-semibold">Limited to 100 Attendees</span>

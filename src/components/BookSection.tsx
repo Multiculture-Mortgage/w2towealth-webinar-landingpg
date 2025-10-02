@@ -1,18 +1,35 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, BookOpen } from "lucide-react";
 
-const BookSection = () => {
+interface BookSectionProps {
+  showChallenge?: boolean;
+}
+
+const BookSection = ({ showChallenge }: BookSectionProps) => {
   return (
     <section className="relative py-8 overflow-hidden w-full min-h-[300px]" style={{ backgroundColor: '#d9514b' }}>
       {/* Book Raffle Banner */}
       <div className="relative z-30">
         <div className="bg-gradient-to-r from-transparent via-yellow-400 to-transparent text-center py-3 px-4">
-          <h3 className="text-xl md:text-2xl font-bold text-black">
-            🎉 **All ATTENDEES WILL GET A DIGITAL PDF COPY** 🎉
-          </h3>
-          <p className="text-xs text-black/70 mt-1">
-            🌟 VIP ticket holders will get a signed physical book copy in the mail & the digital PDF + audiobook.
-          </p>
+          {showChallenge ? (
+            <>
+              <h3 className="text-xl md:text-2xl font-bold text-black">
+                🎉 **All ATTENDEES WILL GET A DIGITAL PDF COPY** 🎉
+              </h3>
+              <p className="text-xs text-black/70 mt-1">
+                🌟 VIP ticket holders will get a signed physical book copy in the mail & the digital PDF + audiobook.
+              </p>
+            </>
+          ) : (
+            <>
+              <h3 className="text-xl md:text-2xl font-bold text-black">
+                **BOOKS WILL BE RAFFLED OFF**
+              </h3>
+              <p className="text-xs text-black/70 mt-1">
+                **To those that stay until the end of the presentation.
+              </p>
+            </>
+          )}
         </div>
       </div>
 

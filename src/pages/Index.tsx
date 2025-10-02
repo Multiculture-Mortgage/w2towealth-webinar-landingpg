@@ -87,8 +87,8 @@ const Index = () => {
       <DevelopmentSection />
       <UrgencySection />
       <AboutSection />
-      <BookSection />
-      <Footer 
+      <BookSection showChallenge={showChallenge} />
+      <Footer
         showChallenge={showChallenge}
         displayDate={displayDate}
         isLoading={isLoading}

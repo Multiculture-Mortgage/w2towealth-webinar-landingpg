@@ -8,7 +8,14 @@ import CountdownTimer from "@/components/CountdownTimer";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const FriendInvite = () => {
+interface FriendInviteProps {
+  showChallenge: boolean;
+  displayDate: string | null;
+  isLoading: boolean;
+  error: string | null;
+}
+
+const FriendInvite = ({ showChallenge, displayDate, isLoading, error }: FriendInviteProps) => {
   const [formData, setFormData] = useState({
     friendName: "",
     friendEmail: "",
@@ -275,7 +282,12 @@ const FriendInvite = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer 
+        showChallenge={showChallenge}
+        displayDate={displayDate}
+        isLoading={isLoading}
+        error={error}
+      />
     </div>
   );
 };

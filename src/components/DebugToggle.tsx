@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface DebugToggleProps {
   onToggle: (isChallenge: boolean) => void;
@@ -52,14 +53,28 @@ const DebugToggle = ({ onToggle }: DebugToggleProps) => {
             {isChallenge ? 'Challenge View Active' : 'Webinar View Active'}
           </span>
         </div>
-        <Button
-          onClick={handleToggle}
-          size="sm"
-          variant={isChallenge ? "default" : "outline"}
-          className="text-xs"
-        >
-          {isChallenge ? 'Switch to Webinar' : 'Switch to Challenge'}
-        </Button>
+        <div className="flex items-center gap-2">
+          <Link 
+            to="/" 
+            className="bg-green-600 text-white px-3 py-1 rounded text-xs font-bold hover:bg-green-700 transition-colors"
+          >
+            Home
+          </Link>
+          <Link 
+            to="/friend-invite" 
+            className="bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold hover:bg-blue-700 transition-colors"
+          >
+            Friend Invite
+          </Link>
+          <Button
+            onClick={handleToggle}
+            size="sm"
+            variant={isChallenge ? "default" : "outline"}
+            className="text-xs"
+          >
+            {isChallenge ? 'Switch to Webinar' : 'Switch to Challenge'}
+          </Button>
+        </div>
       </div>
     </div>
   );

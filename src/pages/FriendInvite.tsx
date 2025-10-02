@@ -269,7 +269,7 @@ const FriendInvite = ({ showChallenge, displayDate, isLoading, error }: FriendIn
                     <h3 className="text-xl font-bold text-brand-navy mb-4">
                       {showChallenge ? "Challenge Starts In:" : "Webinar Starts In:"}
                     </h3>
-                    <CountdownTimer compact />
+                    <CountdownTimer compact targetDate={displayDate} />
                   </CardContent>
                 </Card>
 

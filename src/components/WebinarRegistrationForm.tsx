@@ -8,7 +8,11 @@ import { useNavigate } from "react-router-dom";
 import CountdownTimer from './CountdownTimer';
 import { getTurnstileSiteKey } from '@/config/turnstile';
 
-const WebinarRegistrationForm = () => {
+interface WebinarRegistrationFormProps {
+  displayDate?: string | null;
+}
+
+const WebinarRegistrationForm = ({ displayDate }: WebinarRegistrationFormProps) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -228,7 +232,7 @@ const WebinarRegistrationForm = () => {
         </form>
 
         <div className="flex justify-center py-4">
-          <CountdownTimer />
+          <CountdownTimer targetDate={displayDate} />
         </div>
         
         <div className="text-center space-y-2">

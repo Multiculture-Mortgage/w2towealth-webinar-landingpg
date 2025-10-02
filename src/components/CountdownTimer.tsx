@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const CountdownTimer = ({ compact = false }: { compact?: boolean }) => {
+interface CountdownTimerProps {
+  compact?: boolean;
+  targetDate?: string | null;
+}
+
+const CountdownTimer = ({ compact = false, targetDate }: CountdownTimerProps) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -9,13 +14,16 @@ const CountdownTimer = ({ compact = false }: { compact?: boolean }) => {
   });
 
   useEffect(() => {
-    // Set target date - you can modify this to your desired date
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 7); // 7 days from now
+    // Use provided target date or default to 7 days from now
+    const target = targetDate ? new Date(targetDate) : (() => {
+      const date = new Date();
+      date.setDate(date.getDate() + 7);
+      return date;
+    })();
     
     const timer = setInterval(() => {
       const now = new Date().getTime();
-      const distance = targetDate.getTime() - now;
+      const distance = target.getTime() - now;
 
       if (distance > 0) {
         setTimeLeft({
@@ -30,7 +38,7 @@ const CountdownTimer = ({ compact = false }: { compact?: boolean }) => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
 
   return (
     <div className={`flex ${compact ? 'flex-col sm:flex-row' : 'flex-col sm:flex-row'} items-center gap-${compact ? '2' : '4'} text-primary font-black`}>

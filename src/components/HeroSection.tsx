@@ -95,7 +95,7 @@ const HeroSection = ({ showChallenge = false, displayDate, isLoading = false, er
 
           {/* Registration Card */}
           <div>
-            {showChallenge ? <ChallengeRegistrationForm /> : <WebinarRegistrationForm />}
+            {showChallenge ? <ChallengeRegistrationForm /> : <WebinarRegistrationForm displayDate={displayDate} />}
           </div>
         </div>
       </div>

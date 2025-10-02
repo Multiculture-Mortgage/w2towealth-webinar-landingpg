@@ -29,6 +29,16 @@ const DebugToggle = ({ onToggle }: DebugToggleProps) => {
     const newState = !isChallenge;
     setIsChallenge(newState);
     localStorage.setItem('debug_challenge_mode', String(newState));
+    
+    // Update URL parameters
+    const url = new URL(window.location.href);
+    if (newState) {
+      url.searchParams.set('pg', 'chlg');
+    } else {
+      url.searchParams.delete('pg');
+    }
+    window.history.pushState({}, '', url.toString());
+    
     onToggle(newState);
   };
 

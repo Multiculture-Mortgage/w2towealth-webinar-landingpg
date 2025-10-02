@@ -9,10 +9,10 @@ import CountdownTimer from './CountdownTimer';
 import { getTurnstileSiteKey } from '@/config/turnstile';
 
 interface WebinarRegistrationFormProps {
-  displayDate?: string | null;
+  challengeDate?: string | null;
 }
 
-const WebinarRegistrationForm = ({ displayDate }: WebinarRegistrationFormProps) => {
+const WebinarRegistrationForm = ({ challengeDate }: WebinarRegistrationFormProps) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -232,7 +232,7 @@ const WebinarRegistrationForm = ({ displayDate }: WebinarRegistrationFormProps) 
         </form>
 
         <div className="flex justify-center py-4">
-          <CountdownTimer targetDate={displayDate} />
+          <CountdownTimer targetDate={challengeDate} />
         </div>
         
         <div className="text-center space-y-2">

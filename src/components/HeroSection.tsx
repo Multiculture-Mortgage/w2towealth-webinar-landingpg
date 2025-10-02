@@ -6,11 +6,12 @@ import EventDetails from './EventDetails';
 interface HeroSectionProps {
   showChallenge?: boolean;
   displayDate?: string | null;
+  challengeDate?: string | null;
   isLoading?: boolean;
   error?: string | null;
 }
 
-const HeroSection = ({ showChallenge = false, displayDate, isLoading = false, error = null }: HeroSectionProps) => {
+const HeroSection = ({ showChallenge = false, displayDate, challengeDate, isLoading = false, error = null }: HeroSectionProps) => {
 
 
   return (
@@ -95,7 +96,7 @@ const HeroSection = ({ showChallenge = false, displayDate, isLoading = false, er
 
           {/* Registration Card */}
           <div>
-            {showChallenge ? <ChallengeRegistrationForm /> : <WebinarRegistrationForm displayDate={displayDate} />}
+            {showChallenge ? <ChallengeRegistrationForm /> : <WebinarRegistrationForm challengeDate={challengeDate} />}
           </div>
         </div>
       </div>

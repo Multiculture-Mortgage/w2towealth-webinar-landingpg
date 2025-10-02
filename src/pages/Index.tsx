@@ -13,11 +13,12 @@ import Footer from "@/components/Footer";
 interface IndexProps {
   showChallenge: boolean;
   displayDate: string | null;
+  challengeDate: string | null;
   isLoading: boolean;
   error: string | null;
 }
 
-const Index = ({ showChallenge, displayDate, isLoading, error }: IndexProps) => {
+const Index = ({ showChallenge, displayDate, challengeDate, isLoading, error }: IndexProps) => {
 
   return (
     <div className="min-h-screen">
@@ -25,6 +26,7 @@ const Index = ({ showChallenge, displayDate, isLoading, error }: IndexProps) => 
       <HeroSection
         showChallenge={showChallenge} 
         displayDate={displayDate}
+        challengeDate={challengeDate}
         isLoading={isLoading}
         error={error}
       />
@@ -39,6 +41,7 @@ const Index = ({ showChallenge, displayDate, isLoading, error }: IndexProps) => 
       <Footer
         showChallenge={showChallenge}
         displayDate={displayDate}
+        challengeDate={challengeDate}
         isLoading={isLoading}
         error={error}
       />

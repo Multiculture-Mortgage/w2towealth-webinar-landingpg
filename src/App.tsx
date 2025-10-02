@@ -104,10 +104,11 @@ const AppContent = () => {
             <Index 
               showChallenge={showChallenge}
               displayDate={displayDate}
+              challengeDate={challengeDate}
               isLoading={isLoading}
               error={error}
             />
-          } 
+          }
         />
         <Route 
           path="/friend-invite" 
@@ -115,10 +116,11 @@ const AppContent = () => {
             <FriendInvite 
               showChallenge={showChallenge}
               displayDate={displayDate}
+              challengeDate={challengeDate}
               isLoading={isLoading}
               error={error}
             />
-          } 
+          }
         />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />

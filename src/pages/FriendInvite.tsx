@@ -11,11 +11,12 @@ import Footer from "@/components/Footer";
 interface FriendInviteProps {
   showChallenge: boolean;
   displayDate: string | null;
+  challengeDate: string | null;
   isLoading: boolean;
   error: string | null;
 }
 
-const FriendInvite = ({ showChallenge, displayDate, isLoading, error }: FriendInviteProps) => {
+const FriendInvite = ({ showChallenge, displayDate, challengeDate, isLoading, error }: FriendInviteProps) => {
   const [formData, setFormData] = useState({
     friendName: "",
     friendEmail: "",
@@ -269,7 +270,7 @@ const FriendInvite = ({ showChallenge, displayDate, isLoading, error }: FriendIn
                     <h3 className="text-xl font-bold text-brand-navy mb-4">
                       {showChallenge ? "Challenge Starts In:" : "Webinar Starts In:"}
                     </h3>
-                    <CountdownTimer compact targetDate={displayDate} />
+                    <CountdownTimer compact targetDate={challengeDate} />
                   </CardContent>
                 </Card>
 

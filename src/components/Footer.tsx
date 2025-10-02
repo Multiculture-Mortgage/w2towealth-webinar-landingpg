@@ -7,11 +7,12 @@ import EventDetails from "@/components/EventDetails";
 interface FooterProps {
   showChallenge?: boolean;
   displayDate?: string | null;
+  challengeDate?: string | null;
   isLoading?: boolean;
   error?: string | null;
 }
 
-const Footer = ({ showChallenge = false, displayDate, isLoading = false, error = null }: FooterProps) => {
+const Footer = ({ showChallenge = false, displayDate, challengeDate, isLoading = false, error = null }: FooterProps) => {
   return (
     <footer className="bg-black text-white py-12 relative overflow-hidden">
       {/* Background Texture */}

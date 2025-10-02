@@ -42,7 +42,7 @@ const BookSection = () => {
           {/* Combined Section - Horizontal Layout */}
           <div className="w-full flex flex-col md:flex-row gap-6 items-center md:items-center justify-center">
             {/* Title Section */}
-            <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg w-full max-w-md md:min-w-[480px] flex-shrink-0 text-center transition-transform duration-300 hover:scale-105 cursor-pointer">
+            <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg w-full md:flex-1 text-center transition-transform duration-300 hover:scale-105 cursor-pointer flex flex-col items-center justify-center">
               <div className="inline-flex items-center px-2 py-1 rounded-full bg-red-100 text-red-600 text-xs font-medium mb-2">
                 <BookOpen className="w-3 h-3 mr-1" />
                 New Release
@@ -59,7 +59,7 @@ const BookSection = () => {
             </div>
 
             {/* Description and Actions */}
-            <div className="flex-1 space-y-4 text-center md:text-left">
+            <div className="md:flex-1 space-y-4 text-center md:text-left flex flex-col items-center md:items-start justify-center w-full">
               <p className="text-white/90 leading-relaxed">
                 Discover the proven strategies to maximize cash flow in an unaffordable America. 
                 Learn how to build wealth through smart real estate investing and achieve financial freedom.

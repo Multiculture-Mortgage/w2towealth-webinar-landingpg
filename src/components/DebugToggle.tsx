@@ -1,45 +1,28 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 interface DebugToggleProps {
   onToggle: (isChallenge: boolean) => void;
 }
 
 const DebugToggle = ({ onToggle }: DebugToggleProps) => {
-  // Check production status immediately to prevent flash
+  const [searchParams, setSearchParams] = useSearchParams();
   const isProduction = window.location.hostname.includes('multiculturemortgage.com');
-  const [isChallenge, setIsChallenge] = useState(false);
   const [isVisible] = useState(!isProduction);
+  const isChallenge = searchParams.get('pg') === 'chlg';
 
   useEffect(() => {
-
-    if (!isProduction) {
-      // Load from localStorage
-      const stored = localStorage.getItem('debug_challenge_mode');
-      if (stored) {
-        const challengeMode = stored === 'true';
-        setIsChallenge(challengeMode);
-        onToggle(challengeMode);
-      }
-    }
-  }, [onToggle]);
+    onToggle(isChallenge);
+  }, [isChallenge, onToggle]);
 
   const handleToggle = () => {
-    const newState = !isChallenge;
-    setIsChallenge(newState);
-    localStorage.setItem('debug_challenge_mode', String(newState));
-    
-    // Update URL parameters
-    const url = new URL(window.location.href);
-    if (newState) {
-      url.searchParams.set('pg', 'chlg');
+    if (isChallenge) {
+      searchParams.delete('pg');
     } else {
-      url.searchParams.delete('pg');
+      searchParams.set('pg', 'chlg');
     }
-    window.history.pushState({}, '', url.toString());
-    
-    onToggle(newState);
+    setSearchParams(searchParams);
   };
 
   if (!isVisible) return null;

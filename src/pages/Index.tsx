@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ChartTeaserSection from "@/components/ChartTeaserSection";
@@ -17,10 +18,12 @@ interface WebinarData {
 }
 
 const Index = () => {
-  const [showChallenge, setShowChallenge] = useState(false);
+  const [searchParams] = useSearchParams();
   const [challengeDate, setChallengeDate] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  
+  const showChallenge = searchParams.get('pg') === 'chlg';
 
   const formatChallengeDateRange = (dateString: string) => {
     try {
@@ -61,20 +64,12 @@ const Index = () => {
       }
     };
 
-    // Check URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const pgParam = urlParams.get('pg');
-    const widParam = urlParams.get('wid');
+    const widParam = searchParams.get('wid');
     
-    if (pgParam === 'chlg') {
-      setShowChallenge(true);
-      if (widParam) {
-        fetchWebinarData(widParam);
-      }
-    } else {
-      setShowChallenge(false);
+    if (showChallenge && widParam) {
+      fetchWebinarData(widParam);
     }
-  }, []);
+  }, [showChallenge, searchParams]);
 
   return (
     <div className="min-h-screen">

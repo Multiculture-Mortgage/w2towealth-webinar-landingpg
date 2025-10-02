@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import FriendInvite from "./pages/FriendInvite";
 import NotFound from "./pages/NotFound";
+import DebugToggle from "@/components/DebugToggle";
 import { useEffect } from "react";
 import ReactPixel from "react-facebook-pixel";
 
@@ -34,6 +35,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <DebugToggle onToggle={() => {}} />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/friend-invite" element={<FriendInvite />} />

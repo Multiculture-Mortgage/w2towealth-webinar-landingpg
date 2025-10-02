@@ -70,7 +70,7 @@ const HeroSection = ({ showChallenge = false, displayDate, isLoading = false, er
             
             <p className="text-xl text-brand-gray mb-8 leading-relaxed">
               {showChallenge 
-                ? "Join our intensive 5-day challenge to master the fundamentals of real estate investing and turn your W-2 income into wealth-building opportunities."
+                ? "Join our intensive 5-day challenge to master the fundamentals of real estate investing and turn your W-2 income into attainable wealth-building opportunities."
                 : <>Turn your 9-to-5 income into <strong>income generating real estate assets</strong> through strategic home ownership.</>
               }
             </p>

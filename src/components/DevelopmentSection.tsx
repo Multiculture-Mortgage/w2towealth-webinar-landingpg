@@ -11,9 +11,8 @@ const DevelopmentSection = () => {
             />
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            There is a mindset shift happening across America right now. Local municipalities in cities all across America are changing local zoning laws and ordinances to allow citizens to build more units on existing available space. It’s really just simple math. When the whole pie becomes too expensive you have to start selling slices.<br /><br />
+            Lets face it, single family homes have become a luxury purchase in most major cities.There is a mindset shift happening across America right now. Local municipalities in cities all across America are changing local zoning laws and ordinances to allow citizens to build more units on existing available space. It’s really just simple math. When the whole pie becomes too expensive you have to start selling slices.<br /><br />
             It only make sense for you as a future homeowner to take advantage of these new laws because more units equals more cash flow. When you have more cash flow, you have more options. Your share of the mortgage can be cut in half if not more. <br /><br />
-            Lets face it, single family homes have become a luxury buy in most major cities!
           </p>
         </div>
 

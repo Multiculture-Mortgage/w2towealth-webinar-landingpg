@@ -1,4 +1,4 @@
-import { Calendar, Clock, Users, AlertCircle, Loader2 } from "lucide-react";
+import { Calendar, Clock, Users, AlertCircle, Loader2, StarIcon } from "lucide-react";
 
 interface EventDetailsProps {
   showChallenge?: boolean;
@@ -33,7 +33,7 @@ const EventDetails = ({
         </li>
         <li>
           ⏱️ {showChallenge ? (
-            <>60 minutes + Q&A each day<br />VIP gets an extra personal hour of coaching</>
+            <>60 minutes with us each day<br />🌟 VIP gets an extra hour of Q&A coaching</>
           ) : (
             "60 minutes + Q&A"
           )}
@@ -65,7 +65,11 @@ const EventDetails = ({
       </div>
       <div className="flex items-center justify-center lg:justify-start text-brand-navy">
         <Clock className="h-5 w-5 text-brand-orange mr-3" />
-        <span className="font-semibold">60 Minutes + Live Q&A</span>
+        <span className="font-semibold">60 Minutes With Us Each Day<br /></span>
+      </div>
+      <div className="flex items-center justify-center lg:justify-start text-brand-navy">
+        <StarIcon className="h-5 w-5 text-brand-orange mr-3" />
+        <span className="font-semibold">Get VIP For An Extra Hour of Q&A Coaching</span>
       </div>
       <div className="flex items-center justify-center lg:justify-start text-brand-navy">
         <Users className="h-5 w-5 text-brand-orange mr-3" />

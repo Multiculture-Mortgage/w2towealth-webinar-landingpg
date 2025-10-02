@@ -160,7 +160,7 @@ const ChallengeRegistrationForm = () => {
               </SelectTrigger>
               <SelectContent className="bg-background border-brand-teal z-50">
                 <SelectItem value="general">General Admission</SelectItem>
-                <SelectItem value="vip">VIP Admission</SelectItem>
+                <SelectItem value="vip">VIP Admission + 1 Extra Hour of Q&A Coaching</SelectItem>
               </SelectContent>
             </Select>
             {errors.ticketType && (

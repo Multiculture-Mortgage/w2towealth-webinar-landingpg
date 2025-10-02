@@ -90,9 +90,8 @@ const ChallengeRegistrationForm = () => {
       return null;
     };
 
-    // Get Facebook cookies
+    // Get Facebook _fbp cookie
     const fbp = getCookie('_fbp');
-    const fbc = getCookie('_fbc');
 
     // Get current URL parameters
     const currentUrl = new URL(window.location.href);
@@ -108,9 +107,8 @@ const ChallengeRegistrationForm = () => {
       'billing_phone': formData.phone,
     });
 
-    // Add Facebook cookies if they exist
+    // Add Facebook _fbp cookie if it exists
     if (fbp) checkoutParams.set('_fbp', fbp);
-    if (fbc) checkoutParams.set('_fbc', fbc);
 
     // Add any current URL parameters
     currentParams.forEach((value, key) => {

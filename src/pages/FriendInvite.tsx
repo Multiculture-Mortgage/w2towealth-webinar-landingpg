@@ -128,11 +128,11 @@ const FriendInvite = ({ showChallenge, displayDate, isLoading, error }: FriendIn
               <div className="flex justify-center items-center space-x-8 mb-8 text-brand-navy">
                 <div className="flex items-center">
                   <Calendar className="h-5 w-5 text-brand-orange mr-2" />
-                  <span className="font-semibold">June 12th, 2025</span>
+                  <span className="font-semibold">{displayDate || "June 17th, 2025, 6:00 PM CST"}</span>
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-5 w-5 text-brand-orange mr-2" />
-                  <span className="font-semibold">90 Minutes + Q&A</span>
+                  <span className="font-semibold">{showChallenge ? "60 Minutes With Us Each Day" : "60 Minutes + Q&A"}</span>
                 </div>
               </div>
             </div>
@@ -248,7 +248,9 @@ const FriendInvite = ({ showChallenge, displayDate, isLoading, error }: FriendIn
               <div className="space-y-8">
                 <Card className="shadow-lg border-0 bg-white/50">
                   <CardContent className="p-6 text-center">
-                    <h3 className="text-xl font-bold text-brand-navy mb-4">Webinar Starts In:</h3>
+                    <h3 className="text-xl font-bold text-brand-navy mb-4">
+                      {showChallenge ? "Challenge Starts In:" : "Webinar Starts In:"}
+                    </h3>
                     <CountdownTimer />
                   </CardContent>
                 </Card>
@@ -259,7 +261,10 @@ const FriendInvite = ({ showChallenge, displayDate, isLoading, error }: FriendIn
                     <ul className="space-y-3 text-brand-gray">
                       <li className="flex items-start">
                         <span className="text-brand-orange mr-2">✓</span>
-                        Exclusive pre-webinar guide: "5 Steps Before Your First Investment"
+                        {showChallenge 
+                          ? "Exclusive pre-challenge guide: \"5 Steps Before Your First Investment\""
+                          : "Exclusive pre-webinar guide: \"5 Steps Before Your First Investment\""
+                        }
                       </li>
                       <li className="flex items-start">
                         <span className="text-brand-orange mr-2">✓</span>

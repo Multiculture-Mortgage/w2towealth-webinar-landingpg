@@ -88,7 +88,7 @@ const FriendInvite = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
+    <div className="min-h-screen bg-gradient-subtle pt-12">
       <Header />
       
       <section className="py-20 relative overflow-hidden">

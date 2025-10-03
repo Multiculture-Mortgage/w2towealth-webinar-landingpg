@@ -2,16 +2,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AlertCircle } from "lucide-react";
 import ReactPixel from "react-facebook-pixel";
+import { useToast } from "@/hooks/use-toast";
 
 const ChallengeRegistrationForm = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    ticketType: ""
+    ticketType: "",
+    ipAddress: "",
+    userAgent: ""
   });
   const [errors, setErrors] = useState({
     name: "",
@@ -19,6 +23,23 @@ const ChallengeRegistrationForm = () => {
     phone: "",
     ticketType: ""
   });
+
+  // Capture IP address and User Agent on page load
+  useEffect(() => {
+    // Get User Agent
+    const userAgent = navigator.userAgent;
+    setFormData(prev => ({ ...prev, userAgent }));
+
+    // Get IP address
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        setFormData(prev => ({ ...prev, ipAddress: data.ip }));
+      })
+      .catch(error => {
+        console.error('Failed to fetch IP address:', error);
+      });
+  }, []);
 
   const validateName = (name: string) => {
     if (!name.trim()) return "Name is required";
@@ -50,7 +71,7 @@ const ChallengeRegistrationForm = () => {
     }
   };
 
-  const handlePurchase = (e: React.FormEvent) => {
+  const handlePurchase = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Validate all fields
@@ -91,6 +112,31 @@ const ChallengeRegistrationForm = () => {
     const nameParts = formData.name.trim().split(' ');
     const firstName = nameParts[0] || '';
     const lastName = nameParts.slice(1).join(' ') || '';
+
+    // Submit to webhook before redirecting
+    try {
+      const webhookData = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        ticketType: formData.ticketType,
+        ipAddress: formData.ipAddress,
+        userAgent: formData.userAgent,
+        productId,
+        ticketValue
+      };
+
+      await fetch('https://multiculturemortgage.com/wp-json/autonami/v1/webhook/?bwfan_autonami_webhook_id=16&bwfan_autonami_webhook_key=00df48098da8dd7ecc917b1a24338f9d', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookData)
+      });
+    } catch (error) {
+      console.error('Webhook submission failed:', error);
+      // Continue with checkout even if webhook fails
+    }
 
     // Helper function to get cookie value
     const getCookie = (name: string): string | null => {

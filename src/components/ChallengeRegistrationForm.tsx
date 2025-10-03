@@ -116,7 +116,8 @@ const ChallengeRegistrationForm = () => {
     // Submit to webhook before redirecting
     try {
       const webhookData = {
-        name: formData.name.trim(),
+        first_name: firstName,
+        last_name: lastName,
         email: formData.email.trim(),
         phone: formData.phone.trim(),
         ticketType: formData.ticketType,

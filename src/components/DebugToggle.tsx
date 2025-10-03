@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useSearchParams } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 interface DebugToggleProps {
   onToggle: (isChallenge: boolean) => void;
@@ -8,6 +9,7 @@ interface DebugToggleProps {
 
 const DebugToggle = ({ onToggle }: DebugToggleProps) => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { toast } = useToast();
   const isProduction = window.location.hostname.includes('multiculturemortgage.com');
   const [isVisible] = useState(!isProduction);
   const isChallenge = searchParams.get('pg') === 'chlg';
@@ -23,6 +25,49 @@ const DebugToggle = ({ onToggle }: DebugToggleProps) => {
       searchParams.set('pg', 'chlg');
     }
     setSearchParams(searchParams);
+  };
+
+  const handleTestWebhook = async () => {
+    const testData = {
+      first_name: "John",
+      last_name: "Doe",
+      email: "john.doe@test.com",
+      phone: "+1234567890",
+      ticketType: "vip",
+      ipAddress: "192.168.1.1",
+      userAgent: navigator.userAgent,
+      productId: "5771",
+      ticketValue: 97
+    };
+
+    try {
+      const response = await fetch('https://multiculturemortgage.com/wp-json/autonami/v1/webhook/?bwfan_autonami_webhook_id=16&bwfan_autonami_webhook_key=00df48098da8dd7ecc917b1a24338f9d', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(testData)
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Webhook Test Successful",
+          description: "Test data sent successfully to webhook",
+        });
+      } else {
+        toast({
+          title: "Webhook Test Failed",
+          description: `Status: ${response.status}`,
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Webhook Test Error",
+        description: error instanceof Error ? error.message : "Unknown error",
+        variant: "destructive"
+      });
+    }
   };
 
   if (!isVisible) return null;
@@ -49,6 +94,13 @@ const DebugToggle = ({ onToggle }: DebugToggleProps) => {
           >
             Friend Invite
           </Link>
+          <Button
+            onClick={handleTestWebhook}
+            size="sm"
+            className="bg-purple-600 hover:bg-purple-700 text-white text-xs"
+          >
+            Test Webhook
+          </Button>
           <Button
             onClick={handleToggle}
             size="sm"

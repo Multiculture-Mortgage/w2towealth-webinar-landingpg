@@ -109,13 +109,16 @@ const FriendInvite = ({ showChallenge, displayDate, challengeDate, isLoading, er
         message: formData.message.trim()
       };
 
+      // Convert to form data for no-cors compatibility
+      const formBody = new URLSearchParams();
+      Object.entries(webhookData).forEach(([key, value]) => {
+        formBody.append(key, value);
+      });
+
       await fetch('https://multiculturemortgage.com/wp-json/autonami/v1/webhook/?bwfan_autonami_webhook_id=18&bwfan_autonami_webhook_key=b400d5922ee90ff5e303e4259bd28a1f', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
         mode: 'no-cors',
-        body: JSON.stringify(webhookData)
+        body: formBody
       });
       
       setIsSubmitted(true);

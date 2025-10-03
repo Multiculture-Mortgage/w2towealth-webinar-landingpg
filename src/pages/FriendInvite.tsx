@@ -20,12 +20,14 @@ const FriendInvite = ({ showChallenge, displayDate, challengeDate, isLoading, er
   const [formData, setFormData] = useState({
     friendName: "",
     friendEmail: "",
+    friendPhone: "",
     yourName: "",
     message: ""
   });
   const [errors, setErrors] = useState({
     friendName: "",
     friendEmail: "",
+    friendPhone: "",
     yourName: "",
     message: ""
   });
@@ -45,6 +47,13 @@ const FriendInvite = ({ showChallenge, displayDate, challengeDate, isLoading, er
     return "";
   };
 
+  const validatePhone = (phone: string) => {
+    if (!phone.trim()) return "Phone number is required";
+    const phoneRegex = /^[\+]?[(]?[\d\s\-\(\)\.]{10,}$/;
+    if (!phoneRegex.test(phone.trim())) return "Please enter a valid phone number";
+    return "";
+  };
+
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     
@@ -60,11 +69,13 @@ const FriendInvite = ({ showChallenge, displayDate, challengeDate, isLoading, er
     // Validate fields
     const friendNameError = validateName(formData.friendName);
     const friendEmailError = validateEmail(formData.friendEmail);
+    const friendPhoneError = validatePhone(formData.friendPhone);
     const yourNameError = validateName(formData.yourName);
 
     const newErrors = {
       friendName: friendNameError,
       friendEmail: friendEmailError,
+      friendPhone: friendPhoneError,
       yourName: yourNameError,
       message: ""
     };
@@ -79,13 +90,36 @@ const FriendInvite = ({ showChallenge, displayDate, challengeDate, isLoading, er
     }
 
     try {
-      console.log("Friend invite data:", formData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Split names into first and last
+      const friendNameParts = formData.friendName.trim().split(' ');
+      const friendFirstName = friendNameParts[0] || '';
+      const friendLastName = friendNameParts.slice(1).join(' ') || '';
+
+      const yourNameParts = formData.yourName.trim().split(' ');
+      const yourFirstName = yourNameParts[0] || '';
+      const yourLastName = yourNameParts.slice(1).join(' ') || '';
+
+      const webhookData = {
+        friend_first_name: friendFirstName,
+        friend_last_name: friendLastName,
+        friend_email: formData.friendEmail.trim(),
+        friend_phone: formData.friendPhone.trim(),
+        referrer_first_name: yourFirstName,
+        referrer_last_name: yourLastName,
+        message: formData.message.trim()
+      };
+
+      await fetch('https://multiculturemortgage.com/wp-json/autonami/v1/webhook/?bwfan_autonami_webhook_id=18&bwfan_autonami_webhook_key=b400d5922ee90ff5e303e4259bd28a1f', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'no-cors',
+        body: JSON.stringify(webhookData)
+      });
       
       setIsSubmitted(true);
-      setFormData({ friendName: "", friendEmail: "", yourName: "", message: "" });
+      setFormData({ friendName: "", friendEmail: "", friendPhone: "", yourName: "", message: "" });
       
     } catch (error) {
       console.error("Invite error:", error);
@@ -233,6 +267,23 @@ const FriendInvite = ({ showChallenge, displayDate, challengeDate, isLoading, er
                           <div className="flex items-center mt-1 text-red-500 text-sm">
                             <AlertCircle className="h-4 w-4 mr-1" />
                             {errors.friendEmail}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Friend's Phone */}
+                      <div>
+                        <Input
+                          type="tel"
+                          placeholder="Friend's Phone Number"
+                          value={formData.friendPhone}
+                          onChange={(e) => handleInputChange('friendPhone', e.target.value)}
+                          className={`h-12 text-base ${errors.friendPhone ? 'border-red-500' : ''}`}
+                        />
+                        {errors.friendPhone && (
+                          <div className="flex items-center mt-1 text-red-500 text-sm">
+                            <AlertCircle className="h-4 w-4 mr-1" />
+                            {errors.friendPhone}
                           </div>
                         )}
                       </div>

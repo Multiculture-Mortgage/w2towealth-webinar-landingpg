@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import { useState, useEffect } from "react";
 import { AlertCircle } from "lucide-react";
 import ReactPixel from "react-facebook-pixel";
@@ -15,7 +17,8 @@ const ChallengeRegistrationForm = () => {
     phone: "",
     ticketType: "",
     ipAddress: "",
-    userAgent: ""
+    userAgent: "",
+    smsOptIn: false
   });
   const [errors, setErrors] = useState({
     name: "",
@@ -62,7 +65,7 @@ const ChallengeRegistrationForm = () => {
     return "";
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     
     // Clear error when user starts typing
@@ -124,7 +127,8 @@ const ChallengeRegistrationForm = () => {
         ipAddress: formData.ipAddress,
         userAgent: formData.userAgent,
         productId,
-        ticketValue
+        ticketValue,
+        smsOptIn: formData.smsOptIn
       };
 
       await fetch('https://multiculturemortgage.com/wp-json/autonami/v1/webhook/?bwfan_autonami_webhook_id=16&bwfan_autonami_webhook_key=00df48098da8dd7ecc917b1a24338f9d', {
@@ -263,7 +267,19 @@ const ChallengeRegistrationForm = () => {
             )}
           </div>
 
-          <Button 
+          {/* SMS Opt-in Toggle */}
+          <div className="flex items-start space-x-3 p-4 border rounded-md bg-background/50">
+            <Switch
+              id="sms-opt-in"
+              checked={formData.smsOptIn}
+              onCheckedChange={(checked) => handleInputChange('smsOptIn', checked)}
+            />
+            <Label htmlFor="sms-opt-in" className="text-sm text-brand-gray leading-relaxed cursor-pointer">
+              I agree to be contacted by Multiculture Mortgage via call, email or text. To opt out, you can reply "STOP" at any time or click the unsubscribe link in the emails. Message and data rates may apply.
+            </Label>
+          </div>
+
+          <Button
             type="submit" 
             className="w-full h-12 text-lg font-bold bg-gradient-primary hover:opacity-90 transition-opacity"
           >

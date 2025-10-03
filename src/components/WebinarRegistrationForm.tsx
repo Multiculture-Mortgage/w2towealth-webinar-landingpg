@@ -223,7 +223,7 @@ const WebinarRegistrationForm = ({ challengeDate }: WebinarRegistrationFormProps
               onCheckedChange={(checked) => handleInputChange('smsOptIn', checked)}
             />
             <Label htmlFor="sms-opt-in-webinar" className="text-sm text-brand-gray leading-relaxed cursor-pointer">
-              I agree to be contacted by Multiculture Mortgage via call, email or text. To opt out, you can reply "STOP" at any time or click the unsubscribe link in the emails. Message and data rates may apply.
+              I agree to be contacted via call, email or text. To opt out, you can reply "STOP" at any time or click the unsubscribe link in the emails. Message and data rates may apply.
             </Label>
           </div>
 

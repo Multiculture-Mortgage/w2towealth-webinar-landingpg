@@ -126,18 +126,21 @@ const ChallengeRegistrationForm = () => {
         ticketType: formData.ticketType,
         ipAddress: formData.ipAddress,
         userAgent: formData.userAgent,
-        productId,
-        ticketValue,
-        smsOptIn: formData.smsOptIn
+        productId: productId.toString(),
+        ticketValue: ticketValue.toString(),
+        smsOptIn: formData.smsOptIn.toString()
       };
+
+      // Convert to form data for no-cors compatibility
+      const formBody = new URLSearchParams();
+      Object.entries(webhookData).forEach(([key, value]) => {
+        formBody.append(key, value);
+      });
 
       await fetch('https://multiculturemortgage.com/wp-json/autonami/v1/webhook/?bwfan_autonami_webhook_id=16&bwfan_autonami_webhook_key=00df48098da8dd7ecc917b1a24338f9d', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
         mode: 'no-cors',
-        body: JSON.stringify(webhookData)
+        body: formBody
       });
     } catch (error) {
       console.error('Webhook submission failed:', error);

@@ -41,26 +41,19 @@ const DebugToggle = ({ onToggle }: DebugToggleProps) => {
     };
 
     try {
-      const response = await fetch('https://multiculturemortgage.com/wp-json/autonami/v1/webhook/?bwfan_autonami_webhook_id=16&bwfan_autonami_webhook_key=00df48098da8dd7ecc917b1a24338f9d', {
+      await fetch('https://multiculturemortgage.com/wp-json/autonami/v1/webhook/?bwfan_autonami_webhook_id=16&bwfan_autonami_webhook_key=00df48098da8dd7ecc917b1a24338f9d', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        mode: 'no-cors',
         body: JSON.stringify(testData)
       });
 
-      if (response.ok) {
-        toast({
-          title: "Webhook Test Successful",
-          description: "Test data sent successfully to webhook",
-        });
-      } else {
-        toast({
-          title: "Webhook Test Failed",
-          description: `Status: ${response.status}`,
-          variant: "destructive"
-        });
-      }
+      toast({
+        title: "Webhook Request Sent",
+        description: "Test data sent to webhook. Check your webhook logs to confirm receipt.",
+      });
     } catch (error) {
       toast({
         title: "Webhook Test Error",

@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import { useState, useEffect } from "react";
 import { AlertCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +19,8 @@ const WebinarRegistrationForm = ({ challengeDate }: WebinarRegistrationFormProps
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: ""
+    phone: "",
+    smsOptIn: false
   });
   const [errors, setErrors] = useState({
     name: "",
@@ -64,7 +67,7 @@ const WebinarRegistrationForm = ({ challengeDate }: WebinarRegistrationFormProps
     return "";
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     
     // Clear error when user starts typing
@@ -134,7 +137,7 @@ const WebinarRegistrationForm = ({ challengeDate }: WebinarRegistrationFormProps
       navigate('/friend-invite');
       
       // Reset form
-      setFormData({ name: "", email: "", phone: "" });
+      setFormData({ name: "", email: "", phone: "", smsOptIn: false });
       setCaptchaToken(null);
       
     } catch (error) {
@@ -212,6 +215,18 @@ const WebinarRegistrationForm = ({ challengeDate }: WebinarRegistrationFormProps
             )}
           </div>
 
+          {/* SMS Opt-in Toggle */}
+          <div className="flex items-start space-x-3 p-4 border rounded-md bg-background/50">
+            <Switch
+              id="sms-opt-in-webinar"
+              checked={formData.smsOptIn}
+              onCheckedChange={(checked) => handleInputChange('smsOptIn', checked)}
+            />
+            <Label htmlFor="sms-opt-in-webinar" className="text-sm text-brand-gray leading-relaxed cursor-pointer">
+              I agree to be contacted by Multiculture Mortgage via call, email or text. To opt out, you can reply "STOP" at any time or click the unsubscribe link in the emails. Message and data rates may apply.
+            </Label>
+          </div>
+
           {/* Cloudflare Turnstile */}
           <div className="flex justify-center">
             <div
@@ -222,7 +237,7 @@ const WebinarRegistrationForm = ({ challengeDate }: WebinarRegistrationFormProps
             ></div>
           </div>
 
-          <Button 
+          <Button
             type="submit" 
             disabled={isSubmitting}
             className="w-full h-12 text-lg font-bold bg-gradient-primary hover:opacity-90 transition-opacity disabled:opacity-50"

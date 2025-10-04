@@ -99,9 +99,10 @@ const FriendInvite = ({ showChallenge, displayDate, challengeDate, isLoading, er
       const yourFirstName = yourNameParts[0] || '';
       const yourLastName = yourNameParts.slice(1).join(' ') || '';
 
-      // Extract wid from URL params
+      // Extract wid and email from URL params
       const urlParams = new URLSearchParams(window.location.search);
       const wid = urlParams.get('wid') || '';
+      const email = urlParams.get('email') || '';
 
       const webhookData = {
         friend_first_name: friendFirstName,
@@ -111,7 +112,8 @@ const FriendInvite = ({ showChallenge, displayDate, challengeDate, isLoading, er
         referrer_first_name: yourFirstName,
         referrer_last_name: yourLastName,
         message: formData.message.trim(),
-        wid: wid
+        wid: wid,
+        email: email
       };
 
       // Convert to form data for no-cors compatibility

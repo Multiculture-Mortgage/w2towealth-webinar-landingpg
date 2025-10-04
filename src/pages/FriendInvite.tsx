@@ -113,7 +113,7 @@ const FriendInvite = ({ showChallenge, displayDate, challengeDate, isLoading, er
         referrer_last_name: yourLastName,
         message: formData.message.trim(),
         wid: wid,
-        email: email
+        referrer_email: email
       };
 
       // Convert to form data for no-cors compatibility
